@@ -1,40 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
 
-class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-
-    }
-  }
-  fun(){
-    fetch('http://localhost:8000/api/myapp/Parent/', {
-      method: 'get'
-    }).then(()=>{
-      console.log("sssssssssss")
-    })
-  }
-
-
-
-  render(){
+class App extends Component {
+render() {
     return (
-      <div className="App">
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     
-        <button  onClick={this.fun.bind(this)}>aaaaaaaaaaaaaaaaaaaaaaaaa</button>
-      </div>
+    <div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+    <button type="button" onClick={this.onClick}>Send GET /products </button>
+    </div>
     );
-  }
+}
+
+onClick(ev) {
+  console.log("Sending a GET API Call !!!");
+  axios.get('/products')
+  .then(res => {
+          console.log(res);
+  }).then(response => {
+      console.log(JSON.stringify(response));
+  })    
+}
+
 }
 
 export default App;
