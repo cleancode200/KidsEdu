@@ -21,12 +21,7 @@ render() {
 
 onClick(ev) {
   console.log("Sending a GET API Call !!!");
-  axios.get('/products')
-  .then(res => {
-          console.log(res);
-  }).then(response => {
-      console.log(JSON.stringify(response));
-  })    
+  axios.get('/api/myapp/Parent')
 }
 
 }
