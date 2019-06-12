@@ -1,36 +1,29 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import axios from "axios";
 import "./App.css";
+import Main from "./components/Main";
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <button type="button" onClick={this.onClick}>
-          Send GET /products{" "}
-        </button>
-      </div>
-    );
-  }
-
   onClick(ev) {
     console.log("Sending a GET API Call !!!");
     axios
-      .get("Parent")
+      .get("/Parent")
       .then(res => {
         console.log(res);
       })
       .then(response => {
         console.log(JSON.stringify(response));
       });
+  }
+  render() {
+    return (
+      <div>
+        <Main />
+        {/* <button type="button" onClick={this.onClick}>
+          Send GET /products{" "}
+        </button> */}
+      </div>
+    );
   }
 }
 
