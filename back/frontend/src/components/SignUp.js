@@ -47,7 +47,7 @@ if(password.value != confirm_password.value){
   var that = this
   axios({
    method:"POST",
-   url: '/Parent/',
+   url: 'Parent/',
    data: data,
    config: { headers: {'Content-Type': 'application/json	' }}
    })
