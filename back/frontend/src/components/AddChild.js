@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-//import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 import axios from "axios";
 
 export class AddChild extends Component {
@@ -8,6 +13,7 @@ export class AddChild extends Component {
     this.state = {
       name: "",
       age: "",
+      redirect: false,
       names: []
     };
   }
@@ -48,8 +54,15 @@ export class AddChild extends Component {
         console.log(response);
       });
   }
+  redirectToCategories() {
+    this.setState({
+      redirect: true
+    });
+  }
 
   render() {
+    var redirect = this.state.redirect;
+    console.log(redirect);
     return (
       <div>
         <form>
@@ -75,8 +88,13 @@ export class AddChild extends Component {
           <button onClick={this.addChild.bind(this)}>AddChild</button>
         </form>
         {this.state.names.map((child, index) => {
-          return <p key={index}>{child}</p>;
+          return (
+            <p key={index} onClick={this.redirectToCategories.bind(this)}>
+              {child}
+            </p>
+          );
         })}
+        {redirect ? <Redirect to={{ pathname: "/categories" }} /> : null}
       </div>
     );
   }
