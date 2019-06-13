@@ -6,7 +6,8 @@ export class AddChild extends Component {
     super(props);
     this.state = {
       name: "",
-      age: ""
+      age: "",
+      names: []
     };
   }
   change(e) {
@@ -18,23 +19,28 @@ export class AddChild extends Component {
 
   addChild(e) {
     console.log("Sending a GET API Call !!!");
-    //e.preventDefault();
-    console.log(this.state.name);
-    console.log(this.state.age);
-    var bodyFormData = new FormData();
-    bodyFormData.set("name", "ahmad");
-    bodyFormData.set("password", "ahmad");
-    bodyFormData.set("email", "a@s.com");
-    console.log(bodyFormData);
+    e.preventDefault();
+    var body = {
+      name: this.state.name,
+      age: this.state.age,
+      parent_id: "1"
+    };
+    var that = this;
     axios({
-      method: "post",
-      url: "Parent/",
-      body: bodyFormData,
-      config: { headers: { "Content-Type": "multipart/form-data" } }
+      method: "POST",
+      url: "/Child/",
+      data: body,
+      config: { headers: { "Content-Type": "application/json" } }
     })
       .then(function(response) {
+        var x = that.state.names;
+        x.push(response.data.name);
         //handle success
-        console.log(response);
+        that.setState({
+          names: x
+        });
+        console.log(that.state.names);
+        console.log(response.data.name);
       })
       .catch(function(response) {
         //handle error
@@ -44,30 +50,50 @@ export class AddChild extends Component {
 
   render() {
     return (
-      <form>
-        <h2>AddChild :</h2>
-        <input
-          type="text"
-          placeholder="your child name"
-          value={this.state.name}
-          onChange={this.change.bind(this)}
-          name="name"
-        />
-        <br />
-        <input
-          type="number"
-          placeholder="your child age"
-          min={2}
-          max={8}
-          value={this.state.age}
-          onChange={this.change.bind(this)}
-          name="age"
-        />
-        <br />
-        <button onClick={this.addChild.bind(this)}>AddChild</button>
-      </form>
+      <div>
+        <form>
+          <h2>AddChild :</h2>
+          <input
+            type="text"
+            placeholder="your child name"
+            value={this.state.name}
+            onChange={this.change.bind(this)}
+            name="name"
+          />
+          <br />
+          <input
+            type="number"
+            placeholder="your child age"
+            min={2}
+            max={8}
+            value={this.state.age}
+            onChange={this.change.bind(this)}
+            name="age"
+          />
+          <br />
+          <button onClick={this.addChild.bind(this)}>AddChild</button>
+        </form>
+        {this.state.names.map((child, index) => {
+          return <p key={index}>{child}</p>;
+        })}
+      </div>
     );
   }
 }
+// this.props.resultOfSer.map(function(name, index) {
+//   return (
+//     <div
+//       key={index}
+//       className="card"
+//       name={name.id}
+//       onClick={that.props.openModal.bind(this, name.id)}
+//     >
+//       <img src={name.img} style={{ width: 100 + "%" }} />
+//       <h2 className="cardtext">{name.name}</h2>
+//       <h3 className="cardtext">{name.summary}</h3>
+//       <h3 className="cardtext">{name.reatingText}</h3>
+//       <span className="stars">Rate: {that.stars(name.rate)}</span>
+//       <br />
+//     </div>
 
 export default AddChild;

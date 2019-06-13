@@ -3,11 +3,12 @@ import axios from "axios";
 import "./App.css";
 import Main from "./components/Main";
 import AddChild from "./components/AddChild";
+import Categories from "./components/Categories";
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current_parentId: 1
+      current_parentId: "1"
     };
   }
   onClick(ev) {
@@ -27,6 +28,7 @@ class App extends Component {
       <div>
         <Main />
         <AddChild current_parentId={this.current_parentId} />
+        <Categories />
         {/* <button type="button" onClick={this.onClick}>
           Send GET /products{" "}
         </button> */}
