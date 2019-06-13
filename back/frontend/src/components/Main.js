@@ -22,11 +22,9 @@ export class Main extends Component {
             )}
           />
 
-         
+          {/* <p>Hello world </p> */}
           <Route path="/signin" component={SignIn} />
           <Route path="/signUp" component={SignUp} />
-          <Route exact path="/Main" component={Main} />
-         
         </div>
       </Router>
     );

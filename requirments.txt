@@ -9,3 +9,5 @@ npm install axios --save
 
 
 pip install django-cors-headers
+
+each time you pull type npm i 
