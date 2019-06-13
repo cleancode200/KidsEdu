@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
+
 export class AddChild extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +65,7 @@ export class AddChild extends Component {
           <input
             type="number"
             placeholder="your child age"
-            min={2}
+            min={4}
             max={8}
             value={this.state.age}
             onChange={this.change.bind(this)}
@@ -74,7 +75,7 @@ export class AddChild extends Component {
           <button onClick={this.addChild.bind(this)}>AddChild</button>
         </form>
         {this.state.names.map((child, index) => {
-          return <p key={index}>{child}</p>;
+          return <p key={index} onClick={}>{child}</p>;
         })}
       </div>
     );
