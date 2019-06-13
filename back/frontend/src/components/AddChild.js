@@ -75,7 +75,7 @@ export class AddChild extends Component {
           <button onClick={this.addChild.bind(this)}>AddChild</button>
         </form>
         {this.state.names.map((child, index) => {
-          return <p key={index} onClick={}>{child}</p>;
+          return <p key={index}>{child}</p>;
         })}
       </div>
     );

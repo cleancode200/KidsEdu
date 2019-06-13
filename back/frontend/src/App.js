@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
+
 import Main from "./components/Main";
 import AddChild from "./components/AddChild";
 import Categories from "./components/Categories";
+
 class App extends Component {
   constructor(props) {
     super(props);
