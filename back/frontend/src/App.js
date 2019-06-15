@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
-import "./App.css";
 
 import Main from "./components/Main";
 
@@ -20,9 +18,9 @@ class App extends Component {
     return (
       <div>
         <Main />
-        <button type="button" onClick={this.onClick}>
+        {/* <button type="button" onClick={this.onClick}>
           Send GET /products{" "}
-        </button>
+        </button> */}
       </div>
     );
   }

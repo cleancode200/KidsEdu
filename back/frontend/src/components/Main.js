@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+
 export class Main extends Component {
   render() {
     return (
@@ -22,7 +23,6 @@ export class Main extends Component {
             )}
           />
 
-          {/* <p>Hello world </p> */}
           <Route path="/signin" component={SignIn} />
           <Route path="/signUp" component={SignUp} />
         </div>
