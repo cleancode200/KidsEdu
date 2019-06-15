@@ -211,6 +211,15 @@ export class SignUp extends Component {
                       </div>
                     </div>
                     {/* </Link> */}
+                    <div className="text-center p-t-115">
+                      <span className="txt1">Don’t have an account?</span>
+
+                      <Link to="/signin">
+                        <a className="txt2" href="#">
+                          LOGIN
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

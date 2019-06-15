@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+//for pop up message
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 //import { BrowserRouter as Router, Route,Link } from "react-router-dom";
 import { Redirect, Link } from "react-router-dom";
 //import Main from "./Main";
@@ -26,12 +30,15 @@ class SignIn extends Component {
   }
 
   handleSubmit(evt) {
+    toast.configure();
     evt.preventDefault();
     if (!this.state.email) {
-      return this.setState({ error: "Email is required" });
+      this.setState({ error: "Email is required" });
+      toast("Email is required");
     }
     if (!this.state.password) {
-      return this.setState({ error: "Password is required" });
+      this.setState({ error: "Password is required" });
+      toast("Password is required");
     }
     axios.get("Parent").then(res => {
       let array = res.data;
