@@ -95,7 +95,7 @@ class SignIn extends Component {
           )}
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             value={this.state.email}
             onChange={this.handleUserChange}
           />
