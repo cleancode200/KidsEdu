@@ -20,7 +20,6 @@ export class AddChild extends Component {
   }
 
   addChild(e) {
-    console.log("Sending a GET API Call !!!");
     e.preventDefault();
     var body = {
       name: this.state.name,
@@ -41,8 +40,6 @@ export class AddChild extends Component {
         that.setState({
           names: namesArr
         });
-        console.log(that.state.names);
-        console.log(response.data.name);
       })
       .catch(function(response) {
         //handle error
@@ -57,7 +54,6 @@ export class AddChild extends Component {
 
   render() {
     var redirect = this.state.redirect1;
-    console.log(redirect);
     return (
       <div>
         <form>
