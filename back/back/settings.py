@@ -71,7 +71,7 @@ DATABASES = {
          'ENGINE': 'django.db.backends.mysql', 
         'NAME': 'kids',
         'USER': 'root',
-        'PASSWORD': 'rbk6',
+        'PASSWORD': 'root',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
@@ -115,6 +115,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
 
 
 CORS_ORIGIN_ALLOW_ALL = True

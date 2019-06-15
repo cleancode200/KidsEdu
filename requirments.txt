@@ -4,8 +4,9 @@ psycopg2==2.7.5
 psycopg2-binary==2.7.5
 pytz==2018.5
 
+always when you make new pull do:
+npm install 
 
-npm install axios --save 
 
 
 pip install django-cors-headers
