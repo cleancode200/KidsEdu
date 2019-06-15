@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import Categories from "./Categories";
+import AddChild from "./AddChild";
+import subCategores from "./subCategores";
+
 export class Main extends Component {
   render() {
     return (
@@ -25,6 +29,9 @@ export class Main extends Component {
           {/* <p>Hello world </p> */}
           <Route path="/signin" component={SignIn} />
           <Route path="/signUp" component={SignUp} />
+          <Route path="/addchild" component={AddChild} />
+          <Route path="/categories" component={Categories} />
+          <Route path="/subcategores" component={subCategores} />
         </div>
       </Router>
     );

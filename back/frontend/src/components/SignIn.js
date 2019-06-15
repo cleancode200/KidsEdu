@@ -78,7 +78,7 @@ class SignIn extends Component {
   rend = () => {
     if (this.state.found === true) {
       console.log("render function aaa ");
-      return <Redirect to="/signup" />;
+      return <Redirect to="/addchild" />;
     }
   };
 

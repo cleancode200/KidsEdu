@@ -26,8 +26,8 @@ class App extends Component {
     return (
       <div>
         <Main />
-        <AddChild current_parentId={this.current_parentId} />
-        <Categories />
+        {/* <AddChild current_parentId={this.current_parentId} /> */}
+        {/* <Categories /> */}
 
         {/* <button type="button" onClick={this.onClick}>
           Send GET /products{" "}

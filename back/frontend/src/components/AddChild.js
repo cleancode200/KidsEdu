@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 export class AddChild extends Component {
@@ -13,7 +8,7 @@ export class AddChild extends Component {
     this.state = {
       name: "",
       age: "",
-      redirect: false,
+      redirect1: false,
       names: []
     };
   }
@@ -56,12 +51,12 @@ export class AddChild extends Component {
   }
   redirectToCategories() {
     this.setState({
-      redirect: true
+      redirect1: true
     });
   }
 
   render() {
-    var redirect = this.state.redirect;
+    var redirect = this.state.redirect1;
     console.log(redirect);
     return (
       <div>

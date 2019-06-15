@@ -6,7 +6,7 @@ import {
   Redirect
 } from "react-router-dom";
 import axios from "axios";
-export class Categories extends Component {
+export class subCategores extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +30,7 @@ export class Categories extends Component {
       <div>
         <div>
           <img
-            src="https://s3.amazonaws.com/tinycards/image/377e944a5407032e91b6e77f24072541"
+            src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
             alt="Language"
             height="100%"
             width="33%"
@@ -54,11 +54,11 @@ export class Categories extends Component {
             height="100%"
             width="33%"
           />
-          {redirect ? <Redirect to={{ pathname: "/subCategores" }} /> : null}
+          {redirect ? <Redirect to={{ pathname: "/game" }} /> : null}
         </div>
       </div>
     );
   }
 }
 
-export default Categories;
+export default subCategores;
