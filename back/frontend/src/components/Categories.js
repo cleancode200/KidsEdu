@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import axios from "axios";
 
 export class Categories extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: "",
+      urls: [],
       redirect: false
     };
   }
@@ -18,14 +19,29 @@ export class Categories extends Component {
       redirect: true
     });
   }
+  componentDidMount() {
+    // console.log("Sending a GET API Call !!!");
+    var that = this;
+    axios.get("Media/").then(res => {
+      // console.log(res.data[0].img_url);
+      // console.log(res.data.length);
+      var urlsArr = that.state.urls;
+      for (let i = 0; i < res.data.length; i++) {
+        urlsArr.push(res.data[i].img_url);
+      }
+      that.setState({
+        urls: urlsArr
+      });
+    });
+  }
   render() {
     var redirect = this.state.redirect;
-    console.log(redirect);
+    // console.log(redirect);
     return (
       <div>
         <div>
           <img
-            src="https://image.freepik.com/free-vector/language-word-concept-with-flat-design_23-2147866907.jpg"
+            src={this.state.urls[0]}
             alt="Language"
             height="100%"
             width="33%"
@@ -33,14 +49,14 @@ export class Categories extends Component {
           />
           {redirect ? <Redirect to={{ pathname: "/subCategores" }} /> : null}
           <img
-            src="https://s3.amazonaws.com/tinycards/image/377e944a5407032e91b6e77f24072541"
+            src={this.state.urls[1]}
             alt="Videos"
             height="100%"
             width="33%"
           />
           {redirect ? <Redirect to={{ pathname: "/subCategores" }} /> : null}
           <img
-            src="https://s3.amazonaws.com/tinycards/image/377e944a5407032e91b6e77f24072541"
+            src={this.state.urls[1]}
             alt="Stores"
             height="100%"
             width="33%"

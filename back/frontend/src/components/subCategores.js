@@ -32,14 +32,14 @@ export class subCategores extends Component {
           />
           {redirect ? <Redirect to={{ pathname: "/game" }} /> : null}
           <img
-            src="https://s3.amazonaws.com/tinycards/image/377e944a5407032e91b6e77f24072541"
+            src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
             alt="Videos"
             height="100%"
             width="33%"
           />
           {redirect ? <Redirect to={{ pathname: "/game" }} /> : null}
           <img
-            src="https://s3.amazonaws.com/tinycards/image/377e944a5407032e91b6e77f24072541"
+            src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
             alt="Stores"
             height="100%"
             width="33%"

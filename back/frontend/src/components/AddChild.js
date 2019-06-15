@@ -34,11 +34,11 @@ export class AddChild extends Component {
       config: { headers: { "Content-Type": "application/json" } }
     })
       .then(function(response) {
-        var x = that.state.names;
-        x.push(response.data.name);
+        var namesArr = that.state.names;
+        namesArr.push(response.data.name);
         //handle success
         that.setState({
-          names: x
+          names: namesArr
         });
       })
       .catch(function(response) {
