@@ -111,10 +111,7 @@ export class SignUp extends Component {
               <div className="limiter">
                 <div className="container-login100">
                   <div className="wrap-login100">
-                    <form
-                      className="login100-form validate-form"
-                      onSubmit={this.handleSubmit}
-                    >
+                 
                       <span className="login100-form-title p-b-26">
                         Welcome
                       </span>
@@ -195,11 +192,8 @@ export class SignUp extends Component {
                         </span>
 
                         <input
-                          id="password"
+                          id="confirm_password"
                           type="password"
-                          name="password"
-                          value={this.state.passwods}
-                          onChange={this.onchange.bind(this)}
                           className="input100"
                           required
                         />
@@ -213,13 +207,13 @@ export class SignUp extends Component {
                       <div className="container-login100-form-btn">
                         <div className="wrap-login100-form-btn">
                           <div className="login100-form-bgbtn" />
-                          <button className="login100-form-btn" type="submit">
+                          <button className="login100-form-btn" onClick={this.onclick.bind(this)}>
                             Register
                           </button>
                         </div>
                       </div>
                       {/* </Link> */}
-                    </form>
+                   
                   </div>
                 </div>
               </div>
