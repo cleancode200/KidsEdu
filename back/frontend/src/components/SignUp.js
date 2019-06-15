@@ -44,12 +44,10 @@ export class SignUp extends Component {
       })
         .then(function(response) {
           //handle success
-          //  console.log('dasd')
           console.log(response.statusText);
           that.setState({
             redirect: true
           });
-          // this.props.history.push('/signin');
         })
         .catch(function(response) {
           //handle error
@@ -61,6 +59,7 @@ export class SignUp extends Component {
 
   render() {
     var redirect = this.state.redirect;
+    console.log(redirect);
     return (
       <div>
         {redirect ? (

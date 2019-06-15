@@ -39,18 +39,11 @@ class SignIn extends Component {
           this.state.email === array[i].email &&
           this.state.password === array[i].password
         ) {
-          console.log("welcome" + " " + array[i].name);
+          console.log("welcome " + array[i].name);
           this.setState({
             found: true
           });
           this.rend();
-          // rend = () =>{
-          //   if(this.state.found === true){
-          //    console.log("render function aaa ");
-          //  return <Redirect to="/SignUp"/>
-
-          //   }
-          // };
         }
       }
 
@@ -75,8 +68,7 @@ class SignIn extends Component {
   }
   rend = () => {
     if (this.state.found === true) {
-      console.log("render function aaa ");
-      return <Redirect to="/signup" />;
+      return <Redirect to="/addchild" />;
     }
   };
 
@@ -104,7 +96,6 @@ class SignIn extends Component {
             value={this.state.password}
             onChange={this.handlePassChange}
           />
-          {/* {this.rend} */}
           <button type="submit">Log in</button>
         </form>
       </div>

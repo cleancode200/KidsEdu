@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "01ac1b3021fd4ff4f117ec8d6124d4665acd2b66b44467278464180063a7a770"
+            "sha256": "cef551ea938f961961eb9771af146b53f29b894398c05acedcd98b48f0765217"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -111,11 +111,12 @@
         },
         "mysqlclient": {
             "hashes": [
-                "sha256:06d19604243068adec47f7df485d0e2cf08a04274c2587dcb959b927933c337b",
-                "sha256:b95edaa41d6cc47deecabcdcbb5ab437ad9ae6d8955f5cf10d1847b37e66ef5e"
+                "sha256:425e733b05e359a714d6007c0fc44582be66b63e5a3df0a50949274ae16f4bc6",
+                "sha256:62e4770b6a797b9416bcf70488365b7d6b9c9066878108499c559293bb464380",
+                "sha256:f257d250f2675d0ef99bd318906f3cfc05cef4a2f385ea695ff32a3f04b9f9a7"
             ],
-            "path": "./mysqlclient-1.4.2-cp37-cp37m-win32.whl",
-            "version": "==1.4.2"
+            "index": "pypi",
+            "version": "==1.4.2.post1"
         },
         "pillow": {
             "hashes": [
@@ -254,14 +255,6 @@
                 "sha256:b65db1bbaac9f9f4d190199bb8680af6f6f84fd3769a5ea883df8a91fe68b4c4"
             ],
             "version": "==2.2.5"
-        },
-        "colorama": {
-            "hashes": [
-                "sha256:05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d",
-                "sha256:f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==0.4.1"
         },
         "isort": {
             "hashes": [

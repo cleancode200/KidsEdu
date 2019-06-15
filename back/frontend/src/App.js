@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-
+//import axios from "axios";
+import "./App.css";
 import Main from "./components/Main";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      current_parentId: "1"
+    };
+  }
   // onClick(ev) {
   //   console.log("Sending a GET API Call !!!");
   //   axios
@@ -18,6 +25,9 @@ class App extends Component {
     return (
       <div>
         <Main />
+        {/* <AddChild current_parentId={this.current_parentId} /> */}
+        {/* <Categories /> */}
+
         {/* <button type="button" onClick={this.onClick}>
           Send GET /products{" "}
         </button> */}
