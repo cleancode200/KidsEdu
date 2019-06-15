@@ -5,6 +5,7 @@ import SignUp from "./SignUp";
 import Categories from "./Categories";
 import AddChild from "./AddChild";
 import subCategores from "./subCategores";
+import Game from "./Game";
 
 export class Main extends Component {
   render() {
@@ -32,6 +33,7 @@ export class Main extends Component {
           <Route path="/addchild" component={AddChild} />
           <Route path="/categories" component={Categories} />
           <Route path="/subcategores" component={subCategores} />
+          <Route path="/game" component={Game} />
         </div>
       </Router>
     );
