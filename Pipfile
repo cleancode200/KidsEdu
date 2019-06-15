@@ -15,7 +15,7 @@ Django = "==2.1.5"
 Pillow = "==5.2.0"
 djangorestframework = "*"
 django-rest-knox = "*"
-mysqlclient = {path = "./mysqlclient-1.4.2-cp37-cp37m-win32.whl"}
+mysqlclient = "*"
 
 [requires]
 python_version = "3.7"
