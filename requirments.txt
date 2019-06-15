@@ -8,4 +8,7 @@ always when you make new pull do:
 npm install 
 
 
-(pip install django-cors-headers)
+
+pip install django-cors-headers
+
+each time you pull type npm i 
