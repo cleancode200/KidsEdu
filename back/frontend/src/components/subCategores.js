@@ -41,7 +41,7 @@ export class subCategores extends Component {
             <Redirect to={{ pathname: "/subCategoriesLanguage" }} />
           ) : null}
           <img
-            src="../public/resources/image01.jpg"
+            src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
             alt="Videos"
             height="100%"
             width="33%"
@@ -50,7 +50,7 @@ export class subCategores extends Component {
             <Redirect to={{ pathname: "/subCategoriesVideos" }} />
           ) : null}
           <img
-            src=""
+            src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
             alt="Stores"
             height="100%"
             width="33%"
