@@ -19,9 +19,9 @@ class App extends Component {
     return (
       <div>
         <Main />
-        {/* <button type="button" onClick={this.onClick}>
+        <button type="button" onClick={this.onClick}>
           Send GET /products{" "}
-        </button> */}
+        </button>
       </div>
     );
   }
