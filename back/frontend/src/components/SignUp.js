@@ -44,7 +44,7 @@ export class SignUp extends Component {
       })
         .then(function(response) {
           //handle success
-          console.log(response.statusText);
+          // console.log(response.statusText);
           that.setState({
             redirect: true
           });
@@ -198,7 +198,6 @@ export class SignUp extends Component {
                       />
                     </div>
 
-                    {/* <Link to="/signin"> */}
                     <div className="container-login100-form-btn">
                       <div className="wrap-login100-form-btn">
                         <div className="login100-form-bgbtn" />
@@ -210,7 +209,6 @@ export class SignUp extends Component {
                         </button>
                       </div>
                     </div>
-                    {/* </Link> */}
                     <div className="text-center p-t-115">
                       <span className="txt1">Don’t have an account?</span>
 
