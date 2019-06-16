@@ -14,7 +14,6 @@ import Game from "./components/Game";
 class App extends Component {
   constructor(props) {
     super(props);
-
   }
   // onClick(ev) {
   //   console.log("Sending a GET API Call !!!");

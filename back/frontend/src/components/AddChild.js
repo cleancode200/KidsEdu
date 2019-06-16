@@ -9,7 +9,7 @@ export class AddChild extends Component {
       name: "",
       age: "",
       redirect1: false,
-      dublication:false,
+      dublication: false,
       names: []
     };
   }
@@ -22,73 +22,75 @@ export class AddChild extends Component {
 
   addChild(e) {
     e.preventDefault();
-    
-    console.log(this.props.location.state.parent_id)
+
+    console.log(this.props.location.state.parent_id);
     var body = {
       name: this.state.name,
       age: this.state.age,
       parent_id: this.props.location.state.parent_id
     };
-    var that=this;
+    var that = this;
     var dublication = false;
-    axios.get("/Child").then(function (res){
-     var childarray=res.data;
-     console.log(childarray)
-     console.log(that.state.name)
-     console.log(that.props.location.state.parent_id)
-     for(var i=0;i<childarray.length;i++){
-
-      if(childarray[i].name===that.state.name && that.props.location.state.parent_id ===childarray[i].parent_id){
-        
-        
-        dublication = true
-        
-       
- 
-     }
-    }
-  if(dublication===true){
-    alert("child name exists ")
-  }
-    }).then(function(){ 
-      if(dublication===false && that.state.age <= 8 && that.state.age >= 4){
-        console.log("post new child")
-      axios({
-        method: "POST",
-        url: "/Child/",
-        data: body,
-        config: { headers: { "Content-Type": "application/json" } }
+    axios
+      .get("/Child")
+      .then(function(res) {
+        var childarray = res.data;
+        console.log(childarray);
+        console.log(that.state.name);
+        console.log(that.props.location.state.parent_id);
+        for (var i = 0; i < childarray.length; i++) {
+          if (
+            childarray[i].name === that.state.name &&
+            that.props.location.state.parent_id === childarray[i].parent_id
+          ) {
+            dublication = true;
+          }
+        }
+        if (dublication === true) {
+          alert("child name exists ");
+        }
       })
-        .then(function(response) {
-          var namesArr = that.state.names;
-          namesArr.push(response.data.name);
-          //handle success
-          that.setState({
-            names: namesArr
-          });
-        })
-        .catch(function(response) {
-          //handle error
-          console.log(response);
-        });
-    }
-    
-     else if( that.state.age > 8 && that.state.age < 4 ){
-  alert("age limit violation")
-      }
-    
-  })
-
-    
-    
-    
-}
-  redirectToCategories() {
-    if(this.state.dublication===false){
-    this.setState({
-      redirect1: true
-    });
+      .then(function() {
+        if (
+          dublication === false &&
+          that.state.age <= 8 &&
+          that.state.age >= 4
+        ) {
+          console.log("post new child");
+          axios({
+            method: "POST",
+            url: "/Child/",
+            data: body,
+            config: { headers: { "Content-Type": "application/json" } }
+          })
+            .then(function(response) {
+              var namesArr = that.state.names;
+              namesArr.push(response.data.name);
+              //handle success
+              that.setState({
+                names: namesArr,
+                child_Id: response.data.id
+              });
+              console.log(that.state.child_Id);
+              console.log(response.data);
+              console.log(that.state.name);
+              console.log(that.props.location.state.parent_id);
+            })
+            .catch(function(response) {
+              //handle error
+              console.log(response);
+            });
+        } else if (that.state.age > 8 && that.state.age < 4) {
+          alert("age limit violation");
+        }
+      });
   }
+  redirectToCategories() {
+    if (this.state.dublication === false) {
+      this.setState({
+        redirect1: true
+      });
+    }
   }
 
   render() {
@@ -124,25 +126,18 @@ export class AddChild extends Component {
             </p>
           );
         })}
-        {redirect ? <Redirect to={{ pathname: "/categories" }} /> : null}
+        {redirect ? (
+          <Redirect
+            to={{
+              pathname: "/categories",
+              state: {
+                child_Id: this.state.child_Id
+              }
+            }}
+          />
+        ) : null}
       </div>
     );
   }
 }
-// this.props.resultOfSer.map(function(name, index) {
-//   return (
-//     <div
-//       key={index}
-//       className="card"
-//       name={name.id}
-//       onClick={that.props.openModal.bind(this, name.id)}
-//     >
-//       <img src={name.img} style={{ width: 100 + "%" }} />
-//       <h2 className="cardtext">{name.name}</h2>
-//       <h3 className="cardtext">{name.summary}</h3>
-//       <h3 className="cardtext">{name.reatingText}</h3>
-//       <span className="stars">Rate: {that.stars(name.rate)}</span>
-//       <br />
-//     </div>
-
 export default AddChild;

@@ -77,14 +77,17 @@ class SignIn extends Component {
     });
   }
   rend = () => {
-    if (this.state.found ===true) {
+    if (this.state.found === true) {
       // return <Redirect to="/addchild" />;
-      console.log(this.state.id)
-      return <Redirect to={{
-        pathname:"/addchild",
-        state:{parent_id:this.state.id
-        }
-      }} />
+      console.log(this.state.id);
+      return (
+        <Redirect
+          to={{
+            pathname: "/addchild",
+            state: { parent_id: this.state.id }
+          }}
+        />
+      );
     }
   };
 

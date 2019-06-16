@@ -7,7 +7,8 @@ export class Categories extends Component {
     super(props);
     this.state = {
       urls: [],
-      redirect: false
+      redirect: false,
+      child_Id: this.props.location.state.child_Id
     };
   }
   goToSubCategories(e) {
@@ -32,6 +33,7 @@ export class Categories extends Component {
       that.setState({
         urls: urlsArr
       });
+      console.log(that.state.child_Id);
     });
   }
   render() {
@@ -47,21 +49,48 @@ export class Categories extends Component {
             width="33%"
             onClick={this.goToSubCategories.bind(this)}
           />
-          {redirect ? <Redirect to={{ pathname: "/subCategores" }} /> : null}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/subCategores",
+                state: {
+                  child_Id: this.state.child_Id
+                }
+              }}
+            />
+          ) : null}
           <img
             src={this.state.urls[1]}
             alt="Videos"
             height="100%"
             width="33%"
           />
-          {redirect ? <Redirect to={{ pathname: "/subCategores" }} /> : null}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/subCategores",
+                state: {
+                  child_Id: this.state.child_Id
+                }
+              }}
+            />
+          ) : null}
           <img
             src={this.state.urls[1]}
             alt="Stores"
             height="100%"
             width="33%"
           />
-          {redirect ? <Redirect to={{ pathname: "/subCategores" }} /> : null}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/subCategores",
+                state: {
+                  child_Id: this.state.child_Id
+                }
+              }}
+            />
+          ) : null}
         </div>
       </div>
     );
