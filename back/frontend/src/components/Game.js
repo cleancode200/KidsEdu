@@ -44,7 +44,7 @@ export class Game extends Component {
   }
   render() {
     var redirect = this.state.redirect;
-    console.log(redirect);
+    // console.log(redirect);
     return (
       <div>
         <div align="center">

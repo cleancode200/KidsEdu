@@ -16,7 +16,7 @@ export class AddChild extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   addChild(e) {
@@ -43,7 +43,7 @@ export class AddChild extends Component {
       })
       .catch(function(response) {
         //handle error
-        console.log(response);
+        // console.log(response);
       });
   }
   redirectToCategories() {
