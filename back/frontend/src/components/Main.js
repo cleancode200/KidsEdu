@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 export class Main extends Component {
   render() {
@@ -287,32 +287,6 @@ export class Main extends Component {
             </div>
           </div>
         </footer>
-
-        {/* //{" "} */}
-        {/* <div> */}
-        {/* //{" "} */}
-        {/* <Route
-              exact
-              path="/"
-              render={() => (
-                <div>
-                  <Link to="/signin">
-                    <button>Sign In</button>
-                  </Link>
-                  <Link to="/signup">
-                    <button>Sign Up</button>
-                  </Link>
-                </div>
-              )}
-            />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/signUp" component={SignUp} />
-            <Route exact path="/addchild" component={AddChild} />
-            <Route exact path="/categories" component={Categories} />
-            <Route exact path="/subcategores" component={subCategores} />
-            <Route exact path="/game" component={Game} /> */}
-        {/* </div> */}
-        {/* </Router> */}
       </div>
     );
   }

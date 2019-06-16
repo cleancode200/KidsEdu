@@ -69,10 +69,10 @@ WSGI_APPLICATION = 'back.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'kids',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'NAME': 'RSyPq2PTEN',
+        'USER': 'RSyPq2PTEN',
+        'PASSWORD': '8AAUgq7nKK',
+        'HOST': 'remotemysql.com',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
@@ -118,5 +118,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
 
 CORS_ORIGIN_ALLOW_ALL = True
