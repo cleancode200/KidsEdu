@@ -1,4 +1,5 @@
 {
     "python.pythonPath": "/Users/rbk-11/.local/share/virtualenvs/KidsEdu-1qTAzgit/bin/python",
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.formatOnSave": true
 }
