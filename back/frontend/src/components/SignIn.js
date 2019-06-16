@@ -50,7 +50,8 @@ class SignIn extends Component {
         ) {
           console.log("welcome " + array[i].name);
           this.setState({
-            found: true
+            found: true,
+            id: array[i].id
           });
           this.rend();
         }
@@ -76,8 +77,14 @@ class SignIn extends Component {
     });
   }
   rend = () => {
-    if (this.state.found === true) {
-      return <Redirect to="/addchild" />;
+    if (this.state.found ===true) {
+      // return <Redirect to="/addchild" />;
+      console.log(this.state.id)
+      return <Redirect to={{
+        pathname:"/addchild",
+        state:{parent_id:this.state.id
+        }
+      }} />
     }
   };
 
@@ -94,7 +101,7 @@ class SignIn extends Component {
           )}
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             value={this.state.email}
             onChange={this.handleUserChange}
           />

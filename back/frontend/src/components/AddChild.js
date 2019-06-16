@@ -9,6 +9,7 @@ export class AddChild extends Component {
       name: "",
       age: "",
       redirect1: false,
+      dublication:false,
       names: []
     };
   }
@@ -21,35 +22,73 @@ export class AddChild extends Component {
 
   addChild(e) {
     e.preventDefault();
+    
+    console.log(this.props.location.state.parent_id)
     var body = {
       name: this.state.name,
       age: this.state.age,
-      parent_id: "1"
+      parent_id: this.props.location.state.parent_id
     };
-    var that = this;
-    axios({
-      method: "POST",
-      url: "/Child/",
-      data: body,
-      config: { headers: { "Content-Type": "application/json" } }
-    })
-      .then(function(response) {
-        var namesArr = that.state.names;
-        namesArr.push(response.data.name);
-        //handle success
-        that.setState({
-          names: namesArr
-        });
-      })
-      .catch(function(response) {
-        //handle error
-        console.log(response);
-      });
+    var that=this;
+    var dublication = false;
+    axios.get("/Child").then(function (res){
+     var childarray=res.data;
+     console.log(childarray)
+     console.log(that.state.name)
+     console.log(that.props.location.state.parent_id)
+     for(var i=0;i<childarray.length;i++){
+
+      if(childarray[i].name===that.state.name && that.props.location.state.parent_id ===childarray[i].parent_id){
+        
+        
+        dublication = true
+        
+       
+ 
+     }
+    }
+  if(dublication===true){
+    alert("child name exists ")
   }
+    }).then(function(){ 
+      if(dublication===false && that.state.age <= 8 && that.state.age >= 4){
+        console.log("post new child")
+      axios({
+        method: "POST",
+        url: "/Child/",
+        data: body,
+        config: { headers: { "Content-Type": "application/json" } }
+      })
+        .then(function(response) {
+          var namesArr = that.state.names;
+          namesArr.push(response.data.name);
+          //handle success
+          that.setState({
+            names: namesArr
+          });
+        })
+        .catch(function(response) {
+          //handle error
+          console.log(response);
+        });
+    }
+    
+     else if( that.state.age > 8 && that.state.age < 4 ){
+  alert("age limit violation")
+      }
+    
+  })
+
+    
+    
+    
+}
   redirectToCategories() {
+    if(this.state.dublication===false){
     this.setState({
       redirect1: true
     });
+  }
   }
 
   render() {

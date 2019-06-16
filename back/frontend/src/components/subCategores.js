@@ -22,6 +22,7 @@ export class subCategores extends Component {
     console.log(redirect);
     return (
       <div>
+        
         <div>
           <img
             src="https://i1.wp.com/cms-assets.tutsplus.com/uploads/users/346/posts/27983/image/geo_hex5.jpg?w=1320&ssl=1"
