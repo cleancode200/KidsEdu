@@ -169,7 +169,6 @@ export class SignUp extends Component {
                         value={this.state.passwods}
                         onChange={this.onchange.bind(this)}
                         className="input100"
-                        name="password"
                         required
                       />
                       <span
@@ -213,9 +212,7 @@ export class SignUp extends Component {
                       <span className="txt1">Don’t have an account?</span>
 
                       <Link to="/signin">
-                        <a className="txt2" href="#">
-                          LOGIN
-                        </a>
+                        <a className="txt2">LOGIN</a>
                       </Link>
                     </div>
                   </div>

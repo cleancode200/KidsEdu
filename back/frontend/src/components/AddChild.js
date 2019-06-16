@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export class AddChild extends Component {
   constructor(props) {
@@ -17,11 +19,12 @@ export class AddChild extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   addChild(e) {
     e.preventDefault();
+    toast.configure();
 
     console.log(this.props.location.state.parent_id);
     var body = {
@@ -47,7 +50,7 @@ export class AddChild extends Component {
           }
         }
         if (dublication === true) {
-          alert("child name exists ");
+          toast("Child name is already exists ");
         }
       })
       .then(function() {
@@ -68,13 +71,8 @@ export class AddChild extends Component {
               namesArr.push(response.data.name);
               //handle success
               that.setState({
-                names: namesArr,
-                child_Id: response.data.id
+                names: namesArr
               });
-              console.log(that.state.child_Id);
-              console.log(response.data);
-              console.log(that.state.name);
-              console.log(that.props.location.state.parent_id);
             })
             .catch(function(response) {
               //handle error

@@ -183,9 +183,7 @@ class SignIn extends Component {
                   <span className="txt1">Don’t have an account?</span>
 
                   <Link to="/signup">
-                    <a className="txt2" href="#">
-                      Sign Up
-                    </a>
+                    <a className="txt2">Sign Up</a>
                   </Link>
                 </div>
               </form>
