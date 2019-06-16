@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
+
 export class Categories extends Component {
   constructor(props) {
     super(props);
@@ -24,21 +20,19 @@ export class Categories extends Component {
     });
   }
   componentDidMount() {
-		// console.log("Sending a GET API Call !!!");
-		var that = this;
-    axios
-      .get("Media/")
-      .then(res => {
-        // console.log(res.data[0].img_url);
-        // console.log(res.data.length);
-        var urlsArr = that.state.urls;
-        for (let i = 0; i < res.data.length; i++) {
-          urlsArr.push( res.data[i].img_url);
-        }
-				that.setState({
-					urls: urlsArr
-				})
-      })
+    // console.log("Sending a GET API Call !!!");
+    var that = this;
+    axios.get("Media/").then(res => {
+      // console.log(res.data[0].img_url);
+      // console.log(res.data.length);
+      var urlsArr = that.state.urls;
+      for (let i = 0; i < res.data.length; i++) {
+        urlsArr.push(res.data[i].img_url);
+      }
+      that.setState({
+        urls: urlsArr
+      });
+    });
   }
   render() {
     var redirect = this.state.redirect;
@@ -53,18 +47,14 @@ export class Categories extends Component {
             width="33%"
             onClick={this.goToSubCategories.bind(this)}
           />
-          {redirect ? (
-            <Redirect to={{ pathname: "/subCategoriesLanguage" }} />
-          ) : null}
+          {redirect ? <Redirect to={{ pathname: "/subCategores" }} /> : null}
           <img
             src={this.state.urls[1]}
             alt="Videos"
             height="100%"
             width="33%"
           />
-          {redirect ? (
-            <Redirect to={{ pathname: "/subCategoriesVideos" }} />
-          ) : null}
+          {redirect ? <Redirect to={{ pathname: "/subCategores" }} /> : null}
           <img
             src={this.state.urls[1]}
             alt="Stores"

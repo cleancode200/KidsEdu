@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
+//for pop up message
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 //import { BrowserRouter as Router, Route,Link } from "react-router-dom";
-import { Redirect,Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 //import Main from "./Main";
 
 class SignIn extends Component {
@@ -26,12 +30,15 @@ class SignIn extends Component {
   }
 
   handleSubmit(evt) {
+    toast.configure();
     evt.preventDefault();
     if (!this.state.email) {
-      return this.setState({ error: "Email is required" });
+      this.setState({ error: "Email is required" });
+      toast("Email is required");
     }
     if (!this.state.password) {
-      return this.setState({ error: "Password is required" });
+      this.setState({ error: "Password is required" });
+      toast("Password is required");
     }
     axios.get("Parent").then(res => {
       let array = res.data;
@@ -43,16 +50,10 @@ class SignIn extends Component {
         ) {
           console.log("welcome " + array[i].name);
           this.setState({
-            found: true
+            found: true,
+            id: array[i].id
           });
           this.rend();
-          // rend = () =>{
-          //   if(this.state.found === true){
-          //    console.log("render function aaa ");
-          //  return <Redirect to="/SignUp"/>
-
-          //   }
-          // };
         }
       }
 
@@ -76,9 +77,14 @@ class SignIn extends Component {
     });
   }
   rend = () => {
-    if (this.state.found === true) {
-      console.log("render function aaa ");
-      return <Redirect to="/addchild" />;
+    if (this.state.found ===true) {
+      // return <Redirect to="/addchild" />;
+      console.log(this.state.id)
+      return <Redirect to={{
+        pathname:"/addchild",
+        state:{parent_id:this.state.id
+        }
+      }} />
     }
   };
 
@@ -95,7 +101,7 @@ class SignIn extends Component {
           )}
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             value={this.state.email}
             onChange={this.handleUserChange}
           />
