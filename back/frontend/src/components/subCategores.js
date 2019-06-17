@@ -5,7 +5,8 @@ export class subCategores extends Component {
     super(props);
     this.state = {
       url: "",
-      redirect: false
+      redirect: false,
+      child_Id: this.props.location.state.child_Id
     };
   }
   goToSubCategories(e) {
@@ -19,10 +20,9 @@ export class subCategores extends Component {
   }
   render() {
     var redirect = this.state.redirect;
-    console.log(redirect);
+    console.log(this.state.child_Id);
     return (
       <div>
-        
         <div>
           <img
             src="https://i1.wp.com/cms-assets.tutsplus.com/uploads/users/346/posts/27983/image/geo_hex5.jpg?w=1320&ssl=1"
