@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "react-awesome-modal";
+import SignUp from "./SignUp.js";
 
 export class AddChild extends Component {
   constructor(props) {
@@ -10,6 +12,7 @@ export class AddChild extends Component {
     this.state = {
       name: "",
       age: "",
+      AddChild: false,
       redirect1: false,
       dublication: false,
       names: []
@@ -83,7 +86,7 @@ export class AddChild extends Component {
     if (this.state.dublication === false) {
       this.setState(
         {
-          redirect1:true,
+          redirect1: true,
           child_info: this.state.childInfo[index]
         },
         () => {
@@ -119,41 +122,68 @@ export class AddChild extends Component {
     });
   }
 
+  openmodal(e) {
+    this.setState({
+      [e]: true
+    });
+  }
+
+  closemodal(e) {
+    this.setState({
+      [e]: false
+    });
+  }
+
   render() {
     var redirect = this.state.redirect1;
     return (
       <div>
-        <form>
-          <h2>AddChild :</h2>
-          <input
-            type="text"
-            placeholder="your child name"
-            value={this.state.name}
-            onChange={this.change.bind(this)}
-            name="name"
-          />
-          <br />
-          <input
-            type="number"
-            placeholder="Your child age"
-            min={4}
-            max={8}
-            value={this.state.age}
-            onChange={this.change.bind(this)}
-            name="age"
-          />
-          <br />
-          <button onClick={this.addChild.bind(this)}>AddChild</button>
-        </form>
+        <input
+          className="AddChildbtn"
+          type="button"
+          value="AddChild"
+          onClick={() => this.openmodal("AddChild")}
+        />
+
+        <Modal
+          visible={this.state.AddChild}
+          width="600"
+          height="350"
+          effect="fadeInDown"
+          onClickAway={() => this.closemodal("AddChild")}
+        >
+          <div>
+            <form className="AddChild">
+              <h2>AddChild :</h2>
+              <input
+                type="text"
+                placeholder="your child name"
+                value={this.state.name}
+                onChange={this.change.bind(this)}
+                name="name"
+              />
+              <br />
+              <input
+                type="number"
+                placeholder="Your child age"
+                min={4}
+                max={8}
+                value={this.state.age}
+                onChange={this.change.bind(this)}
+                name="age"
+              />
+              <br />
+              <button onClick={this.addChild.bind(this)}>Add</button>
+            </form>
+          </div>
+        </Modal>
         {this.state.names.map((child, index) => {
           return (
             <p
               key={index}
-              onClick={()=>{
-
-                this.redirectToCategories(index)
-              }
-              }
+              onClick={() => {
+                this.redirectToCategories(index);
+              }}
             >
               {child}
             </p>
