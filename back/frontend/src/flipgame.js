@@ -1,19 +1,81 @@
 import React, { Component } from "react";
-import Header from "./components/Header/header";
+import axios from "axios";
+
+// import ReactCardFlip from "react-card-flip";
+
 import Card from "./components/card/Card";
-import GameOver from "./components/card/GameOver";
 import "./components/styles/main.css";
-import "./";
+
 class Flipgame extends Component {
-  state = {
-    isFlipped: Array(8).fill(false),
-    shuffledCard: Flipgame.duplicateCard().sort(() => Math.random() - 0.5),
-    clickCount: 1,
-    prevSelectedCard: -1,
-    prevCardId: -1
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFlipped: Array(8).fill(false),
+      shuffledCard: this.duplicateCard().sort(() => Math.random() - 0.5),
+      clickCount: 1,
+      prevSelectedCard: -1,
+      prevCardId: -1,
+      countclicks: 0,
+      level : 1,
+      child_info:this.props.location.state.child_info
+    };
+  }
+
+  // Card = (cardNumber, id) => {
+  //   return (
+  //     <ReactCardFlip
+  //       isFlipped={this.state.isFlipped}
+  //       flipSpeedBackToFront={1}
+  //       flipSpeedFrontToBack={1}
+  //     >
+  //       <button
+  //         id={id}
+  //         className={`card card-front  ${cardNumber !== -1 ? "" : "hide-card"}`}
+  //         onClick={this.handleClick}
+  //         key="front"
+  //       />
+
+  //       <img
+  //         id={id}
+  //         className={`card card-back ${cardNumber !== -1 ? "" : "hide-card"}`}
+  //         onClick={this.handleClick}
+  //         key="back"
+  //         src={cardNumber}
+  //       />
+  //     </ReactCardFlip>
+  //   );
+  // };
+
+  Header = () => {
+    return (
+      <div className="grid-header-container">
+        <div className="justify-left timer" />
+        <div className="justify-center game-status-text" />
+        <div className="justify-end">
+          <button onClick={this.restartGame} className="restart-button">
+            Restart Game
+          </button>
+        </div>
+      </div>
+    );
   };
 
-  static duplicateCard = () => {
+  GameOver = () => {
+    
+
+    // console.log(this.state.isFlipped)
+    return (
+      <div className="justify-center">
+        <h1>مبرووك</h1>
+        <h3 />
+        <button className="restart-button" onClick={this.restartGame}>
+          Restart Game
+        </button>
+      </div>
+    );
+  };
+
+  duplicateCard = () => {
     return [
       "./imgs/A.PNG",
       "./imgs/B.PNG",
@@ -25,9 +87,13 @@ class Flipgame extends Component {
   };
 
   handleClick = event => {
+    this.state.countclicks++;
+    console.log(this.state.child_info);
+
     event.preventDefault();
     const cardId = event.target.id;
     const newFlipps = this.state.isFlipped.slice();
+    // console.log(cardId ,newFlipps)
     this.setState({
       prevSelectedCard: this.state.shuffledCard[cardId],
       prevCardId: cardId
@@ -72,16 +138,40 @@ class Flipgame extends Component {
   };
 
   restartGame = () => {
+    this.state.countclicks = 0;
+
     this.setState({
-      isFlipped: Array(16).fill(false),
-      shuffledCard: Flipgame.duplicateCard().sort(() => Math.random() - 0.5),
+      isFlipped: Array(8).fill(false),
+      shuffledCard: this.duplicateCard().sort(() => Math.random() - 0.5),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1
+      
     });
   };
 
   isGameOver = () => {
+    // axios({
+    //   method: "POST",
+    //   url: "Ach/",
+    //   data: data,
+    //   config: { headers: { "Content-Type": "application/json	" } }
+    // })
+    //   .then(function(response) {
+    //     //handle success
+    //     // console.log(response.statusText);
+    //     that.setState({
+    //       redirect: true
+    //     });
+    //   })
+    //   .catch(function(response) {
+    //     //handle error
+
+    //     toast("E-mail is already used or Incorrect sytax ");
+    //   });
+
+
+
     return this.state.isFlipped.every(
       (element, index, array) => element !== false
     );
@@ -90,9 +180,9 @@ class Flipgame extends Component {
   render() {
     return (
       <div>
-        <Header restartGame={this.restartGame} />
+        {this.Header()}
         {this.isGameOver() ? (
-          <GameOver restartGame={this.restartGame} />
+          this.GameOver()
         ) : (
           <div className="grid-container">
             {this.state.shuffledCard.map((cardNumber, index) => (

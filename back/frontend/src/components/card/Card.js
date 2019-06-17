@@ -1,9 +1,7 @@
 import React from "react";
 
 import ReactCardFlip from "react-card-flip";
-const imgback = {
-  background: `url(A.png)`
-};
+
 const Card = ({ id, isFlipped, handleClick, cardNumber }) => (
   <ReactCardFlip
     isFlipped={isFlipped}

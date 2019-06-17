@@ -78,11 +78,18 @@ export class AddChild extends Component {
         }
       });
   }
-  redirectToCategories() {
+  redirectToCategories(index) {
+    var that = this;
     if (this.state.dublication === false) {
-      this.setState({
-        redirect1: true
-      });
+      this.setState(
+        {
+          redirect1:true,
+          child_info: this.state.childInfo[index]
+        },
+        () => {
+          console.log(this.state.child_info);
+        }
+      );
     }
   }
 
@@ -94,18 +101,21 @@ export class AddChild extends Component {
       var childarray = res.data;
       console.log(childarray);
       var namesArr = that.state.names;
+      var childInfo = [];
       // console.log(childarray);
       // console.log(childarray[0].name);
       // console.log(that.state.names);
       for (var i = 0; i < childarray.length; i++) {
         if (childarray[i].parent_id === parentid) {
           namesArr.push(childarray[i].name);
+          childInfo.push(childarray[i]);
         }
       }
       that.setState({
-        names: namesArr
+        names: namesArr,
+        childInfo: childInfo
       });
-      console.log(that.state.names);
+      console.log(that.state.childInfo);
     });
   }
 
@@ -137,7 +147,14 @@ export class AddChild extends Component {
         </form>
         {this.state.names.map((child, index) => {
           return (
-            <p key={index} onClick={this.redirectToCategories.bind(this)}>
+            <p
+              key={index}
+              onClick={()=>{
+
+                this.redirectToCategories(index)
+              }
+              }
+            >
               {child}
             </p>
           );
@@ -146,9 +163,7 @@ export class AddChild extends Component {
           <Redirect
             to={{
               pathname: "/categories",
-              state: {
-                child_Id: this.state.child_Id
-              }
+              state: { child_info: this.state.child_info }
             }}
           />
         ) : null}

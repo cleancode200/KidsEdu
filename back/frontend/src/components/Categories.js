@@ -8,7 +8,7 @@ export class Categories extends Component {
     this.state = {
       urls: [],
       redirect: false,
-      child_Id: this.props.location.state.child_Id
+      child_info: this.props.location.state.child_info
     };
   }
   goToSubCategories(e) {
@@ -33,7 +33,7 @@ export class Categories extends Component {
       that.setState({
         urls: urlsArr
       });
-      console.log(that.state.child_Id);
+      console.log(that.state.child_info);
     });
   }
   render() {
@@ -54,7 +54,7 @@ export class Categories extends Component {
               to={{
                 pathname: "/subCategores",
                 state: {
-                  child_Id: this.state.child_Id
+                  child_info: this.state.child_info
                 }
               }}
             />
@@ -70,7 +70,7 @@ export class Categories extends Component {
               to={{
                 pathname: "/subCategores",
                 state: {
-                  child_Id: this.state.child_Id
+                  child_info: this.state.child_info
                 }
               }}
             />
@@ -86,7 +86,7 @@ export class Categories extends Component {
               to={{
                 pathname: "/subCategores",
                 state: {
-                  child_Id: this.state.child_Id
+                  child_info: this.state.child_info
                 }
               }}
             />
