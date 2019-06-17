@@ -6,8 +6,7 @@ import SignUp from "./components/SignUp";
 import Categories from "./components/Categories";
 import AddChild from "./components/AddChild";
 import subCategores from "./components/subCategores";
-import Game from "./components/Game";
-import "./App.css";
+import Flipgame from "./flipgame.js";
 
 class App extends Component {
   render() {
@@ -20,7 +19,15 @@ class App extends Component {
           <Route exact path="/addchild" component={AddChild} />
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/subcategores" component={subCategores} />
-          <Route exact path="/game" component={Game} />
+          <Route exact path="/Flipgame" component={Flipgame} />
+
+          {/* <SignIn /> */}
+          {/* <AddChild current_parentId={this.current_parentId} /> */}
+          {/* <Categories /> */}
+
+          {/* <button type="button" onClick={this.onClick}>
+          Send GET /products{" "}
+        </button> */}
         </div>
       </Router>
     );
