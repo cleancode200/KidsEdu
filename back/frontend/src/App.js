@@ -7,6 +7,7 @@ import Categories from "./components/Categories";
 import AddChild from "./components/AddChild";
 import subCategores from "./components/subCategores";
 import Game from "./components/Game";
+import ParentProfile from "./components/ParentProfile";
 import "./App.css";
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/subcategores" component={subCategores} />
           <Route exact path="/game" component={Game} />
+          <Route exact path="/parentprofile" component={ParentProfile} />
         </div>
       </Router>
     );
