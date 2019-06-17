@@ -16,7 +16,8 @@ class Flipgame extends Component {
       prevSelectedCard: -1,
       prevCardId: -1,
       countclicks: 0,
-      level : 1
+      level : 1,
+      child_info:this.props.location.state.child_info
     };
   }
 
@@ -87,7 +88,7 @@ class Flipgame extends Component {
 
   handleClick = event => {
     this.state.countclicks++;
-    console.log(this.state.countclicks);
+    console.log(this.state.child_info);
 
     event.preventDefault();
     const cardId = event.target.id;
@@ -145,28 +146,29 @@ class Flipgame extends Component {
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1
+      
     });
   };
 
   isGameOver = () => {
-    axios({
-      method: "POST",
-      url: "Ach/",
-      data: data,
-      config: { headers: { "Content-Type": "application/json	" } }
-    })
-      .then(function(response) {
-        //handle success
-        // console.log(response.statusText);
-        that.setState({
-          redirect: true
-        });
-      })
-      .catch(function(response) {
-        //handle error
+    // axios({
+    //   method: "POST",
+    //   url: "Ach/",
+    //   data: data,
+    //   config: { headers: { "Content-Type": "application/json	" } }
+    // })
+    //   .then(function(response) {
+    //     //handle success
+    //     // console.log(response.statusText);
+    //     that.setState({
+    //       redirect: true
+    //     });
+    //   })
+    //   .catch(function(response) {
+    //     //handle error
 
-        toast("E-mail is already used or Incorrect sytax ");
-      });
+    //     toast("E-mail is already used or Incorrect sytax ");
+    //   });
 
 
 

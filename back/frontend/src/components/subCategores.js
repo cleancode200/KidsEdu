@@ -6,7 +6,7 @@ export class subCategores extends Component {
     this.state = {
       url: "",
       redirect: false,
-      child_Id: this.props.location.state.child_Id
+      child_info: this.props.location.state.child_info
     };
   }
   goToSubCategories(e) {
@@ -20,7 +20,7 @@ export class subCategores extends Component {
   }
   render() {
     var redirect = this.state.redirect;
-    console.log(this.state.child_Id);
+    console.log(this.state.child_info);
     return (
       <div>
         <div>
@@ -31,21 +31,48 @@ export class subCategores extends Component {
             width="33%"
             onClick={this.goToSubCategories.bind(this)}
           />
-          {redirect ? <Redirect to={{ pathname: "/flipgame" }} /> : null}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/flipgame",
+                state: {
+                  child_info: this.state.child_info
+                }
+              }}
+            />
+          ) : null}
           <img
             src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
             alt="Videos"
             height="100%"
             width="33%"
           />
-          {redirect ? <Redirect to={{ pathname: "/flipgame" }} /> : null}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/flipgame",
+                state: {
+                  child_info: this.state.child_info
+                }
+              }}
+            />
+          ) : null}
           <img
             src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
             alt="Stores"
             height="100%"
             width="33%"
           />
-          {redirect ? <Redirect to={{ pathname: "/flipgame" }} /> : null}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/flipgame",
+                state: {
+                  child_info: this.state.child_info
+                }
+              }}
+            />
+          ) : null}
         </div>
       </div>
     );
