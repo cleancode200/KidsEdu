@@ -17,7 +17,8 @@ class Flipgame extends Component {
       prevCardId: -1,
       countclicks: 0,
       level : 1,
-      child_info:this.props.location.state.child_info
+      child_info:this.props.location.state.child_info,
+      totalTime:0
     };
   }
 
@@ -52,6 +53,9 @@ class Flipgame extends Component {
         <div className="justify-left timer" />
         <div className="justify-center game-status-text" />
         <div className="justify-end">
+          
+
+          <h1>{" Welcome => "}{this.state.child_info.name}{"  Clicks Count=  "}{this.state.countclicks}</h1>
           <button onClick={this.restartGame} className="restart-button">
             Restart Game
           </button>
@@ -61,7 +65,48 @@ class Flipgame extends Component {
   };
 
   GameOver = () => {
-    
+    var endTime = Date.now()
+    var startTime = this.state.startTime
+    this.state.totalTime = Math.ceil((endTime - startTime)/1000)
+     console.log(this.state.totalTime)
+   
+
+
+        //  var data={
+        //    child_id:this.state.child_info.id,
+        //   language_letters_level:this.state.level,
+        //   start_time:this.state.startTime,
+        //   end_time:endTime,
+        //   clicks:this.state.countclicks
+        //  }
+        var data={
+          child_id:this.state.child_info.id,
+         language_letters_level:this.state.level,
+         start_time:10,
+         end_time:50,
+         clicks:this.state.countclicks
+        }
+  // console.log(data)
+  
+      axios({
+      method: "POST",
+      url: "/Ach/",
+      data: data,
+      config: { headers: { "Content-Type": "application/json	" } }
+    })
+      .then(function(response) {
+        //handle success
+       return console.log(response.statusText);
+         
+      })
+      .catch(function(response) {
+        //handle error
+
+       
+      });
+
+       
+
 
     // console.log(this.state.isFlipped)
     return (
@@ -87,8 +132,13 @@ class Flipgame extends Component {
   };
 
   handleClick = event => {
+    if(this.state.countclicks === 0 ){
+      this.setState({
+        startTime:Date.now()
+      }) 
+    }
     this.state.countclicks++;
-    console.log(this.state.child_info);
+    console.log(this.state.child_info ,this.state.countclicks );
 
     event.preventDefault();
     const cardId = event.target.id;
@@ -151,24 +201,7 @@ class Flipgame extends Component {
   };
 
   isGameOver = () => {
-    // axios({
-    //   method: "POST",
-    //   url: "Ach/",
-    //   data: data,
-    //   config: { headers: { "Content-Type": "application/json	" } }
-    // })
-    //   .then(function(response) {
-    //     //handle success
-    //     // console.log(response.statusText);
-    //     that.setState({
-    //       redirect: true
-    //     });
-    //   })
-    //   .catch(function(response) {
-    //     //handle error
-
-    //     toast("E-mail is already used or Incorrect sytax ");
-    //   });
+   
 
 
 

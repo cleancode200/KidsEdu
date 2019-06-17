@@ -83,7 +83,7 @@ export class AddChild extends Component {
     if (this.state.dublication === false) {
       this.setState(
         {
-          redirect1:true,
+          redirect1: true,
           child_info: this.state.childInfo[index]
         },
         () => {
@@ -123,6 +123,26 @@ export class AddChild extends Component {
     var redirect = this.state.redirect1;
     return (
       <div>
+        {this.state.names.map((child, index) => {
+          return (
+            <p
+              key={index}
+              onClick={() => {
+                this.redirectToCategories(index);
+              }}
+            >
+              {child}
+            </p>
+          );
+        })}
+        {redirect ? (
+          <Redirect
+            to={{
+              pathname: "/categories",
+              state: { child_info: this.state.child_info }
+            }}
+          />
+        ) : null}
         <form>
           <h2>AddChild :</h2>
           <input
@@ -145,28 +165,6 @@ export class AddChild extends Component {
           <br />
           <button onClick={this.addChild.bind(this)}>AddChild</button>
         </form>
-        {this.state.names.map((child, index) => {
-          return (
-            <p
-              key={index}
-              onClick={()=>{
-
-                this.redirectToCategories(index)
-              }
-              }
-            >
-              {child}
-            </p>
-          );
-        })}
-        {redirect ? (
-          <Redirect
-            to={{
-              pathname: "/categories",
-              state: { child_info: this.state.child_info }
-            }}
-          />
-        ) : null}
       </div>
     );
   }
