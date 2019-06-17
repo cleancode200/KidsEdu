@@ -77,14 +77,17 @@ class SignIn extends Component {
     });
   }
   rend = () => {
-    if (this.state.found ===true) {
+    if (this.state.found === true) {
       // return <Redirect to="/addchild" />;
-      console.log(this.state.id)
-      return <Redirect to={{
-        pathname:"/addchild",
-        state:{parent_id:this.state.id
-        }
-      }} />
+      console.log(this.state.id);
+      return (
+        <Redirect
+          to={{
+            pathname: "/addchild",
+            state: { parent_id: this.state.id }
+          }}
+        />
+      );
     }
   };
 
@@ -180,9 +183,7 @@ class SignIn extends Component {
                   <span className="txt1">Don’t have an account?</span>
 
                   <Link to="/signup">
-                    <a className="txt2" href="#">
-                      Sign Up
-                    </a>
+                    <a className="txt2">Sign Up</a>
                   </Link>
                 </div>
               </form>

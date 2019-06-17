@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-//import axios from "axios";
-import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./components/Main";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
@@ -11,23 +8,7 @@ import AddChild from "./components/AddChild";
 import subCategores from "./components/subCategores";
 import Flipgame from "./flipgame.js";
 
-
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-  // onClick(ev) {
-  //   console.log("Sending a GET API Call !!!");
-  //   axios
-  //     .get("Parent/")
-  //     .then(res => {
-  //       console.log(res);
-  //     })
-  //     .then(response => {
-  //       console.log(JSON.stringify(response));
-  //     });
-  // }
   render() {
     return (
       <Router>

@@ -1,19 +1,15 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 export class Main extends Component {
   render() {
     return (
       <div>
-        {/* <Router> */}
         {/* <!-- Navigation --> */}
         <nav className="navbar navbar-light bg-light static-top">
           <div className="container">
             <a className="navbar-brand" href="#">
-              {/* <Link to="/signin">
-                      <button>Sign In</button>
-                    </Link> */}
-              Start Bootstrap
+              Kids Edu
             </a>
             <Link to="/signin">
               <button className="btn btn-primary">Sign In</button>
@@ -28,20 +24,21 @@ export class Main extends Component {
             <div className="row">
               <div className="col-xl-9 mx-auto">
                 <h1 className="mb-5">
-                  Build a landing page for your business or project and generate
-                  more leads!
+                  YOUR CHILDERN IS YOURS RESPONSABILTY SO TAKE CARE OF THEM
                 </h1>
               </div>
               <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
                 <form>
                   <div className="form-row">
-                    <div className="col-12 col-md-9 mb-2 mb-md-0">
-                      <input
+                    {/* <div className="col-12 col-md-9 mb-2 mb-md-0"> */}
+                    {/* <input
                         type="email"
                         className="form-control form-control-lg"
                         placeholder="Enter your email..."
-                      />
-                    </div>
+                      /> */}
+
+                    {/* </div> */}
+
                     {/* <Link to="/signin">
                       <button>Sign In</button>
                     </Link> */}
@@ -290,32 +287,6 @@ export class Main extends Component {
             </div>
           </div>
         </footer>
-
-        {/* //{" "} */}
-        {/* <div> */}
-        {/* //{" "} */}
-        {/* <Route
-              exact
-              path="/"
-              render={() => (
-                <div>
-                  <Link to="/signin">
-                    <button>Sign In</button>
-                  </Link>
-                  <Link to="/signup">
-                    <button>Sign Up</button>
-                  </Link>
-                </div>
-              )}
-            />
-            <Route exact path="/signin" component={SignIn} />
-            <Route exact path="/signUp" component={SignUp} />
-            <Route exact path="/addchild" component={AddChild} />
-            <Route exact path="/categories" component={Categories} />
-            <Route exact path="/subcategores" component={subCategores} />
-            <Route exact path="/game" component={Game} /> */}
-        {/* </div> */}
-        {/* </Router> */}
       </div>
     );
   }
