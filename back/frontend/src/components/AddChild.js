@@ -19,14 +19,11 @@ export class AddChild extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
-    // console.log(this.state);
   }
 
   addChild(e) {
     e.preventDefault();
     toast.configure();
-
-    console.log(this.props.location.state.parent_id);
     var body = {
       name: this.state.name,
       age: this.state.age,
@@ -38,9 +35,6 @@ export class AddChild extends Component {
       .get("/Child")
       .then(function(res) {
         var childarray = res.data;
-        console.log(childarray);
-        console.log(that.state.name);
-        console.log(that.props.location.state.parent_id);
         for (var i = 0; i < childarray.length; i++) {
           if (
             childarray[i].name === that.state.name &&
@@ -76,10 +70,11 @@ export class AddChild extends Component {
             })
             .catch(function(response) {
               //handle error
-              console.log(response);
             });
-        } else if (that.state.age > 8 && that.state.age < 4) {
+        } else {
+          console.log("age");
           alert("age limit violation");
+          //toast("please enter age between 4 to 8");
         }
       });
   }
@@ -89,6 +84,29 @@ export class AddChild extends Component {
         redirect1: true
       });
     }
+  }
+
+  componentDidMount() {
+    var that = this;
+    let parentid = that.props.location.state.parent_id;
+    console.log(parentid);
+    axios.get("Child").then(res => {
+      var childarray = res.data;
+      console.log(childarray);
+      var namesArr = that.state.names;
+      // console.log(childarray);
+      // console.log(childarray[0].name);
+      // console.log(that.state.names);
+      for (var i = 0; i < childarray.length; i++) {
+        if (childarray[i].parent_id === parentid) {
+          namesArr.push(childarray[i].name);
+        }
+      }
+      that.setState({
+        names: namesArr
+      });
+      console.log(that.state.names);
+    });
   }
 
   render() {
