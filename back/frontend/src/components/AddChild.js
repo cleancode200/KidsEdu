@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "react-awesome-modal";
+import "./styles/AddChild.css";
 
 export class AddChild extends Component {
   constructor(props) {
@@ -10,6 +12,7 @@ export class AddChild extends Component {
     this.state = {
       name: "",
       age: "",
+      AddChild: false,
       redirect1: false,
       dublication: false,
       names: []
@@ -79,7 +82,6 @@ export class AddChild extends Component {
       });
   }
   redirectToCategories(index) {
-    var that = this;
     if (this.state.dublication === false) {
       this.setState(
         {
@@ -119,52 +121,117 @@ export class AddChild extends Component {
     });
   }
 
+  openmodal(e) {
+    this.setState({
+      [e]: true
+    });
+  }
+
+  closemodal(e) {
+    this.setState({
+      [e]: false
+    });
+  }
+
   render() {
     var redirect = this.state.redirect1;
     return (
       <div>
-        {this.state.names.map((child, index) => {
-          return (
-            <p
-              key={index}
-              onClick={() => {
-                this.redirectToCategories(index);
-              }}
-            >
-              {child}
-            </p>
-          );
-        })}
-        {redirect ? (
-          <Redirect
-            to={{
-              pathname: "/categories",
-              state: { child_info: this.state.child_info }
-            }}
-          />
-        ) : null}
-        <form>
-          <h2>AddChild :</h2>
-          <input
-            type="text"
-            placeholder="your child name"
-            value={this.state.name}
-            onChange={this.change.bind(this)}
-            name="name"
-          />
-          <br />
-          <input
-            type="number"
-            placeholder="Your child age"
-            min={4}
-            max={8}
-            value={this.state.age}
-            onChange={this.change.bind(this)}
-            name="age"
-          />
-          <br />
-          <button onClick={this.addChild.bind(this)}>AddChild</button>
-        </form>
+        <Modal
+          visible={this.state.AddChild}
+          width="390px"
+          height="250px"
+          effect="fadeInDown"
+          onClickAway={() => this.closemodal("AddChild")}
+        >
+          <div className="wrap-login100">
+            <form className="login100-form">
+              <div className="wrap-input100">
+                <label htmlFor="inputChildName">
+                  <b>Child name</b>
+                </label>
+                <input
+                  type="text"
+                  className=""
+                  id="inputChildName"
+                  placeholder="Enter your Child name"
+                  value={this.state.name}
+                  onChange={this.change.bind(this)}
+                  name="name"
+                />
+              </div>
+              <div className="wrap-input100 validate-input">
+                <label htmlFor="inputChildAge">
+                  <b>Child age</b>
+                </label>
+                <input
+                  type="number"
+                  placeholder="Your child age"
+                  className="form-control"
+                  id="inputChildAge"
+                  min={4}
+                  max={8}
+                  value={this.state.age}
+                  onChange={this.change.bind(this)}
+                  name="age"
+                />
+              </div>
+              <div className="container-login100-form-btn">
+                <div className="wrap-login100-form-btn">
+                  <div className="login100-form-bgbtn" />
+                  <button className="addBtn" onClick={this.addChild.bind(this)}>
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </Modal>
+
+        <div
+          className="btn-toolbar"
+          role="toolbar"
+          aria-label="Toolbar with button groups"
+        >
+          <div className="btn-group mr-2" role="group" aria-label="First group">
+            {this.state.names.map((child, index) => {
+              return (
+                <div
+                  className="childName btn-group"
+                  role="group"
+                  aria-label="Third group"
+                >
+                  <button
+                    type="button"
+                    className="childsBtns btn btn-primary btn-lg"
+                    key={index}
+                    onClick={() => {
+                      this.redirectToCategories(index);
+                    }}
+                  >
+                    {child}
+                  </button>
+                </div>
+              );
+            })}
+            {redirect ? (
+              <Redirect
+                to={{
+                  pathname: "/categories",
+                  state: { child_info: this.state.child_info }
+                }}
+              />
+            ) : null}
+          </div>
+          <div className="btn-group" role="group" aria-label="Third group">
+            <input
+              className="AddChildbtn btn btn-primary btn-lg"
+              type="button"
+              value="AddChild"
+              onClick={() => this.openmodal("AddChild")}
+            />
+          </div>
+        </div>
       </div>
     );
   }
