@@ -76,7 +76,7 @@ export class Categories extends Component {
             />
           ) : null}
           <img
-            src={this.state.urls[26]}
+            src={this.state.urls[28]}
             alt="Stores"
             height="100%"
             width="33%"

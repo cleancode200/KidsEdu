@@ -55,7 +55,8 @@ export class subCategores extends Component {
               to={{
                 pathname: "/flipgame",
                 state: {
-                  child_info: this.state.child_info
+                  child_info: this.state.child_info,
+                  img_url:this.state.urls
                 }
               }}
             />
@@ -71,7 +72,8 @@ export class subCategores extends Component {
               to={{
                 pathname: "/flipgame",
                 state: {
-                  child_info: this.state.child_info
+                  child_info: this.state.child_info,
+                  img_url:this.state.urls
                 }
               }}
             />
@@ -87,7 +89,8 @@ export class subCategores extends Component {
               to={{
                 pathname: "/flipgame",
                 state: {
-                  child_info: this.state.child_info
+                  child_info: this.state.child_info,
+                  img_url:this.state.urls
                 }
               }}
             />
