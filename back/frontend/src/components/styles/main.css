@@ -48,6 +48,7 @@ body {
   color: white;
   background-color: #5168e9;
   border: 0;
+  
 }
 
 .game-status-text {
@@ -81,8 +82,4 @@ body {
 .card-back {
   font-weight: bold;
   text-align: center;
-}
-
-.react-card-front {
-  /* position: unset !important; */
 }
