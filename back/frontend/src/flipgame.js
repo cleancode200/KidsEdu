@@ -70,7 +70,7 @@ class Flipgame extends Component {
     this.state.totalTime = Math.ceil((endTime - startTime)/1000)
      console.log(this.state.totalTime)
    
-
+        var 
 
         //  var data={
         //    child_id:this.state.child_info.id,
@@ -97,12 +97,9 @@ class Flipgame extends Component {
       .then(function(response) {
         //handle success
        return console.log(response.statusText);
-         
       })
       .catch(function(response) {
         //handle error
-
-       
       });
 
        
