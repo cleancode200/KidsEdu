@@ -11,14 +11,18 @@ class Flipgame extends Component {
     super(props);
     this.state = {
       isFlipped: Array(8).fill(false),
-      shuffledCard: this.duplicateCard().sort(() => Math.random() - 0.5),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1,
       countclicks: 0,
-      level : 1,
-      child_info:this.props.location.state.child_info,
-      totalTime:0
+      level: 1,
+      child_info: this.props.location.state.child_info,
+      totalTime: 0,
+      img1: "./imgs/A.PNG",
+      img2: "./imgs/B.PNG",
+      img3: "./imgs/C.PNG",
+      img4: "./imgs/D.PNG",
+      shuffledCard: ""
     };
   }
 
@@ -53,9 +57,12 @@ class Flipgame extends Component {
         <div className="justify-left timer" />
         <div className="justify-center game-status-text" />
         <div className="justify-end">
-          
-
-          <h1>{" Welcome => "}{this.state.child_info.name}{"  Clicks Count=  "}{this.state.countclicks}</h1>
+          <h1>
+            {" Welcome => "}
+            {this.state.child_info.name}
+            {"  Clicks Count=  "}
+            {this.state.countclicks}
+          </h1>
           <button onClick={this.restartGame} className="restart-button">
             Restart Game
           </button>
@@ -65,45 +72,41 @@ class Flipgame extends Component {
   };
 
   GameOver = () => {
-    var endTime = Date.now()
-    var startTime = this.state.startTime
-    this.state.totalTime = Math.ceil((endTime - startTime)/1000)
-     console.log(this.state.totalTime)
-   
-        var 
+    
+    var endTime = Date.now();
+    var startTime = this.state.startTime;
+    this.state.totalTime = Math.ceil((endTime - startTime) / 1000);
+    console.log(this.state.totalTime);
 
-        //  var data={
-        //    child_id:this.state.child_info.id,
-        //   language_letters_level:this.state.level,
-        //   start_time:this.state.startTime,
-        //   end_time:endTime,
-        //   clicks:this.state.countclicks
-        //  }
-        var data={
-          child_id:this.state.child_info.id,
-         language_letters_level:this.state.level,
-         start_time:10,
-         end_time:50,
-         clicks:this.state.countclicks
-        }
-  // console.log(data)
-  
-      axios({
-      method: "POST",
-      url: "/Ach/",
-      data: data,
-      config: { headers: { "Content-Type": "application/json	" } }
-    })
-      .then(function(response) {
-        //handle success
-       return console.log(response.statusText);
-      })
-      .catch(function(response) {
-        //handle error
-      });
+    //  var data={
+    //    child_id:this.state.child_info.id,
+    //   language_letters_level:this.state.level,
+    //   start_time:this.state.startTime,
+    //   end_time:endTime,
+    //   clicks:this.state.countclicks
+    //  }
+    // var data={
+    //   child_id:this.state.child_info.id,
+    //  language_letters_level:this.state.level,
+    //  start_time:10,
+    //  end_time:50,
+    //  clicks:this.state.countclicks
+    // }
+    // console.log(data)
 
-       
-
+    //   axios({
+    //   method: "POST",
+    //   url: "/Ach/",
+    //   data: data,
+    //   config: { headers: { "Content-Type": "application/json	" } }
+    // })
+    //   .then(function(response) {
+    //     //handle success
+    //    return console.log(response.statusText);
+    //   })
+    //   .catch(function(response) {
+    //     //handle error
+    //   });
 
     // console.log(this.state.isFlipped)
     return (
@@ -118,24 +121,36 @@ class Flipgame extends Component {
   };
 
   duplicateCard = () => {
-    return [
-      "./imgs/A.PNG",
-      "./imgs/B.PNG",
-      "./imgs/C.PNG",
-      "./imgs/D.PNG"
-    ].reduce((preValue, current, index, array) => {
-      return preValue.concat([current, current]);
-    }, []);
+    if (this.state.level === 2) {
+      this.setState({
+        img1: "./imgs/E.PNG",
+        img2: "./imgs/F.PNG",
+        img3: "./imgs/G.PNG",
+        img4: "./imgs/H.PNG"
+      });
+    }
+
+    var img1 = this.state.img1;
+    var img2 = this.state.img2;
+    var img3 = this.state.img3;
+    var img4 = this.state.img4;
+    return [img1, img2, img3, img4].reduce(
+      (preValue, current, index, array) => {
+        return preValue.concat([current, current]);
+      },
+      []
+    );
   };
 
   handleClick = event => {
-    if(this.state.countclicks === 0 ){
+    console.log(this.state.level);
+    if (this.state.countclicks === 0) {
       this.setState({
-        startTime:Date.now()
-      }) 
+        startTime: Date.now()
+      });
     }
     this.state.countclicks++;
-    console.log(this.state.child_info ,this.state.countclicks );
+    console.log(this.state.child_info, this.state.countclicks);
 
     event.preventDefault();
     const cardId = event.target.id;
@@ -185,23 +200,20 @@ class Flipgame extends Component {
   };
 
   restartGame = () => {
+    this.state.level = 2
     this.state.countclicks = 0;
-
+    console.log(this.state.level);
     this.setState({
       isFlipped: Array(8).fill(false),
       shuffledCard: this.duplicateCard().sort(() => Math.random() - 0.5),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1
-      
     });
   };
 
-  isGameOver = () => {
-   
-
-
-
+  isGameOver = () => { 
+     
     return this.state.isFlipped.every(
       (element, index, array) => element !== false
     );
@@ -210,6 +222,11 @@ class Flipgame extends Component {
   render() {
     return (
       <div>
+        {this.state.shuffledCard === ""
+          ? (this.state.shuffledCard = this.duplicateCard().sort(
+              () => Math.random() - 0.5
+            ))
+          : null}
         {this.Header()}
         {this.isGameOver() ? (
           this.GameOver()
