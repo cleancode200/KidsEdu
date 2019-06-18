@@ -4,9 +4,11 @@ import Main from "./components/Main";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Categories from "./components/Categories";
+import UploadImages from "./components/UploadImages";
 import AddChild from "./components/AddChild";
 import subCategores from "./components/subCategores";
 import Flipgame from "./flipgame.js";
+import ParentProfile from "./components/ParentProfile";
 
 class App extends Component {
   render() {
@@ -16,6 +18,7 @@ class App extends Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signUp" component={SignUp} />
+          <Route exact path="/UploadImages" component={UploadImages} />
           <Route exact path="/addchild" component={AddChild} />
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/subcategores" component={subCategores} />
