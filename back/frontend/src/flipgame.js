@@ -18,10 +18,6 @@ class Flipgame extends Component {
       level: 1,
       child_info: this.props.location.state.child_info,
       totalTime: 0,
-      img1: "./imgs/A.PNG",
-      img2: "./imgs/B.PNG",
-      img3: "./imgs/C.PNG",
-      img4: "./imgs/D.PNG",
       shuffledCard: ""
     };
   }
@@ -72,12 +68,12 @@ class Flipgame extends Component {
   };
 
   GameOver = () => {
-    
     var endTime = Date.now();
     var startTime = this.state.startTime;
     this.state.totalTime = Math.ceil((endTime - startTime) / 1000);
     console.log(this.state.totalTime);
-
+    this.state.level++
+console.log(this.state.level)
     //  var data={
     //    child_id:this.state.child_info.id,
     //   language_letters_level:this.state.level,
@@ -114,26 +110,30 @@ class Flipgame extends Component {
         <h1>مبرووك</h1>
         <h3 />
         <button className="restart-button" onClick={this.restartGame}>
-          Restart Game
+          NEXT
         </button>
       </div>
     );
   };
 
   duplicateCard = () => {
-    if (this.state.level === 2) {
-      this.setState({
-        img1: "./imgs/E.PNG",
-        img2: "./imgs/F.PNG",
-        img3: "./imgs/G.PNG",
-        img4: "./imgs/H.PNG"
-      });
-    }
+    var img1 = "";
+    var img2 = "";
+    var img3 = "";
+    var img4 = "";
 
-    var img1 = this.state.img1;
-    var img2 = this.state.img2;
-    var img3 = this.state.img3;
-    var img4 = this.state.img4;
+    if (this.state.level === 1) {
+      img1 = "./imgs/A.PNG";
+      img2 = "./imgs/B.PNG";
+      img3 = "./imgs/C.PNG";
+      img4 = "./imgs/D.PNG";
+    }
+    if (this.state.level === 2) {
+      img1 = "./imgs/E.PNG";
+      img2 = "./imgs/F.PNG";
+      img3 = "./imgs/G.PNG";
+      img4 = "./imgs/H.PNG";
+    }
     return [img1, img2, img3, img4].reduce(
       (preValue, current, index, array) => {
         return preValue.concat([current, current]);
@@ -200,9 +200,7 @@ class Flipgame extends Component {
   };
 
   restartGame = () => {
-    this.state.level = 2
-    this.state.countclicks = 0;
-    console.log(this.state.level);
+    this.state.level = 2;
     this.setState({
       isFlipped: Array(8).fill(false),
       shuffledCard: this.duplicateCard().sort(() => Math.random() - 0.5),
@@ -210,10 +208,10 @@ class Flipgame extends Component {
       prevSelectedCard: -1,
       prevCardId: -1
     });
+    this.state.countclicks = 0;
   };
 
-  isGameOver = () => { 
-     
+  isGameOver = () => {
     return this.state.isFlipped.every(
       (element, index, array) => element !== false
     );
