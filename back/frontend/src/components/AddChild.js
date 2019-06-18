@@ -19,14 +19,11 @@ export class AddChild extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
-    // console.log(this.state);
   }
 
   addChild(e) {
     e.preventDefault();
     toast.configure();
-
-    console.log(this.props.location.state.parent_id);
     var body = {
       name: this.state.name,
       age: this.state.age,
@@ -35,12 +32,9 @@ export class AddChild extends Component {
     var that = this;
     var dublication = false;
     axios
-      .get("Child")
+      .get("/Child")
       .then(function(res) {
         var childarray = res.data;
-        console.log(childarray);
-        console.log(that.state.name);
-        console.log(that.props.location.state.parent_id);
         for (var i = 0; i < childarray.length; i++) {
           if (
             childarray[i].name === that.state.name &&
@@ -76,20 +70,53 @@ export class AddChild extends Component {
             })
             .catch(function(response) {
               //handle error
-              console.log(response);
             });
-        } else if (that.state.age > 8 && that.state.age < 4) {
+        } else {
+          console.log("age");
           alert("age limit violation");
-          // toast("age limit violation");
+          //toast("please enter age between 4 to 8");
         }
       });
   }
-  redirectToCategories() {
+  redirectToCategories(index) {
+    var that = this;
     if (this.state.dublication === false) {
-      this.setState({
-        redirect1: true
-      });
+      this.setState(
+        {
+          redirect1:true,
+          child_info: this.state.childInfo[index]
+        },
+        () => {
+          console.log(this.state.child_info);
+        }
+      );
     }
+  }
+
+  componentDidMount() {
+    var that = this;
+    let parentid = that.props.location.state.parent_id;
+    console.log(parentid);
+    axios.get("Child").then(res => {
+      var childarray = res.data;
+      console.log(childarray);
+      var namesArr = that.state.names;
+      var childInfo = [];
+      // console.log(childarray);
+      // console.log(childarray[0].name);
+      // console.log(that.state.names);
+      for (var i = 0; i < childarray.length; i++) {
+        if (childarray[i].parent_id === parentid) {
+          namesArr.push(childarray[i].name);
+          childInfo.push(childarray[i]);
+        }
+      }
+      that.setState({
+        names: namesArr,
+        childInfo: childInfo
+      });
+      console.log(that.state.childInfo);
+    });
   }
 
   render() {
@@ -120,15 +147,28 @@ export class AddChild extends Component {
         </form>
         {this.state.names.map((child, index) => {
           return (
-            <p key={index} onClick={this.redirectToCategories.bind(this)}>
+            <p
+              key={index}
+              onClick={()=>{
+
+                this.redirectToCategories(index)
+              }
+              }
+            >
               {child}
             </p>
           );
         })}
-        {redirect ? <Redirect to={{ pathname: "/categories" }} /> : null}
+        {redirect ? (
+          <Redirect
+            to={{
+              pathname: "/categories",
+              state: { child_info: this.state.child_info }
+            }}
+          />
+        ) : null}
       </div>
     );
   }
 }
-
 export default AddChild;

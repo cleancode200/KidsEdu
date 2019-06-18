@@ -3,36 +3,40 @@ from myapp.models import Media
 from myapp.models import Child
 from myapp.models import Achievements
 
-from rest_framework import viewsets,permissions
+from rest_framework import viewsets, permissions
 from .serializers import ParentSerializer
 from .serializers import MediaSerializer
 from .serializers import ChildSerializer
 from .serializers import AchievementsSerializer
 
+
 class ParentViewSet(viewsets.ModelViewSet):
-    queryset=Parent.objects.all()
-    permission_classes=[
+    queryset = Parent.objects.all()
+    permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class=ParentSerializer
+    serializer_class = ParentSerializer
+
 
 class MediaViewSet(viewsets.ModelViewSet):
-    queryset=Media.objects.all()
-    permission_classes=[
+    queryset = Media.objects.all()
+    permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class=MediaSerializer
+    serializer_class = MediaSerializer
+
 
 class ChildViewSet(viewsets.ModelViewSet):
-    queryset=Child.objects.all()
-    permission_classes=[
+    queryset = Child.objects.all()
+    permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class=ChildSerializer
+    serializer_class = ChildSerializer
+
 
 class AchievementsViewSet(viewsets.ModelViewSet):
-    queryset=Achievements.objects.all()
-    permission_classes=[
+    queryset = Achievements.objects.all()
+    permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class=AchievementsSerializer
+    serializer_class = AchievementsSerializer
