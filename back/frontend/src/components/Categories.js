@@ -43,7 +43,7 @@ export class Categories extends Component {
       <div>
         <div>
           <img
-            src={this.state.urls[0]}
+            src={this.state.urls[26]}
             alt="Language"
             height="100%"
             width="33%"
@@ -60,7 +60,7 @@ export class Categories extends Component {
             />
           ) : null}
           <img
-            src={this.state.urls[1]}
+            src={this.state.urls[28]}
             alt="Videos"
             height="100%"
             width="33%"
@@ -76,7 +76,7 @@ export class Categories extends Component {
             />
           ) : null}
           <img
-            src={this.state.urls[1]}
+            src={this.state.urls[26]}
             alt="Stores"
             height="100%"
             width="33%"
