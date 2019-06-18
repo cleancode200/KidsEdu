@@ -297,3 +297,7 @@ input:-ms-input-placeholder {
 .validate-input {
   position: relative;
 }
+
+.childsBtns {
+  height: 30vh;
+}

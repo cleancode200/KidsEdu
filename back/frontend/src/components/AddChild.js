@@ -137,13 +137,6 @@ export class AddChild extends Component {
     var redirect = this.state.redirect1;
     return (
       <div>
-        <input
-          className="AddChildbtn"
-          type="button"
-          value="AddChild"
-          onClick={() => this.openmodal("AddChild")}
-        />
-
         <Modal
           visible={this.state.AddChild}
           width="390px"
@@ -194,26 +187,45 @@ export class AddChild extends Component {
             </form>
           </div>
         </Modal>
-        {this.state.names.map((child, index) => {
-          return (
-            <p
-              key={index}
-              onClick={() => {
-                this.redirectToCategories(index);
-              }}
-            >
-              {child}
-            </p>
-          );
-        })}
-        {redirect ? (
-          <Redirect
-            to={{
-              pathname: "/categories",
-              state: { child_info: this.state.child_info }
-            }}
-          />
-        ) : null}
+
+        <div
+          className="childsBtns btn-toolbar"
+          role="toolbar"
+          aria-label="Toolbar with button groups"
+        >
+          <div className="btn-group mr-2" role="group" aria-label="First group">
+            {this.state.names.map((child, index) => {
+              return (
+                <button
+                  type="button"
+                  className="btn btn-primary btn-lg"
+                  key={index}
+                  onClick={() => {
+                    this.redirectToCategories(index);
+                  }}
+                >
+                  {child}
+                </button>
+              );
+            })}
+            {redirect ? (
+              <Redirect
+                to={{
+                  pathname: "/categories",
+                  state: { child_info: this.state.child_info }
+                }}
+              />
+            ) : null}
+          </div>
+          <div className="btn-group" role="group" aria-label="Third group">
+            <input
+              className="AddChildbtn btn btn-primary btn-lg"
+              type="button"
+              value="AddChild"
+              onClick={() => this.openmodal("AddChild")}
+            />
+          </div>
+        </div>
       </div>
     );
   }
