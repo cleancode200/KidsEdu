@@ -68,43 +68,6 @@ class Flipgame extends Component {
   };
 
   GameOver = () => {
-    var endTime = Date.now();
-    var startTime = this.state.startTime;
-    this.state.totalTime = Math.ceil((endTime - startTime) / 1000);
-    console.log(this.state.totalTime);
-    this.state.level++
-console.log(this.state.level)
-    //  var data={
-    //    child_id:this.state.child_info.id,
-    //   language_letters_level:this.state.level,
-    //   start_time:this.state.startTime,
-    //   end_time:endTime,
-    //   clicks:this.state.countclicks
-    //  }
-    // var data={
-    //   child_id:this.state.child_info.id,
-    //  language_letters_level:this.state.level,
-    //  start_time:10,
-    //  end_time:50,
-    //  clicks:this.state.countclicks
-    // }
-    // console.log(data)
-
-    //   axios({
-    //   method: "POST",
-    //   url: "/Ach/",
-    //   data: data,
-    //   config: { headers: { "Content-Type": "application/json	" } }
-    // })
-    //   .then(function(response) {
-    //     //handle success
-    //    return console.log(response.statusText);
-    //   })
-    //   .catch(function(response) {
-    //     //handle error
-    //   });
-
-    // console.log(this.state.isFlipped)
     return (
       <div className="justify-center">
         <h1>مبرووك</h1>
@@ -143,19 +106,17 @@ console.log(this.state.level)
   };
 
   handleClick = event => {
-    console.log(this.state.level);
     if (this.state.countclicks === 0) {
       this.setState({
         startTime: Date.now()
       });
     }
     this.state.countclicks++;
-    console.log(this.state.child_info, this.state.countclicks);
 
     event.preventDefault();
     const cardId = event.target.id;
     const newFlipps = this.state.isFlipped.slice();
-    // console.log(cardId ,newFlipps)
+
     this.setState({
       prevSelectedCard: this.state.shuffledCard[cardId],
       prevCardId: cardId
@@ -200,7 +161,49 @@ console.log(this.state.level)
   };
 
   restartGame = () => {
-    this.state.level = 2;
+    
+    // resting the number of clicks
+    
+
+    ////////////////////////////////////////////
+    //sending the data from here to the database
+    var endTime = Date.now();
+    var startTime = this.state.startTime;
+    this.state.totalTime = Math.ceil((endTime - startTime) / 1000);
+    
+
+    var data = {
+      child_id: this.state.child_info.id,
+      language_letters_level: this.state.level,
+      language_animals_level:0,
+      language_planets_level:0,
+      total_time:this.state.totalTime,
+      clicks: this.state.countclicks
+    };
+
+      console.log(data)
+    axios({
+      method: "POST",
+      url: "/Ach/",
+      data: data,
+      config: { headers: { "Content-Type": "application/json" } }
+    })
+      .then(function(response) {
+        //handle success
+        return console.log(response.statusText);
+      })
+      .catch(function(response) {
+        //handle error
+        console.log("not created")
+      });
+
+    //change the level
+    this.state.level++;
+
+    if (this.state.level > 7) {
+      this.state.level = 1;
+    }
+    //initializiong the next level
     this.setState({
       isFlipped: Array(8).fill(false),
       shuffledCard: this.duplicateCard().sort(() => Math.random() - 0.5),
@@ -208,6 +211,7 @@ console.log(this.state.level)
       prevSelectedCard: -1,
       prevCardId: -1
     });
+
     this.state.countclicks = 0;
   };
 
