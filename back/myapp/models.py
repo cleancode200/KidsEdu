@@ -22,6 +22,7 @@ class Child(models.Model):
 class Achievements(models.Model):
    child_id= models.ForeignKey(Child,on_delete=models.CASCADE)
    language_letters_level=models.IntegerField(max_length=10)
-   start_time=models.IntegerField(max_length=100)
-   end_time=models.IntegerField(max_length=100)
+   language_animals_level=models.IntegerField(max_length=10)
+   language_planets_level=models.IntegerField(max_length=10)
+   total_time=models.IntegerField(max_length=100)
    clicks=models.IntegerField(max_length=100)
