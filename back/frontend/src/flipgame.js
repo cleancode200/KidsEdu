@@ -161,27 +161,22 @@ class Flipgame extends Component {
   };
 
   restartGame = () => {
-    
-    // resting the number of clicks
-    
-
     ////////////////////////////////////////////
     //sending the data from here to the database
     var endTime = Date.now();
     var startTime = this.state.startTime;
     this.state.totalTime = Math.ceil((endTime - startTime) / 1000);
-    
 
     var data = {
       child_id: this.state.child_info.id,
       language_letters_level: this.state.level,
-      language_animals_level:0,
-      language_planets_level:0,
-      total_time:this.state.totalTime,
+      language_animals_level: 0,
+      language_planets_level: 0,
+      total_time: this.state.totalTime,
       clicks: this.state.countclicks
     };
 
-      console.log(data)
+    console.log(data);
     axios({
       method: "POST",
       url: "/Ach/",
@@ -194,7 +189,7 @@ class Flipgame extends Component {
       })
       .catch(function(response) {
         //handle error
-        console.log("not created")
+        console.log("not created");
       });
 
     //change the level
@@ -211,6 +206,7 @@ class Flipgame extends Component {
       prevSelectedCard: -1,
       prevCardId: -1
     });
+    // resting the number of clicks
 
     this.state.countclicks = 0;
   };
