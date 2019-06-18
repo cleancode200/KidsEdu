@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Modal from "react-awesome-modal";
-import SignUp from "./SignUp.js";
+import "./styles/AddChild.css";
 
 export class AddChild extends Component {
   constructor(props) {
@@ -82,7 +82,6 @@ export class AddChild extends Component {
       });
   }
   redirectToCategories(index) {
-    var that = this;
     if (this.state.dublication === false) {
       this.setState(
         {
@@ -147,18 +146,20 @@ export class AddChild extends Component {
 
         <Modal
           visible={this.state.AddChild}
-          width="600"
-          height="350"
+          width="390px"
+          height="250px"
           effect="fadeInDown"
           onClickAway={() => this.closemodal("AddChild")}
         >
-          <div>
-            <form className="AddChild">
-              <div className="form-group">
-                <label htmlFor="inputChildName">Child name</label>
+          <div className="wrap-login100">
+            <form className="login100-form">
+              <div className="wrap-input100">
+                <label htmlFor="inputChildName">
+                  <b>Child name</b>
+                </label>
                 <input
                   type="text"
-                  className="form-control-plaintext"
+                  className=""
                   id="inputChildName"
                   placeholder="Enter your Child name"
                   value={this.state.name}
@@ -166,8 +167,10 @@ export class AddChild extends Component {
                   name="name"
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="inputChildAge">Child age</label>
+              <div className="wrap-input100 validate-input">
+                <label htmlFor="inputChildAge">
+                  <b>Child age</b>
+                </label>
                 <input
                   type="number"
                   placeholder="Your child age"
@@ -180,12 +183,14 @@ export class AddChild extends Component {
                   name="age"
                 />
               </div>
-              <button
-                class="btn btn-primary"
-                onClick={this.addChild.bind(this)}
-              >
-                Add
-              </button>
+              <div className="container-login100-form-btn">
+                <div className="wrap-login100-form-btn">
+                  <div className="login100-form-bgbtn" />
+                  <button className="addBtn" onClick={this.addChild.bind(this)}>
+                    Add
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
         </Modal>
