@@ -189,23 +189,29 @@ export class AddChild extends Component {
         </Modal>
 
         <div
-          className="childsBtns btn-toolbar"
+          className="btn-toolbar"
           role="toolbar"
           aria-label="Toolbar with button groups"
         >
           <div className="btn-group mr-2" role="group" aria-label="First group">
             {this.state.names.map((child, index) => {
               return (
-                <button
-                  type="button"
-                  className="btn btn-primary btn-lg"
-                  key={index}
-                  onClick={() => {
-                    this.redirectToCategories(index);
-                  }}
+                <div
+                  className="childName btn-group"
+                  role="group"
+                  aria-label="Third group"
                 >
-                  {child}
-                </button>
+                  <button
+                    type="button"
+                    className="childsBtns btn btn-primary btn-lg"
+                    key={index}
+                    onClick={() => {
+                      this.redirectToCategories(index);
+                    }}
+                  >
+                    {child}
+                  </button>
+                </div>
               );
             })}
             {redirect ? (

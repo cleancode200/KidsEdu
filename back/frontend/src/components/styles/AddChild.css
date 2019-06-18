@@ -299,5 +299,11 @@ input:-ms-input-placeholder {
 }
 
 .childsBtns {
+  width: 30vh;
   height: 30vh;
+  border-radius: 10px;
+}
+
+div.childName {
+  margin-right: 20px;
 }
