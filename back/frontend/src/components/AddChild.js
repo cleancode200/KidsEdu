@@ -154,26 +154,38 @@ export class AddChild extends Component {
         >
           <div>
             <form className="AddChild">
-              <h2>AddChild :</h2>
-              <input
-                type="text"
-                placeholder="your child name"
-                value={this.state.name}
-                onChange={this.change.bind(this)}
-                name="name"
-              />
-              <br />
-              <input
-                type="number"
-                placeholder="Your child age"
-                min={4}
-                max={8}
-                value={this.state.age}
-                onChange={this.change.bind(this)}
-                name="age"
-              />
-              <br />
-              <button onClick={this.addChild.bind(this)}>Add</button>
+              <div className="form-group">
+                <label htmlFor="inputChildName">Child name</label>
+                <input
+                  type="text"
+                  className="form-control-plaintext"
+                  id="inputChildName"
+                  placeholder="Enter your Child name"
+                  value={this.state.name}
+                  onChange={this.change.bind(this)}
+                  name="name"
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputChildAge">Child age</label>
+                <input
+                  type="number"
+                  placeholder="Your child age"
+                  className="form-control"
+                  id="inputChildAge"
+                  min={4}
+                  max={8}
+                  value={this.state.age}
+                  onChange={this.change.bind(this)}
+                  name="age"
+                />
+              </div>
+              <button
+                class="btn btn-primary"
+                onClick={this.addChild.bind(this)}
+              >
+                Add
+              </button>
             </form>
           </div>
         </Modal>
