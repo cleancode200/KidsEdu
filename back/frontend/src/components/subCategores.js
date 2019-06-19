@@ -93,7 +93,7 @@ export class subCategores extends Component {
           {redirect2 ? (
             <Redirect
               to={{
-                pathname: "/flipgame",
+                pathname: "/Animal",
                 state: {
                   child_info: this.state.child_info,
                   img_url: this.state.urls
