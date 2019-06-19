@@ -24,16 +24,17 @@ class Profile extends Component {
                     childsName:this.state.childsName
                   }
                 }}>
-                    <button>asdasdasdasd</button>
+                    <button>categories  </button>
                 </NavLink>
                 <NavLink to={{
                   pathname: "/addchild",
                   state: {
-                    parent_id: this.state.child_info.parent_id
+                    parent_id: this.state.child_info.parent_id,
+                    parentName:this.state.parentName
                   }
                 }}>
-
-                <button>choose</button>
+<br/>
+                <button>change the player</button>
                 </NavLink>
             </div>
             <div>
