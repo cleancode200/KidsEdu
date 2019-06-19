@@ -8,7 +8,9 @@ export class Categories extends Component {
     this.state = {
       urls: [],
       redirect: false,
-      child_info: this.props.location.state.child_info
+      child_info: this.props.location.state.child_info,
+      parentName:this.props.location.state.parentName,
+      childsName:this.props.location.state.childsName
     };
   }
   goToSubCategories(e) {
@@ -46,7 +48,8 @@ export class Categories extends Component {
                 pathname: "/Profile",
                 state: {
                   child_info: this.state.child_info,
-                  parentName:this.props.location.state.parentName 
+                  parentName:this.state.parentName,
+                  childsName:this.state.childsName 
                 }
               }}>
             <button className="Profile_button">profile</button>

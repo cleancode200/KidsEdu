@@ -220,7 +220,8 @@ export class AddChild extends Component {
                   pathname: "/categories",
                   state: {
                     child_info: this.state.child_info,
-                    parentName: this.props.location.state.parentName
+                    parentName: this.props.location.state.parentName, 
+                    childsName:this.state.names
                   }
                 }}
               />
