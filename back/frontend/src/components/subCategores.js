@@ -56,7 +56,7 @@ export class subCategores extends Component {
                 pathname: "/flipgame",
                 state: {
                   child_info: this.state.child_info,
-                  img_url:this.state.urls
+                  img_url: this.state.urls
                 }
               }}
             />
@@ -73,7 +73,7 @@ export class subCategores extends Component {
                 pathname: "/flipgame",
                 state: {
                   child_info: this.state.child_info,
-                  img_url:this.state.urls
+                  img_url: this.state.urls
                 }
               }}
             />
@@ -87,10 +87,10 @@ export class subCategores extends Component {
           {redirect ? (
             <Redirect
               to={{
-                pathname: "/flipgame",
+                pathname: "/Planet",
                 state: {
                   child_info: this.state.child_info,
-                  img_url:this.state.urls
+                  img_url: this.state.urls
                 }
               }}
             />
