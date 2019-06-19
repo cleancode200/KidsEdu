@@ -198,11 +198,15 @@ export class AddChild extends Component {
           role="toolbar"
           aria-label="Toolbar with button groups"
         >
-          <div className="btn-group mr-2" role="group" aria-label="First group">
-            {this.state.names.map((child, index) => {
-              return (
+          {this.state.names.map((child, index) => {
+            return (
+              <div
+                className="childName btn-group mr-2"
+                role="group"
+                aria-label="First group"
+              >
                 <div
-                  className="childName btn-group"
+                  className="btn-group"
                   role="group"
                   aria-label="Third group"
                 >
@@ -217,25 +221,24 @@ export class AddChild extends Component {
                     {child}
                   </button>
                 </div>
-              );
-            })}
-            {redirect ? (
-              <Redirect
-                to={{
-                  pathname: "/categories",
-                  state: { child_info: this.state.child_info }
-                }}
-              />
-            ) : null}
-          </div>
-          <div className="btn-group" role="group" aria-label="Third group">
-            <input
-              className="AddChildbtn btn btn-primary btn-lg"
-              type="button"
-              value="AddChild"
-              onClick={() => this.openmodal("AddChild")}
+              </div>
+            );
+          })}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/categories",
+                state: { child_info: this.state.child_info }
+              }}
             />
-          </div>
+          ) : null}
+
+          <input
+            className="childName childsBtns btn btn-primary btn-lg"
+            type="button"
+            value="+"
+            onClick={() => this.openmodal("AddChild")}
+          />
         </div>
       </div>
     );

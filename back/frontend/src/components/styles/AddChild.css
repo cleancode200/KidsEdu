@@ -220,6 +220,7 @@ input:-ms-input-placeholder {
   border-radius: 10px;
 }
 
-div.childName {
+.childName {
+  margin-top: 10px;
   margin-right: 20px;
 }
