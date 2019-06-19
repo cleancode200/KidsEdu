@@ -50,20 +50,16 @@ class Flipgame extends Component {
 
   Header = () => {
     return (
-      <div className="grid-header-container">
-        <div className="justify-left timer" />
-        <div className="justify-center game-status-text" />
-        <div className="justify-end">
-          <h1>
-            {" Welcome => "}
-            {this.state.child_info.name}
-            {"  Clicks Count=  "}
-            {this.state.countclicks}
+      <div className="grid-header-container " >
+        
+          <h1 className="justify-center" >
+            ({" Welcome => "}
+            {this.state.child_info.name})
+            ({"  Clicks Count=  "}
+            {this.state.countclicks})
           </h1>
-          <button onClick={this.restartGame} className="restart-button">
-            Restart Game
-          </button>
-        </div>
+          
+        
       </div>
     );
   };
@@ -128,6 +124,7 @@ class Flipgame extends Component {
       img3 = this.state.level_img[26];
       img4 = this.state.level_img[27];
     }
+    // this is to dublicate the img it self so we can have tow imgs or the same one
     return [img1, img2, img3, img4].reduce(
       (preValue, current, index, array) => {
         return preValue.concat([current, current]);
@@ -155,7 +152,7 @@ class Flipgame extends Component {
 
     if (newFlipps[cardId] === false) {
       newFlipps[cardId] = !newFlipps[cardId];
-      this.setState(prevState => ({
+      this.setState( ()=> ({
         isFlipped: newFlipps,
         clickCount: this.state.clickCount + 1
       }));

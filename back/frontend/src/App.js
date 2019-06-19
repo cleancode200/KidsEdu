@@ -9,6 +9,7 @@ import AddChild from "./components/AddChild";
 import subCategores from "./components/subCategores";
 import Flipgame from "./flipgame.js";
 import ParentProfile from "./components/ParentProfile";
+import Profile from "./components/Profile";
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/subcategores" component={subCategores} />
           <Route exact path="/Flipgame" component={Flipgame} />
+          <Route exact path="/Profile" component={Profile} />
 
           {/* <SignIn /> */}
           {/* <AddChild current_parentId={this.current_parentId} /> */}

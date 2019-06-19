@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
 import axios from "axios";
 
 export class Categories extends Component {
@@ -41,6 +41,17 @@ export class Categories extends Component {
     // console.log(redirect);
     return (
       <div>
+        <div className="profile_button_div">
+          <NavLink to={{
+                pathname: "/Profile",
+                state: {
+                  child_info: this.state.child_info,
+                  parentName:this.props.location.state.parentName 
+                }
+              }}>
+            <button className="Profile_button">profile</button>
+          </NavLink>
+        </div>
         <div>
           <img
             src={this.state.urls[26]}

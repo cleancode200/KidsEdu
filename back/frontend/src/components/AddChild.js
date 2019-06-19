@@ -218,7 +218,10 @@ export class AddChild extends Component {
               <Redirect
                 to={{
                   pathname: "/categories",
-                  state: { child_info: this.state.child_info }
+                  state: {
+                    child_info: this.state.child_info,
+                    parentName: this.props.location.state.parentName
+                  }
                 }}
               />
             ) : null}

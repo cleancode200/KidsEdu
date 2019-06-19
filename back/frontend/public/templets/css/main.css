@@ -519,3 +519,17 @@ iframe {
     opacity: 1;
   }
 }
+
+
+
+
+
+.profile_button_div{
+  text-align: right
+}
+
+.Profile_button{
+  height: 20px;
+  border-radius: 5px;
+  border-block-color: red;
+}
