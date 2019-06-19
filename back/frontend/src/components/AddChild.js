@@ -79,6 +79,11 @@ export class AddChild extends Component {
           alert("age limit violation");
           //toast("please enter age between 4 to 8");
         }
+      })
+      .then(function() {
+        that.setState({
+          AddChild: false
+        });
       });
   }
   redirectToCategories(index) {
@@ -93,6 +98,18 @@ export class AddChild extends Component {
         }
       );
     }
+  }
+
+  openmodal(e) {
+    this.setState({
+      [e]: true
+    });
+  }
+
+  closemodal(e) {
+    this.setState({
+      [e]: false
+    });
   }
 
   componentDidMount() {
@@ -118,18 +135,6 @@ export class AddChild extends Component {
         childInfo: childInfo
       });
       console.log(that.state.childInfo);
-    });
-  }
-
-  openmodal(e) {
-    this.setState({
-      [e]: true
-    });
-  }
-
-  closemodal(e) {
-    this.setState({
-      [e]: false
     });
   }
 
@@ -160,7 +165,7 @@ export class AddChild extends Component {
                   name="name"
                 />
               </div>
-              <div className="wrap-input100 validate-input">
+              <div className="wrap-input100">
                 <label htmlFor="inputChildAge">
                   <b>Child age</b>
                 </label>
