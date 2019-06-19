@@ -8,17 +8,37 @@ export class subCategores extends Component {
     this.state = {
       url: "",
       urls: [],
-      redirect: false,
+      redirect1: false,
+      redirect2: false,
+      redirect3: false,
       child_info: this.props.location.state.child_info
     };
   }
-  goToSubCategories(e) {
+  goToSubCategories1(e) {
     console.log("going to subCategories");
     // axios.get("/Media").then(response => {
     //   console.log(JSON.stringify(response));
     // });
     this.setState({
-      redirect: true
+      redirect1: true
+    });
+  }
+  goToSubCategories2(e) {
+    console.log("going to subCategories");
+    // axios.get("/Media").then(response => {
+    //   console.log(JSON.stringify(response));
+    // });
+    this.setState({
+      redirect2: true
+    });
+  }
+  goToSubCategories3(e) {
+    console.log("going to subCategories");
+    // axios.get("/Media").then(response => {
+    //   console.log(JSON.stringify(response));
+    // });
+    this.setState({
+      redirect3: true
     });
   }
   componentDidMount() {
@@ -38,7 +58,9 @@ export class subCategores extends Component {
     });
   }
   render() {
-    var redirect = this.state.redirect;
+    var redirect1 = this.state.redirect1;
+    var redirect2 = this.state.redirect2;
+    var redirect3 = this.state.redirect3;
     console.log(this.state.child_info);
     return (
       <div>
@@ -48,9 +70,9 @@ export class subCategores extends Component {
             alt="Language"
             height="100%"
             width="33%"
-            onClick={this.goToSubCategories.bind(this)}
+            onClick={this.goToSubCategories1.bind(this)}
           />
-          {redirect ? (
+          {redirect1 ? (
             <Redirect
               to={{
                 pathname: "/flipgame",
@@ -66,8 +88,9 @@ export class subCategores extends Component {
             alt="Videos"
             height="100%"
             width="33%"
+            onClick={this.goToSubCategories2.bind(this)}
           />
-          {redirect ? (
+          {redirect2 ? (
             <Redirect
               to={{
                 pathname: "/flipgame",
@@ -79,12 +102,13 @@ export class subCategores extends Component {
             />
           ) : null}
           <img
-            src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
+            src={this.state.urls[10]}
             alt="Stores"
             height="100%"
             width="33%"
+            onClick={this.goToSubCategories3.bind(this)}
           />
-          {redirect ? (
+          {redirect3 ? (
             <Redirect
               to={{
                 pathname: "/Planet",
