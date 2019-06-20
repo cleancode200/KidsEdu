@@ -15,9 +15,10 @@ body {
 
 .grid-header-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto ;
   background-color: #c9d1f5;
   padding: 10px;
+  
 }
 
 .grid-item {
