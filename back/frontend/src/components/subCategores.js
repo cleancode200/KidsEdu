@@ -8,6 +8,7 @@ export class subCategores extends Component {
     this.state = {
       url: "",
       urls: [],
+      game_img_urls: [],
       redirect1: false,
       redirect2: false,
       redirect3: false,
@@ -16,35 +17,54 @@ export class subCategores extends Component {
   }
   goToSubCategories1(e) {
     console.log("going to subCategories");
-    // axios.get("/Media").then(response => {
-    //   console.log(JSON.stringify(response));
-    // });
-    this.setState({
-      redirect1: true
+    var role = "letter";
+    axios.get("/Media/?role=" + role).then(res => {
+      console.log(res.data);
+      var urlsArr = [];
+      for (let i = 0; i < res.data.length; i++) {
+        urlsArr.push(res.data[i].img_url);
+      }
+      this.setState({
+        redirect1: true,
+        game_img_urls: urlsArr.slice()
+      });
     });
   }
   goToSubCategories2(e) {
     console.log("going to subCategories");
-    // axios.get("/Media").then(response => {
-    //   console.log(JSON.stringify(response));
-    // });
-    this.setState({
-      redirect2: true
+    var role = "letter";
+    axios.get("/Media/?role=" + role).then(res => {
+      var urlsArr = [];
+      for (let i = 0; i < res.data.length; i++) {
+        urlsArr.push(res.data[i].img_url);
+      }
+      this.setState({
+        redirect2: true,
+        game_img_urls: urlsArr
+      });
     });
   }
   goToSubCategories3(e) {
-    console.log("going to subCategories");
-    // axios.get("/Media").then(response => {
-    //   console.log(JSON.stringify(response));
-    // });
-    this.setState({
-      redirect3: true
+    var role = "letter";
+    axios.get("/Media/?role=" + role).then(res => {
+      // axios.get("/Media").then(response => {
+      //   console.log(JSON.stringify(response));
+      // });
+      var urlsArr = [];
+      for (let i = 0; i < res.data.length; i++) {
+        urlsArr.push(res.data[i].img_url);
+      }
+      this.setState({
+        redirect3: true,
+        game_img_urls: urlsArr
+      });
     });
   }
   componentDidMount() {
     // console.log("Sending a GET API Call !!!");
     var that = this;
-    axios.get("Media/").then(res => {
+    var role = "subcategories";
+    axios.get("/Media/?role=" + role).then(res => {
       // console.log(res.data[0].img_url);
       // console.log(res.data.length);
       var urlsArr = [];
@@ -66,7 +86,7 @@ export class subCategores extends Component {
       <div>
         <div>
           <img
-            src={this.state.urls[29]}
+            src={this.state.urls[0]}
             alt="Language"
             height="100%"
             width="33%"
@@ -78,13 +98,13 @@ export class subCategores extends Component {
                 pathname: "/flipgame",
                 state: {
                   child_info: this.state.child_info,
-                  img_url: this.state.urls
+                  img_url: this.state.game_img_urls
                 }
               }}
             />
           ) : null}
           <img
-            src="https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/2019/05/tom-and-jerry-warner-bros.jpg?itok=nNIChfNa"
+            src={this.state.urls[1]}
             alt="Videos"
             height="100%"
             width="33%"
@@ -93,16 +113,16 @@ export class subCategores extends Component {
           {redirect2 ? (
             <Redirect
               to={{
-                pathname: "/Animal",
+                pathname: "/flipgame",
                 state: {
                   child_info: this.state.child_info,
-                  img_url: this.state.urls
+                  img_url: this.state.game_img_urls
                 }
               }}
             />
           ) : null}
           <img
-            src={this.state.urls[10]}
+            src={this.state.urls[2]}
             alt="Stores"
             height="100%"
             width="33%"
@@ -111,10 +131,10 @@ export class subCategores extends Component {
           {redirect3 ? (
             <Redirect
               to={{
-                pathname: "/Planet",
+                pathname: "/flipgame",
                 state: {
                   child_info: this.state.child_info,
-                  img_url: this.state.urls
+                  img_url: this.state.game_img_urls
                 }
               }}
             />

@@ -50,16 +50,12 @@ class Flipgame extends Component {
 
   Header = () => {
     return (
-      <div className="grid-header-container " >
-        
-          <h1 className="justify-center" >
-            ({" Welcome => "}
-            {this.state.child_info.name})
-            ({"  Clicks Count=  "}
-            {this.state.countclicks})
-          </h1>
-          
-        
+      <div className="grid-header-container ">
+        <h1 className="justify-center">
+          ({" Welcome => "}
+          {this.state.child_info.name}) ({"  Clicks Count=  "}
+          {this.state.countclicks})
+        </h1>
       </div>
     );
   };
@@ -121,8 +117,8 @@ class Flipgame extends Component {
     if (this.state.level === 7) {
       img1 = this.state.level_img[24];
       img2 = this.state.level_img[25];
-      img3 = this.state.level_img[26];
-      img4 = this.state.level_img[27];
+      img3 = this.state.level_img[25];
+      img4 = this.state.level_img[25];
     }
     // this is to dublicate the img it self so we can have tow imgs or the same one
     return [img1, img2, img3, img4].reduce(
@@ -152,7 +148,7 @@ class Flipgame extends Component {
 
     if (newFlipps[cardId] === false) {
       newFlipps[cardId] = !newFlipps[cardId];
-      this.setState( ()=> ({
+      this.setState(() => ({
         isFlipped: newFlipps,
         clickCount: this.state.clickCount + 1
       }));
