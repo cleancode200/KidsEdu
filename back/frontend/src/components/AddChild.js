@@ -95,7 +95,7 @@ export class AddChild extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     var that = this;
     let parentid = that.props.location.state.parent_id;
     console.log(parentid);

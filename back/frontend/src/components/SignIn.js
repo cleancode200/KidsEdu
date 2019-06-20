@@ -40,9 +40,15 @@ class SignIn extends Component {
       this.setState({ error: "Password is required" });
       toast("Password is required");
     }
-    axios.get("Parent").then(res => {
+    var email = this.state.email;
+    var password = this.state.password;
+    console.log("temp");
+    axios("/Parent/?email=" + email + "&password=" + password).then(res => {
       let array = res.data;
-
+      console.log(array);
+      if (!array.length) {
+        alert("email or password does not match");
+      }
       for (let i = 0; i < array.length; i++) {
         if (
           this.state.email === array[i].email &&
@@ -58,7 +64,7 @@ class SignIn extends Component {
       }
 
       if (this.state.found === false) {
-        alert("not found ");
+        console.log("not found ");
       }
     });
 

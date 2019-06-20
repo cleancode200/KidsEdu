@@ -19,7 +19,7 @@ class Flipgame extends Component {
       child_info: this.props.location.state.child_info,
       totalTime: 0,
       shuffledCard: "",
-      level_img:this.props.location.state.img_url
+      level_img: this.props.location.state.img_url
     };
   }
 
