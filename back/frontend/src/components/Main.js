@@ -77,19 +77,27 @@ export class Main extends Component {
 				<nav id="nav-menu-container">
 					<ul className="nav-menu">
 						<li className="menu-active"><a href="index.html">Home</a></li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="courses.html">Courses</a></li>
-						<li className="menu-has-children"><a href="">Pages</a>
+						<li>
+              <Link to="/signup">
+              <a>Register</a>
+              </Link>
+              </li>
+						<li>
+              <Link to="/signin">
+              <a>Login</a>
+            </Link>
+              </li>
+						{/* <li className="menu-has-children"><a href="">Pages</a>
 							<ul>
 								<li><a href="elements.html">Elements</a></li>
 							</ul>
-						</li>
-						<li className="menu-has-children"><a href="">Blog</a>
+						</li> */}
+						{/* <li className="menu-has-children"><a href="">Blog</a>
 							<ul>
 								<li><a href="blog-home.html">Blog Home</a></li>
 								<li><a href="blog-single.html">Blog Details</a></li>
 							</ul>
-						</li>
+						</li> */}
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</nav>
@@ -105,34 +113,10 @@ export class Main extends Component {
 		<div className="container">
 			<div className="row fullscreen d-flex align-items-center justify-content-center">
 				<div className="banner-content col-lg-8 col-md-12">
-					<h1 className="wow fadeIn" data-wow-duration="4s">We Rank the Best Courses <br/> on the Web</h1>
+					<h1 className="wow fadeIn" data-wow-duration="4s">EduKid <br/>Learn While Playing</h1>
 					<p className="text-white">
-						In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space
-						telescope.
+          We aim to teach our childs by letting them play, without realizing that they are learning.
 					</p>
-
-					<div className="input-wrap">
-						<form action="" className="form-box d-flex justify-content-between">
-							<input type="text" placeholder="Search Courses" className="form-control" name="username"/>
-							<button type="submit" className="btn search-btn">Search</button>
-						</form>
-					</div>
-					<h4 className="text-white">Top courses</h4>
-
-					<div className="courses pt-20">
-						<a href="#" data-wow-duration="1s" data-wow-delay=".3s" className="primary-btn transparent mr-10 mb-10 wow fadeInDown">Ruby
-							on Rails</a>
-						<a href="#" data-wow-duration="1s" data-wow-delay=".6s" className="primary-btn transparent mr-10 mb-10 wow fadeInDown">Python</a>
-						<a href="#" data-wow-duration="1s" data-wow-delay=".9s" className="primary-btn transparent mr-10 mb-10 wow fadeInDown">Marketing</a>
-						<a href="#" data-wow-duration="1s" data-wow-delay="1.2s" className="primary-btn transparent mr-10 mb-10 wow fadeInDown">UI/UX
-							Design
-						</a>
-						<a href="#" data-wow-duration="1s" data-wow-delay="1.5s" className="primary-btn transparent mr-10 mb-10 wow fadeInDown">Android</a>
-						<a href="#" data-wow-duration="1s" data-wow-delay="1.8s" className="primary-btn transparent mr-10 mb-10 wow fadeInDown">Data
-							Science
-						</a>
-						<a href="#" data-wow-duration="1s" data-wow-delay="2.1s" className="primary-btn transparent mr-10 mb-10 wow fadeInDown">Cryptocurrency</a>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -152,16 +136,13 @@ export class Main extends Component {
 				</div>
 				<div className="offset-lg-1 col-lg-6 offset-md-0 col-md-12 about-right">
 					<h1>
-						Over 2500 Courses <br/> from 5 Platform
+						Over 22 Country Around <br/> the world
 					</h1>
 					<div className="wow fadeIn" data-wow-duration="1s">
 						<p>
-							There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s exciting to think
-							about setting up your own viewing station. In the life of any aspiring astronomer that it is time to buy that first
-							telescope. It’s exciting to think about setting up your own viewing station.
+							[fill this paragraph long one]
 						</p>
 					</div>
-					<a href="courses.html" className="primary-btn">Explore Courses</a>
 				</div>
 			</div>
 		</div>
@@ -188,86 +169,7 @@ export class Main extends Component {
 				</div>
 				<div className="offset-lg-1 col-lg-6">
 					<div className="courses-right">
-						<div className="row">
-							<div className="col-lg-6 col-md-6 col-sm-12">
-								<ul className="courses-list">
-									<li>
-										<a className="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay=".1s">
-											<i className="fa fa-book"></i> Development
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay=".3s">
-											<i className="fa fa-book"></i> IT & Software
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay=".5s">
-											<i className="fa fa-book"></i> Photography
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay=".7s">
-											<i className="fa fa-book"></i> Language
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay=".9s">
-											<i className="fa fa-book"></i> Life Science
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay="1.1s">
-											<i className="fa fa-book"></i> Business
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInLeft" href="courses.html" data-wow-duration="1s" data-wow-delay="1.3s">
-											<i className="fa fa-book"></i> Socoal Science
-										</a>
-									</li>
-								</ul>
-							</div>
-							<div className="col-lg-6 col-md-6 col-sm-12">
-								<ul className="courses-list">
-									<li>
-										<a className="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay="1.3s">
-											<i className="fa fa-book"></i> Data Science
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay="1.1s">
-											<i className="fa fa-book"></i> Design
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay=".9s">
-											<i className="fa fa-book"></i> Training
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay=".7s">
-											<i className="fa fa-book"></i> Humanities
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay=".5s">
-											<i className="fa fa-book"></i> Marketing
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay=".3s">
-											<i className="fa fa-book"></i> Economics
-										</a>
-									</li>
-									<li>
-										<a className="wow fadeInRight" href="courses.html" data-wow-duration="1s" data-wow-delay=".1s">
-											<i className="fa fa-book"></i> Personal Dev
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
+					[this area was for the table ]
 					</div>
 				</div>
 			</div>
@@ -294,7 +196,7 @@ export class Main extends Component {
 				<div className="col-lg-4 col-md-6">
 					<div className="feature-item">
 						<i className="ti-crown"></i>
-						<h4>Architecture</h4>
+						<h4>[Title]</h4>
 						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
 							<p>
 								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
@@ -305,7 +207,7 @@ export class Main extends Component {
 				<div className="col-lg-4 col-md-6">
 					<div className="feature-item">
 						<i className="ti-briefcase"></i>
-						<h4>Interior Design</h4>
+						<h4>[Title]</h4>
 						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
 							<p>
 								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
@@ -316,7 +218,7 @@ export class Main extends Component {
 				<div className="col-lg-4 col-md-6">
 					<div className="feature-item">
 						<i className="ti-medall-alt"></i>
-						<h4>Concept Design</h4>
+						<h4>[Title]</h4>
 						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
 							<p>
 								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
@@ -327,7 +229,7 @@ export class Main extends Component {
 				<div className="col-lg-4 col-md-6">
 					<div className="feature-item">
 						<i className="ti-key"></i>
-						<h4>Lifetime Access</h4>
+						<h4>[Title]</h4>
 						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
 							<p>
 								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
@@ -338,7 +240,7 @@ export class Main extends Component {
 				<div className="col-lg-4 col-md-6">
 					<div className="feature-item">
 						<i className="ti-files"></i>
-						<h4>Source File Included</h4>
+						<h4>[Title]</h4>
 						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
 							<p>
 								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
@@ -349,7 +251,7 @@ export class Main extends Component {
 				<div className="col-lg-4 col-md-6">
 					<div className="feature-item">
 						<i className="ti-headphone-alt"></i>
-						<h4>Live Support</h4>
+						<h4>[Title]</h4>
 						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
 							<p>
 								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
@@ -369,10 +271,9 @@ export class Main extends Component {
 			<div className="row justify-content-center">
 				<div className="col-lg-8">
 					<div className="section-title text-center">
-						<h1>Faculty Members</h1>
+						<h1>Members</h1>
 						<p>
-							If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for
-							as low as $.17 each.
+							[fill This paragraph]
 						</p>
 					</div>
 				</div>
@@ -383,7 +284,7 @@ export class Main extends Component {
 						<img className="img-fluid" src="homepageTemplete/img/faculty/f1.jpg" alt=""/>
 					</div>
 					<div className="meta-text text-center">
-						<h4>Ethel Davis</h4>
+						<h4>Amer Alkharashgah</h4>
 						<p className="designation">Sr. Faculty Data Science</p>
 						<div className="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
 							<p>
@@ -402,7 +303,7 @@ export class Main extends Component {
 						<img className="img-fluid" src="homepageTemplete/img/faculty/f2.jpg" alt=""/>
 					</div>
 					<div className="meta-text text-center">
-						<h4>Rodney Cooper</h4>
+						<h4>Abdulrohman</h4>
 						<p className="designation">Sr. Faculty Data Science</p>
 						<div className="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
 							<p>
@@ -421,7 +322,7 @@ export class Main extends Component {
 						<img className="img-fluid" src="homepageTemplete/img/faculty/f3.jpg" alt=""/>
 					</div>
 					<div className="meta-text text-center">
-						<h4>Dora Walker</h4>
+						<h4>Ahmad Aldarkashli</h4>
 						<p className="designation">Sr. Faculty Data Science</p>
 						<div className="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
 							<p>
@@ -440,7 +341,7 @@ export class Main extends Component {
 						<img className="img-fluid" src="homepageTemplete/img/faculty/f4.jpg" alt=""/>
 					</div>
 					<div className="meta-text text-center">
-						<h4>Lena Keller</h4>
+						<h4>Yousef alshabah</h4>
 						<p className="designation">Sr. Faculty Data Science</p>
 						<div className="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
 							<p>
@@ -461,114 +362,7 @@ export class Main extends Component {
 
 
 	{/* <!-- Start Testimonials Area --> */}
-	<section className="testimonials-area section-gap">
-		<div className="container">
-			<div className="testi-slider owl-carousel" data-slider-id="1">
-				<div className="item">
-					<div className="testi-item">
-						<img src="homepageTemplete/img/quote.png" alt=""/>
-						<h4>Fanny Spencer</h4>
-						<ul className="list">
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-						</ul>
-						<div className="wow fadeIn" data-wow-duration="1s">
-							<p>
-								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel
-								across her face <br/> and She is the host to your journey.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="item">
-					<div className="testi-item">
-						<img src="homepageTemplete/img/quote.png" alt=""/>
-						<h4>Fanny Spencer</h4>
-						<ul className="list">
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-						</ul>
-						<div className="wow fadeIn" data-wow-duration="1s">
-							<p>
-								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel
-								across her face <br/> and She is the host to your journey.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="item">
-					<div className="testi-item">
-						<img src="homepageTemplete/img/quote.png" alt=""/>
-						<h4>Fanny Spencer</h4>
-						<ul className="list">
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-						</ul>
-						<div className="wow fadeIn" data-wow-duration="1s">
-							<p>
-								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel
-								across her face <br/> and She is the host to your journey.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div className="item">
-					<div className="testi-item">
-						<img src="homepageTemplete/img/quote.png" alt=""/>
-						<h4>Fanny Spencer</h4>
-						<ul className="list">
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-							<li><a href="#"><i className="fa fa-star"></i></a></li>
-						</ul>
-						<div className="wow fadeIn" data-wow-duration="1s">
-							<p>
-								As conscious traveling Paup ers we must always be oncerned about our dear Mother Earth. If you think about it, you travel
-								across her face <br/> and She is the host to your journey.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className="owl-thumbs d-flex justify-content-center" data-slider-id="1">
-				<div className="owl-thumb-item">
-					<div>
-						<img className="img-fluid" src="homepageTemplete/img/testimonial/t1.jpg" alt=""/>
-					</div>
-					<div className="overlay overlay-grad"></div>
-				</div>
-				<div className="owl-thumb-item">
-					<div>
-						<img className="img-fluid" src="homepageTemplete/img/testimonial/t2.jpg" alt=""/>
-					</div>
-					<div className="overlay overlay-grad"></div>
-				</div>
-				<div className="owl-thumb-item">
-					<div>
-						<img className="img-fluid" src="homepageTemplete/img/testimonial/t3.jpg" alt=""/>
-					</div>
-					<div className="overlay overlay-grad"></div>
-				</div>
-				<div className="owl-thumb-item">
-					<div>
-						<img className="img-fluid" src="homepageTemplete/img/testimonial/t4.jpg" alt=""/>
-					</div>
-					<div className="overlay overlay-grad"></div>
-				</div>
-			</div>
-		</div>
-	</section>
+
 	{/* <!-- End Testimonials Area --> */}
 
 
