@@ -9,8 +9,8 @@ export class Categories extends Component {
       urls: [],
       redirect: false,
       child_info: this.props.location.state.child_info,
-      parentName:this.props.location.state.parentName,
-      childsName:this.props.location.state.childsName
+      parentName: this.props.location.state.parentName,
+      childsName: this.props.location.state.childsName
     };
   }
   goToSubCategories(e) {
@@ -22,13 +22,17 @@ export class Categories extends Component {
       redirect: true
     });
   }
-  componentWillMount() {
+  componentDidMount() {
     // console.log("Sending a GET API Call !!!");
+
+    var role = "categories";
     var that = this;
-    axios.get("Media/").then(res => {
+    axios.get("/Media/?role=" + role).then(res => {
       // console.log(res.data[0].img_url);
       // console.log(res.data.length);
+      console.log(res.data);
       var urlsArr = that.state.urls;
+      console.log(res.data.length);
       for (let i = 0; i < res.data.length; i++) {
         urlsArr.push(res.data[i].img_url);
       }
@@ -44,20 +48,22 @@ export class Categories extends Component {
     return (
       <div>
         <div className="profile_button_div">
-          <NavLink to={{
-                pathname: "/Profile",
-                state: {
-                  child_info: this.state.child_info,
-                  parentName:this.state.parentName,
-                  childsName:this.state.childsName 
-                }
-              }}>
+          <NavLink
+            to={{
+              pathname: "/Profile",
+              state: {
+                child_info: this.state.child_info,
+                parentName: this.state.parentName,
+                childsName: this.state.childsName
+              }
+            }}
+          >
             <button className="Profile_button">profile</button>
           </NavLink>
         </div>
         <div>
           <img
-            src={this.state.urls[26]}
+            src={this.state.urls[0]}
             alt="Language"
             height="100%"
             width="33%"
@@ -74,7 +80,7 @@ export class Categories extends Component {
             />
           ) : null}
           <img
-            src={this.state.urls[28]}
+            src={this.state.urls[1]}
             alt="Videos"
             height="100%"
             width="33%"
@@ -90,7 +96,7 @@ export class Categories extends Component {
             />
           ) : null}
           <img
-            src={this.state.urls[28]}
+            src={this.state.urls[2]}
             alt="Stores"
             height="100%"
             width="33%"
