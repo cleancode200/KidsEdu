@@ -23,19 +23,21 @@ class ParentViewSet(viewsets.ModelViewSet):
 
 
 class MediaViewSet(viewsets.ModelViewSet):
-    queryset = Media.objects.all()
-    permission_classes = [
-        permissions.AllowAny
-    ]
     serializer_class = MediaSerializer
+
+    def get_queryset(self):
+        queryset = Media.objects.all()
+        role = self.request.query_params.get("role", None)
+        return queryset.filter(role=role)
 
 
 class ChildViewSet(viewsets.ModelViewSet):
-    queryset = Child.objects.all()
-    permission_classes = [
-        permissions.AllowAny
-    ]
     serializer_class = ChildSerializer
+
+    def get_queryset(self):
+        queryset = Child.objects.all()
+        parent_id = self.request.query_params.get("parent_id", None)
+        return queryset.filter(parent_id=parent_id)
 
 
 class AchievementsViewSet(viewsets.ModelViewSet):

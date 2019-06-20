@@ -59,7 +59,7 @@ export class AddChild extends Component {
           console.log("post new child");
           axios({
             method: "POST",
-            url: "/Child/",
+            url: "Child/",
             data: body,
             config: { headers: { "Content-Type": "application/json" } }
           })
@@ -116,7 +116,7 @@ export class AddChild extends Component {
     var that = this;
     let parentid = that.props.location.state.parent_id;
     console.log(parentid);
-    axios.get("Child").then(res => {
+    axios.get("/Child/?parent_id=" + parentid).then(res => {
       var childarray = res.data;
       console.log(childarray);
       var namesArr = that.state.names;
@@ -125,10 +125,8 @@ export class AddChild extends Component {
       // console.log(childarray[0].name);
       // console.log(that.state.names);
       for (var i = 0; i < childarray.length; i++) {
-        if (childarray[i].parent_id === parentid) {
-          namesArr.push(childarray[i].name);
-          childInfo.push(childarray[i]);
-        }
+        namesArr.push(childarray[i].name);
+        childInfo.push(childarray[i]);
       }
       that.setState({
         names: namesArr,
