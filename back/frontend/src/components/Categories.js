@@ -22,7 +22,7 @@ export class Categories extends Component {
       redirect: true
     });
   }
-  componentDidMount() {
+  componentWillMount() {
     // console.log("Sending a GET API Call !!!");
     var that = this;
     axios.get("Media/").then(res => {
