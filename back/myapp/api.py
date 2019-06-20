@@ -11,11 +11,15 @@ from .serializers import AchievementsSerializer
 
 
 class ParentViewSet(viewsets.ModelViewSet):
-    queryset = Parent.objects.all()
-    permission_classes = [
-        permissions.AllowAny
-    ]
     serializer_class = ParentSerializer
+
+    def get_queryset(self):
+        queryset = Parent.objects.all()
+        email = self.request.query_params.get("email", None)
+        password = self.request.query_params.get("password", None)
+        # print(self.request.data, email, password)
+        # print(self.request.query_params, email, password)
+        return queryset.filter(email=email, password=password)
 
 
 class MediaViewSet(viewsets.ModelViewSet):
