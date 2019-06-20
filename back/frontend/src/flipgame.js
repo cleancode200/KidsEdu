@@ -19,7 +19,7 @@ class Flipgame extends Component {
       child_info: this.props.location.state.child_info,
       totalTime: 0,
       shuffledCard: "",
-      level_img:this.props.location.state.img_url
+      level_img: this.props.location.state.img_url
     };
   }
 
@@ -51,18 +51,20 @@ class Flipgame extends Component {
   Header = () => {
     return (
       <div className="grid-header-container">
-        <div className="justify-left timer" />
-        <div className="justify-center game-status-text" />
-        <div className="justify-end">
-          <h1>
-            {" Welcome => "}
-            {this.state.child_info.name}
-            {"  Clicks Count=  "}
-            {this.state.countclicks}
-          </h1>
-          <button onClick={this.restartGame} className="restart-button">
-            Restart Game
-          </button>
+        <div className="justify-left timer">
+          <div className="justify-center game-status-text">
+            <div className="justify-end">
+              <h1>
+                {" Welcome => "}
+                {this.state.child_info.name}
+                {"  Clicks Count=  "}
+                {this.state.countclicks}
+              </h1>
+              <button onClick={this.restartGame} className="restart-button">
+                Restart Game
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -248,30 +250,36 @@ class Flipgame extends Component {
     );
   };
 
+  componentWillMount() {
+    if (this.state.shuffledCard === "") {
+      this.state.shuffledCard = this.duplicateCard().sort(
+        () => Math.random() - 0.5
+      );
+    } else {
+      this.state.shuffledCard = null;
+    }
+  }
   render() {
     return (
       <div>
-        {this.state.shuffledCard === ""
-          ? (this.state.shuffledCard = this.duplicateCard().sort(
-              () => Math.random() - 0.5
-            ))
-          : null}
-        {this.Header()}
-        {this.isGameOver() ? (
-          this.GameOver()
-        ) : (
-          <div className="grid-container">
-            {this.state.shuffledCard.map((cardNumber, index) => (
-              <Card
-                key={index}
-                id={index}
-                cardNumber={cardNumber}
-                isFlipped={this.state.isFlipped[index]}
-                handleClick={this.handleClick}
-              />
-            ))}
-          </div>
-        )}
+        <div>{this.Header()}</div>
+        <div>
+          {this.isGameOver() ? (
+            this.GameOver()
+          ) : (
+            <div className="grid-container">
+              {this.state.shuffledCard.map((cardNumber, index) => (
+                <Card
+                  key={index}
+                  id={index}
+                  cardNumber={cardNumber}
+                  isFlipped={this.state.isFlipped[index]}
+                  handleClick={this.handleClick}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     );
   }
