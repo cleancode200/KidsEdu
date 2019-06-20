@@ -57,7 +57,8 @@ class SignIn extends Component {
           console.log("welcome " + array[i].name);
           this.setState({
             found: true,
-            id: array[i].id
+            id: array[i].id,
+            parentName:array[i].name
           });
           this.rend();
         }
@@ -90,7 +91,8 @@ class SignIn extends Component {
         <Redirect
           to={{
             pathname: "/addchild",
-            state: { parent_id: this.state.id }
+            state: { parent_id: this.state.id,
+            parentName:this.state.parentName }
           }}
         />
       );

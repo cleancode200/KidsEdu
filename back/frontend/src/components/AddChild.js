@@ -79,6 +79,11 @@ export class AddChild extends Component {
           alert("age limit violation");
           //toast("please enter age between 4 to 8");
         }
+      })
+      .then(function() {
+        that.setState({
+          AddChild: false
+        });
       });
   }
   redirectToCategories(index) {
@@ -95,7 +100,19 @@ export class AddChild extends Component {
     }
   }
 
-  componentWillMount() {
+  openmodal(e) {
+    this.setState({
+      [e]: true
+    });
+  }
+
+  closemodal(e) {
+    this.setState({
+      [e]: false
+    });
+  }
+
+  componentDidMount() {
     var that = this;
     let parentid = that.props.location.state.parent_id;
     console.log(parentid);
@@ -118,18 +135,6 @@ export class AddChild extends Component {
         childInfo: childInfo
       });
       console.log(that.state.childInfo);
-    });
-  }
-
-  openmodal(e) {
-    this.setState({
-      [e]: true
-    });
-  }
-
-  closemodal(e) {
-    this.setState({
-      [e]: false
     });
   }
 
@@ -160,7 +165,7 @@ export class AddChild extends Component {
                   name="name"
                 />
               </div>
-              <div className="wrap-input100 validate-input">
+              <div className="wrap-input100">
                 <label htmlFor="inputChildAge">
                   <b>Child age</b>
                 </label>
@@ -193,11 +198,15 @@ export class AddChild extends Component {
           role="toolbar"
           aria-label="Toolbar with button groups"
         >
-          <div className="btn-group mr-2" role="group" aria-label="First group">
-            {this.state.names.map((child, index) => {
-              return (
+          {this.state.names.map((child, index) => {
+            return (
+              <div
+                className="childName btn-group mr-2"
+                role="group"
+                aria-label="First group"
+              >
                 <div
-                  className="childName btn-group"
+                  className="btn-group"
                   role="group"
                   aria-label="Third group"
                 >
@@ -212,25 +221,28 @@ export class AddChild extends Component {
                     {child}
                   </button>
                 </div>
-              );
-            })}
-            {redirect ? (
-              <Redirect
-                to={{
-                  pathname: "/categories",
-                  state: { child_info: this.state.child_info }
-                }}
-              />
-            ) : null}
-          </div>
-          <div className="btn-group" role="group" aria-label="Third group">
-            <input
-              className="AddChildbtn btn btn-primary btn-lg"
-              type="button"
-              value="AddChild"
-              onClick={() => this.openmodal("AddChild")}
+              </div>
+            );
+          })}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/categories",
+                state: {
+                  child_info: this.state.child_info,
+                  parentName: this.props.location.state.parentName,
+                  childsName: this.state.names
+                }
+              }}
             />
-          </div>
+          ) : null}
+
+          <input
+            className="childName childsBtns btn btn-primary btn-lg"
+            type="button"
+            value="+"
+            onClick={() => this.openmodal("AddChild")}
+          />
         </div>
       </div>
     );
