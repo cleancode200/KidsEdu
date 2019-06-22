@@ -2007,6 +2007,42 @@ body.mobile-nav-active #mobile-nav-toggle {
     background: #fff;
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08); }
 
+/* for catigories page */
+    .feature-item1 {
+      background: #f1f9ff;
+      margin-bottom: 30px;
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s; }
+      @media (max-width: 1024px) {
+        .feature-item1 {
+          padding: 50px 30px; } }
+      .feature-item1 i {
+        font-size: 36px;
+        color: #222222; }
+      .feature-item1 h4 {
+        margin-top: 30px;
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 20px; }
+      .feature-item1 p {
+        margin-bottom: 0px; }
+      .feature-item1:hover {
+        background: #fff;
+        box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.08); }
+        .feature-item1 img {
+          width: 100%;
+          height: 100%;
+        }
+
+
+        .body123{
+          background: #f1f9ff;
+        }
+
+
+
 .faculty-area {
   background-color: #f1f9ff; }
 

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 //for pop up message
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 //import { BrowserRouter as Router, Route,Link } from "react-router-dom";
 import { Redirect, Link } from "react-router-dom";
@@ -58,7 +57,7 @@ class SignIn extends Component {
           this.setState({
             found: true,
             id: array[i].id,
-            parentName:array[i].name
+            parentName: array[i].name
           });
           this.rend();
         }
@@ -91,8 +90,10 @@ class SignIn extends Component {
         <Redirect
           to={{
             pathname: "/addchild",
-            state: { parent_id: this.state.id,
-            parentName:this.state.parentName }
+            state: {
+              parent_id: this.state.id,
+              parentName: this.state.parentName
+            }
           }}
         />
       );
@@ -126,7 +127,7 @@ class SignIn extends Component {
         {/* {this.rend} */}
         {/* <button type="submit">Log in</button>
         </form> */}
-
+        {/* 
         <div className="limiter">
           <div className="container-login100">
             <div className="wrap-login100">
@@ -174,20 +175,20 @@ class SignIn extends Component {
                     className="focus-input100"
                     data-placeholder="Password"
                   />
-                </div>
+                </div> */}
 
-                {/* <Link to="/addChild"> */}
-                <div className="container-login100-form-btn">
+        {/* <Link to="/addChild"> */}
+        {/* <div className="container-login100-form-btn">
                   <div className="wrap-login100-form-btn">
                     <div className="login100-form-bgbtn" />
                     <button className="login100-form-btn" type="submit">
                       Login
                     </button>
                   </div>
-                </div>
-                {/* </Link> */}
+                </div> */}
+        {/* </Link> */}
 
-                <div className="text-center p-t-115">
+        {/* <div className="text-center p-t-115">
                   <span className="txt1">Don’t have an account?</span>
 
                   <Link to="/signup">
@@ -199,7 +200,50 @@ class SignIn extends Component {
           </div>
         </div>
 
-        <div id="dropDownSelect1" />
+        <div id="dropDownSelect1" /> */}
+        <div className="wrapper1">
+          <div className="inner1">
+            <img
+              src="templets/images/image-1.png"
+              alt=""
+              className="image-11"
+            />
+            <form className="the_form" onSubmit={this.handleSubmit}>
+            {this.rend()}
+              <h3 className="h3_tag">New Account?</h3>
+              <div className="form-holder1234">
+                <span className="lnr lnr-envelope" />
+                <input
+                  type="email"
+                  className="form-control123"
+                  placeholder="Mail"
+                  value={this.state.email}
+                  onChange={this.handleUserChange}
+                  name="email"
+                />
+              </div>
+              <div className="form-holder1234">
+                <span className="lnr lnr-lock" />
+                <input
+                  type="password"
+                  className="form-control123"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.handlePassChange}
+                  name="pass"
+                />
+              </div>
+              <button className="button_class" type="submit">
+                <span>Register</span>
+              </button>
+            </form>
+            <img
+              src="templets\images\image-2.png"
+              alt=""
+              className="image-21"
+            />
+          </div>
+        </div>
       </div>
     );
   }
