@@ -149,12 +149,9 @@ export class Categories extends Component {
               </div>
               <div className="col-lg-4 col-md-6">
                 <div className="feature-item1">
-                  <img src="https://i.pinimg.com/originals/4e/50/93/4e5093e68297c27d6c2f45b0145271da.jpg"></img>
+                  <img src="https://i.pinimg.com/originals/4e/50/93/4e5093e68297c27d6c2f45b0145271da.jpg" />
                 </div>
               </div>
-              
-              
-              
             </div>
           </div>
         </section>
