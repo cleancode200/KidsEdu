@@ -41,8 +41,18 @@ class ChildViewSet(viewsets.ModelViewSet):
 
 
 class AchievementsViewSet(viewsets.ModelViewSet):
-    queryset = Achievements.objects.all()
-    permission_classes = [
-        permissions.AllowAny
-    ]
     serializer_class = AchievementsSerializer
+
+    def get_queryset(self):
+        queryset = Achievements.objects.all()
+        child_id = self.request.query_params.get("child_id", None)
+        language_letters_level = self.request.query_params.get(
+            "language_letters_level", None)
+        language_animals_level = self.request.query_params.get(
+            "language_animals_level", None)
+        language_planets_level = self.request.query_params.get(
+            "language_planets_level", None)
+        if(child_id):
+            return queryset.filter(language_letters_level=language_letters_level, language_animals_level=language_animals_level, language_planets_level=language_planets_level, child_id=child_id)
+        else:
+            return Achievements.objects.all()
