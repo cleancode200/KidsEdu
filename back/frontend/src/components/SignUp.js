@@ -229,7 +229,7 @@ export class SignUp extends Component {
                   className="image-11"
                 />
                 <div className="the_form">
-                  <h3 className="h3_tag">New Account?</h3>
+                  <h3 className="h3_tag">New Account</h3>
                   <div className="form-holder1234">
                     <span className="lnr lnr-user" />
                     <input
@@ -279,10 +279,23 @@ export class SignUp extends Component {
                       required
                     />
                   </div>
-                  <button className="button_class" onClick={this.onclick.bind(this)}>
-                    <span>Register</span>
+                  <button
+                    className="button_class"
+                    onClick={this.onclick.bind(this)}
+                  >
+                    <span>Creat An Account</span>
                   </button>
+                  <div>
+                    <br />
+                    <span className="txt1">
+                      If you already have an account
+                    </span>{" "}
+                    <Link to="/signin">
+                      <a className="txt2">LOGIN</a>{" "}
+                    </Link>
+                  </div>
                 </div>
+
                 <img
                   src="templets\images\image-2.png"
                   alt=""
