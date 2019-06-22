@@ -19,34 +19,10 @@ class Flipgame extends Component {
       child_info: this.props.location.state.child_info,
       totalTime: 0,
       shuffledCard: "",
-      level_img: this.props.location.state.img_url
+      level_img: this.props.location.state.img_url,
+      role: this.props.location.state.role
     };
   }
-
-  // Card = (cardNumber, id) => {
-  //   return (
-  //     <ReactCardFlip
-  //       isFlipped={this.state.isFlipped}
-  //       flipSpeedBackToFront={1}
-  //       flipSpeedFrontToBack={1}
-  //     >
-  //       <button
-  //         id={id}
-  //         className={`card card-front  ${cardNumber !== -1 ? "" : "hide-card"}`}
-  //         onClick={this.handleClick}
-  //         key="front"
-  //       />
-
-  //       <img
-  //         id={id}
-  //         className={`card card-back ${cardNumber !== -1 ? "" : "hide-card"}`}
-  //         onClick={this.handleClick}
-  //         key="back"
-  //         src={cardNumber}
-  //       />
-  //     </ReactCardFlip>
-  //   );
-  // };
 
   Header = () => {
     return (
@@ -212,7 +188,7 @@ class Flipgame extends Component {
 
     console.log(data);
     axios({
-      method: "POST",
+      method: "put",
       url: "/Ach/",
       data: data,
       config: { headers: { "Content-Type": "application/json" } }
