@@ -105,121 +105,190 @@ export class SignUp extends Component {
             //   {/* </Link> */}
             // </div>
 
-            <div>
-              <div className="limiter">
-                <div className="container-login100">
-                  <div className="wrap-login100">
-                    <span className="login100-form-title p-b-26">Welcome</span>
-                    <span className="login100-form-title p-b-48">
-                      <i className="zmdi zmdi-font" />
-                    </span>
+            // <div>
+            //   <div className="limiter">
+            //     <div className="container-login100">
+            //       <div className="wrap-login100">
+            //         <span className="login100-form-title p-b-26">Welcome</span>
+            //         <span className="login100-form-title p-b-48">
+            //           <i className="zmdi zmdi-font" />
+            //         </span>
 
-                    <div
-                      className="wrap-input100 validate-input"
-                      data-validate="Valid email is: a@b.c"
-                    >
-                      <input
-                        id="name"
-                        type="text"
-                        name="name"
-                        value={this.state.names}
-                        onChange={this.onchange.bind(this)}
-                        className="input100"
-                        required
-                      />
+            //         <div
+            //           className="wrap-input100 validate-input"
+            //           data-validate="Valid email is: a@b.c"
+            //         >
+            //           <input
+            //             id="name"
+            //             type="text"
+            //             name="name"
+            //             value={this.state.names}
+            //             onChange={this.onchange.bind(this)}
+            //             className="input100"
+            //             required
+            //           />
 
-                      <span
-                        className="focus-input100"
-                        data-placeholder="Name"
-                      />
-                    </div>
+            //           <span
+            //             className="focus-input100"
+            //             data-placeholder="Name"
+            //           />
+            //         </div>
 
-                    <div
-                      className="wrap-input100 validate-input"
-                      data-validate="Valid email is: a@b.c"
-                    >
-                      <input
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={this.state.emails}
-                        onChange={this.onchange.bind(this)}
-                        className="input100"
-                        required
-                      />
+            //         <div
+            //           className="wrap-input100 validate-input"
+            //           data-validate="Valid email is: a@b.c"
+            //         >
+            //           <input
+            //             id="email"
+            //             type="email"
+            //             name="email"
+            //             value={this.state.emails}
+            //             onChange={this.onchange.bind(this)}
+            //             className="input100"
+            //             required
+            //           />
 
-                      <span
-                        className="focus-input100"
-                        data-placeholder="Email"
-                      />
-                    </div>
+            //           <span
+            //             className="focus-input100"
+            //             data-placeholder="Email"
+            //           />
+            //         </div>
 
-                    <div
-                      className="wrap-input100 validate-input"
-                      data-validate="Enter password"
-                    >
-                      <span className="btn-show-pass">
-                        <i className="zmdi zmdi-eye" />
-                      </span>
+            //         <div
+            //           className="wrap-input100 validate-input"
+            //           data-validate="Enter password"
+            //         >
+            //           <span className="btn-show-pass">
+            //             <i className="zmdi zmdi-eye" />
+            //           </span>
 
-                      <input
-                        id="password"
-                        type="password"
-                        name="password"
-                        value={this.state.passwods}
-                        onChange={this.onchange.bind(this)}
-                        className="input100"
-                        required
-                      />
-                      <span
-                        className="focus-input100"
-                        data-placeholder="Password"
-                      />
-                    </div>
+            //           <input
+            //             id="password"
+            //             type="password"
+            //             name="password"
+            //             value={this.state.passwods}
+            //             onChange={this.onchange.bind(this)}
+            //             className="input100"
+            //             required
+            //           />
+            //           <span
+            //             className="focus-input100"
+            //             data-placeholder="Password"
+            //           />
+            //         </div>
 
-                    <div
-                      className="wrap-input100 validate-input"
-                      data-validate="Enter password"
-                    >
-                      <span className="btn-show-pass">
-                        <i className="zmdi zmdi-eye" />
-                      </span>
+            //         <div
+            //           className="wrap-input100 validate-input"
+            //           data-validate="Enter password"
+            //         >
+            //           <span className="btn-show-pass">
+            //             <i className="zmdi zmdi-eye" />
+            //           </span>
 
-                      <input
-                        id="confirm_password"
-                        type="password"
-                        className="input100"
-                        required
-                      />
-                      <span
-                        className="focus-input100"
-                        data-placeholder="Rewrite - password"
-                      />
-                    </div>
+            //           <input
+            //             id="confirm_password"
+            //             type="password"
+            //             className="input100"
+            //             required
+            //           />
+            //           <span
+            //             className="focus-input100"
+            //             data-placeholder="Rewrite - password"
+            //           />
+            //         </div>
 
-                    <div className="container-login100-form-btn">
-                      <div className="wrap-login100-form-btn">
-                        <div className="login100-form-bgbtn" />
-                        <button
-                          className="login100-form-btn"
-                          onClick={this.onclick.bind(this)}
-                        >
-                          Register
-                        </button>
-                      </div>
-                    </div>
-                    <div className="text-center p-t-115">
-                      <span className="txt1">Don’t have an account?</span>
+            //         <div className="container-login100-form-btn">
+            //           <div className="wrap-login100-form-btn">
+            //             <div className="login100-form-bgbtn" />
+            //             <button
+            //               className="login100-form-btn"
+            //               onClick={this.onclick.bind(this)}
+            //             >
+            //               Register
+            //             </button>
+            //           </div>
+            //         </div>
+            //         <div className="text-center p-t-115">
+            //           <span className="txt1">Don’t have an account?</span>
 
-                      <Link to="/signin">
-                        <a className="txt2">LOGIN</a>
-                      </Link>
-                    </div>
+            //           <Link to="/signin">
+            //             <a className="txt2">LOGIN</a>
+            //           </Link>
+            //         </div>
+            //       </div>
+            //     </div>
+            //   </div>
+
+            //   <div id="dropDownSelect1" />
+            // </div>
+            <div className="wrapper1">
+              <div className="inner1">
+                <img
+                  src="templets/images/image-1.png"
+                  alt=""
+                  className="image-11"
+                />
+                <div className="the_form">
+                  <h3 className="h3_tag">New Account?</h3>
+                  <div className="form-holder1234">
+                    <span className="lnr lnr-user" />
+                    <input
+                      id="name"
+                      name="name"
+                      value={this.state.names}
+                      onChange={this.onchange.bind(this)}
+                      type="text"
+                      className="form-control123"
+                      placeholder="Username"
+                      required
+                    />
                   </div>
+                  <div className="form-holder1234">
+                    <span className="lnr lnr-envelope" />
+                    <input
+                      id="email"
+                      name="email"
+                      value={this.state.emails}
+                      onChange={this.onchange.bind(this)}
+                      type="text"
+                      className="form-control123"
+                      placeholder="Mail"
+                      required
+                    />
+                  </div>
+                  <div className="form-holder1234">
+                    <span className="lnr lnr-lock" />
+                    <input
+                      id="password"
+                      name="password"
+                      value={this.state.passwods}
+                      onChange={this.onchange.bind(this)}
+                      type="password"
+                      className="form-control123"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <div className="form-holder1234">
+                    <span className="lnr lnr-lock" />
+                    <input
+                      id="confirm_password"
+                      type="password"
+                      className="form-control123"
+                      placeholder="Confirm Password"
+                      required
+                    />
+                  </div>
+                  <button className="button_class" onClick={this.onclick.bind(this)}>
+                    <span>Register</span>
+                  </button>
                 </div>
+                <img
+                  src="templets\images\image-2.png"
+                  alt=""
+                  className="image-21"
+                />
               </div>
-
-              <div id="dropDownSelect1" />
             </div>
           )}
         </div>

@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 
+ const divStyle = {
+  position: "absolute", 
+  left:" -5000px",
+  
+
+}
+
 export class Main extends Component {
+  
   render() {
     return (
       <div>
-        {/* <!-- Navigation --> */}
-        <nav className="navbar navbar-light bg-light static-top">
+        {/* <nav className="navbar navbar-light bg-light static-top">
           <div className="container">
             <a className="navbar-brand" href="#">
               Kids Edu
@@ -17,7 +24,7 @@ export class Main extends Component {
           </div>
         </nav>
 
-        {/* <!-- Masthead --> */}
+      
         <header className="masthead text-white text-center">
           <div className="overlay" />
           <div className="container">
@@ -30,18 +37,6 @@ export class Main extends Component {
               <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
                 <form>
                   <div className="form-row">
-                    {/* <div className="col-12 col-md-9 mb-2 mb-md-0"> */}
-                    {/* <input
-                        type="email"
-                        className="form-control form-control-lg"
-                        placeholder="Enter your email..."
-                      /> */}
-
-                    {/* </div> */}
-
-                    {/* <Link to="/signin">
-                      <button>Sign In</button>
-                    </Link> */}
                     <div className="col-12 col-md-3">
                       <Link to="/signup">
                         <button
@@ -57,236 +52,420 @@ export class Main extends Component {
               </div>
             </div>
           </div>
-        </header>
+        </header> */}
+        
 
-        {/* <!-- Icons Grid --> */}
-        <section className="features-icons bg-light text-center">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-4">
-                <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                  <div className="features-icons-icon d-flex">
-                    <i className="icon-screen-desktop m-auto text-primary" />
-                  </div>
-                  <h3>Fully Responsive</h3>
-                  <p className="lead mb-0">
-                    This theme will look great on any device, no matter the
-                    size!
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                  <div className="features-icons-icon d-flex">
-                    <i className="icon-layers m-auto text-primary" />
-                  </div>
-                  <h3>Bootstrap 4 Ready</h3>
-                  <p className="lead mb-0">
-                    Featuring the latest build of the new Bootstrap 4 framework!
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="features-icons-item mx-auto mb-0 mb-lg-3">
-                  <div className="features-icons-icon d-flex">
-                    <i className="icon-check m-auto text-primary" />
-                  </div>
-                  <h3>Easy to Use</h3>
-                  <p className="lead mb-0">
-                    Ready to use with your own content, or customize the source
-                    files!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+         {/* /////////////////////////
+         /////////////////////////////////
+         ///////////////////////////////////////////
+         /////////////////////////////////////////////////
+         ///////////////////////////////////////////////////////////
+         ///////////////////////////////////////////////////////////////////
+         ///////////////////////////////////////////////////////////////////////////// */}
 
-        {/* <!-- Image Showcases --> */}
-        <section className="showcase">
-          <div className="container-fluid p-0">
-            <div className="row no-gutters">
-              <div
-                className="col-lg-6 order-lg-2 text-white showcase-img"
-                // style="{{background-image: url('img/bg-showcase-1.jpg');}}"
-              />
-              <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Fully Responsive Design</h2>
-                <p className="lead mb-0">
-                  When you use a theme created by Start Bootstrap, you know that
-                  the theme will look great on any device, whether it's a phone,
-                  tablet, or desktop the page will behave responsively!
-                </p>
-              </div>
-            </div>
-            <div className="row no-gutters">
-              <div
-                className="col-lg-6 text-white showcase-img"
-                // style="background-image: url('img/bg-showcase-2.jpg');"
-              />
-              <div className="col-lg-6 my-auto showcase-text">
-                <h2>Updated For Bootstrap 4</h2>
-                <p className="lead mb-0">
-                  Newly improved, and full of great utility classNamees,
-                  Bootstrap 4 is leading the way in mobile responsive web
-                  development! All of the themes on Start Bootstrap are now
-                  using Bootstrap 4!
-                </p>
-              </div>
-            </div>
-            <div className="row no-gutters">
-              <div
-                className="col-lg-6 order-lg-2 text-white showcase-img"
-                // style="background-image: url('img/bg-showcase-3.jpg');"
-              />
-              <div className="col-lg-6 order-lg-1 my-auto showcase-text">
-                <h2>Easy to Use &amp; Customize</h2>
-                <p className="lead mb-0">
-                  Landing Page is just HTML and CSS with a splash of SCSS for
-                  users who demand some deeper customization options. Out of the
-                  box, just add your content and images, and your new landing
-                  page will be ready to go!
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* <!-- Testimonials --> */}
-        <section className="testimonials text-center bg-light">
-          <div className="container">
-            <h2 className="mb-5">What people are saying...</h2>
-            <div className="row">
-              <div className="col-lg-4">
-                <div className="testimonial-item mx-auto mb-5 mb-lg-0">
-                  <img
-                    className="img-fluid rounded-circle mb-3"
-                    src="img/testimonials-1.jpg"
-                    alt=""
-                  />
-                  <h5>Margaret E.</h5>
-                  <p className="font-weight-light mb-0">
-                    "This is fantastic! Thanks so much guys!"
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="testimonial-item mx-auto mb-5 mb-lg-0">
-                  <img
-                    className="img-fluid rounded-circle mb-3"
-                    src="img/testimonials-2.jpg"
-                    alt=""
-                  />
-                  <h5>Fred S.</h5>
-                  <p className="font-weight-light mb-0">
-                    "Bootstrap is amazing. I've been using it to create lots of
-                    super nice landing pages."
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="testimonial-item mx-auto mb-5 mb-lg-0">
-                  <img
-                    className="img-fluid rounded-circle mb-3"
-                    src="img/testimonials-3.jpg"
-                    alt=""
-                  />
-                  <h5>Sarah W.</h5>
-                  <p className="font-weight-light mb-0">
-                    "Thanks so much for making these free resources available to
-                    us!"
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+         
 
-        {/* <!-- Call to Action --> */}
-        <section className="call-to-action text-white text-center">
-          <div className="overlay" />
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-9 mx-auto">
-                <h2 className="mb-4">Ready to get started? Sign up now!</h2>
-              </div>
-              <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                <form>
-                  <div className="form-row">
-                    <div className="col-12 col-md-9 mb-2 mb-md-0">
-                      <input
-                        type="email"
-                        className="form-control form-control-lg"
-                        placeholder="Enter your email..."
-                      />
-                    </div>
-                    <div className="col-12 col-md-3">
-                      <Route>
-                        <Link to="/signup">
-                          <button
-                            type="submit"
-                            className="btn btn-block btn-lg btn-primary"
-                          >
-                            Sign up!
-                          </button>
-                        </Link>
-                      </Route>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* <!-- Footer --> */}
-        <footer className="footer bg-light">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6 h-100 text-center text-lg-left my-auto">
-                <ul className="list-inline mb-2">
-                  <li className="list-inline-item">
-                    <a href="#">About</a>
-                  </li>
-                  <li className="list-inline-item">&sdot;</li>
-                  <li className="list-inline-item">
-                    <a href="#">Contact</a>
-                  </li>
-                  <li className="list-inline-item">&sdot;</li>
-                  <li className="list-inline-item">
-                    <a href="#">Terms of Use</a>
-                  </li>
-                  <li className="list-inline-item">&sdot;</li>
-                  <li className="list-inline-item">
-                    <a href="#">Privacy Policy</a>
-                  </li>
-                </ul>
-                <p className="text-muted small mb-4 mb-lg-0">
-                  &copy; Your Website 2019. All Rights Reserved.
-                </p>
-              </div>
-              <div className="col-lg-6 h-100 text-center text-lg-right my-auto">
-                <ul className="list-inline mb-0">
-                  <li className="list-inline-item mr-3">
-                    <a href="#">
-                      <i className="fab fa-facebook fa-2x fa-fw" />
-                    </a>
-                  </li>
-                  <li className="list-inline-item mr-3">
-                    <a href="#">
-                      <i className="fab fa-twitter-square fa-2x fa-fw" />
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="#">
-                      <i className="fab fa-instagram fa-2x fa-fw" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
+         <header id="header">
+		<div className="container">
+
+			<div className="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="index.html"><img src="homepageTemplete/img/logo.png" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul className="nav-menu">
+						<li className="menu-active"><a href="index.html">Home</a></li>
+						<li>
+              <Link to="/signup">
+              <a>Register</a>
+              </Link>
+              </li>
+						<li>
+              <Link to="/signin">
+              <a>Login</a>
+            </Link>
+              </li>
+						{/* <li className="menu-has-children"><a href="">Pages</a>
+							<ul>
+								<li><a href="elements.html">Elements</a></li>
+							</ul>
+						</li> */}
+						{/* <li className="menu-has-children"><a href="">Blog</a>
+							<ul>
+								<li><a href="blog-home.html">Blog Home</a></li>
+								<li><a href="blog-single.html">Blog Details</a></li>
+							</ul>
+						</li> */}
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+        {/* <!-- #nav-menu-container --> */}
+			</div>
+		</div>
+	</header>
+	{/* <!-- End Header Area --> */}
+
+
+	{/* <!-- Start Banner Area --> */}
+	<section className="home-banner-area relative">
+		<div className="container">
+			<div className="row fullscreen d-flex align-items-center justify-content-center">
+				<div className="banner-content col-lg-8 col-md-12">
+					<h1 className="wow fadeIn" data-wow-duration="4s">EduKid <br/>Learn While Playing</h1>
+					<p className="text-white">
+          We aim to teach our childs by letting them play, without realizing that they are learning.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div className="rocket-img">
+			<img src="homepageTemplete/img/rocket.png" alt=""/>
+		</div>
+	</section>
+	{/* <!-- End Banner Area --> */}
+
+
+	{/* <!-- Start About Area --> */}
+	<section className="about-area section-gap">
+		<div className="container">
+			<div className="row align-items-center justify-content-center">
+				<div className="col-lg-5 col-md-6 about-left">
+					<img className="img-fluid" src="homepageTemplete/img/about.jpg" alt="" />
+				</div>
+				<div className="offset-lg-1 col-lg-6 offset-md-0 col-md-12 about-right">
+					<h1>
+						Over 22 Country Around <br/> the world
+					</h1>
+					<div className="wow fadeIn" data-wow-duration="1s">
+						<p>
+							[fill this paragraph long one]
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{/* <!-- End About Area --> */}
+
+
+	{/* <!-- Start Courses Area --> */}
+	<section className="courses-area section-gap">
+		<div className="container">
+			<div className="row align-items-center">
+				<div className="col-lg-5 about-right">
+					<h1>
+						This is Why <br/> We have Solid Idea
+					</h1>
+					<div className="wow fadeIn" data-wow-duration="1s">
+						<p>
+							There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s exciting to think
+							about setting up your own viewing station. In the life of any aspiring astronomer that it is time to buy that first
+							telescope. It’s exciting to think about setting up your own viewing station.
+						</p>
+					</div>
+					<a href="courses.html" className="primary-btn white">Explore Courses</a>
+				</div>
+				<div className="offset-lg-1 col-lg-6">
+					<div className="courses-right">
+					[this area was for the table ]
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{/* <!-- End Courses Area --> */}
+
+
+	{/* <!--Start Feature Area --> */}
+	<section className="feature-area">
+		<div className="container">
+			<div className="row justify-content-center">
+				<div className="col-lg-8">
+					<div className="section-title text-center">
+						<h1>Features That Make Us Hero</h1>
+						<p>
+							If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for
+							as low as $.17 each.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div className="feature-inner row">
+				<div className="col-lg-4 col-md-6">
+					<div className="feature-item">
+						<i className="ti-crown"></i>
+						<h4>[Title]</h4>
+						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+							<p>
+								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div className="col-lg-4 col-md-6">
+					<div className="feature-item">
+						<i className="ti-briefcase"></i>
+						<h4>[Title]</h4>
+						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+							<p>
+								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div className="col-lg-4 col-md-6">
+					<div className="feature-item">
+						<i className="ti-medall-alt"></i>
+						<h4>[Title]</h4>
+						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+							<p>
+								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div className="col-lg-4 col-md-6">
+					<div className="feature-item">
+						<i className="ti-key"></i>
+						<h4>[Title]</h4>
+						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+							<p>
+								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div className="col-lg-4 col-md-6">
+					<div className="feature-item">
+						<i className="ti-files"></i>
+						<h4>[Title]</h4>
+						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+							<p>
+								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div className="col-lg-4 col-md-6">
+					<div className="feature-item">
+						<i className="ti-headphone-alt"></i>
+						<h4>[Title]</h4>
+						<div className="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+							<p>
+								Lorem ipsum dolor sit amet consec tetur adipisicing elit, sed do eiusmod tempor incididunt labore.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{/* <!-- End Feature Area --> */}
+
+
+	{/* <!-- Start Faculty Area --> */}
+	<section className="faculty-area section-gap">
+		<div className="container">
+			<div className="row justify-content-center">
+				<div className="col-lg-8">
+					<div className="section-title text-center">
+						<h1>Members</h1>
+						<p>
+							[fill This paragraph]
+						</p>
+					</div>
+				</div>
+			</div>
+			<div className="row justify-content-center d-flex align-items-center">
+				<div className="col-lg-3 col-md-6 col-sm-12 single-faculty">
+					<div className="thumb d-flex justify-content-center">
+						<img className="img-fluid" src="homepageTemplete/img/faculty/f1.jpg" alt=""/>
+					</div>
+					<div className="meta-text text-center">
+						<h4>Amer Alkharashgah</h4>
+						<p className="designation">Sr. Faculty Data Science</p>
+						<div className="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+							<p>
+								If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
+							</p>
+						</div>
+						<div className="align-items-center justify-content-center d-flex">
+							<a href="#"><i className="fa fa-facebook"></i></a>
+							<a href="#"><i className="fa fa-twitter"></i></a>
+							<a href="#"><i className="fa fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+				<div className="col-lg-3 col-md-6 col-sm-12 single-faculty">
+					<div className="thumb d-flex justify-content-center">
+						<img className="img-fluid" src="homepageTemplete/img/faculty/f2.jpg" alt=""/>
+					</div>
+					<div className="meta-text text-center">
+						<h4>Abdulrohman</h4>
+						<p className="designation">Sr. Faculty Data Science</p>
+						<div className="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+							<p>
+								If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
+							</p>
+						</div>
+						<div className="align-items-center justify-content-center d-flex">
+							<a href="#"><i className="fa fa-facebook"></i></a>
+							<a href="#"><i className="fa fa-twitter"></i></a>
+							<a href="#"><i className="fa fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+				<div className="col-lg-3 col-md-6 col-sm-12 single-faculty">
+					<div className="thumb d-flex justify-content-center">
+						<img className="img-fluid" src="homepageTemplete/img/faculty/f3.jpg" alt=""/>
+					</div>
+					<div className="meta-text text-center">
+						<h4>Ahmad Aldarkashli</h4>
+						<p className="designation">Sr. Faculty Data Science</p>
+						<div className="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+							<p>
+								If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
+							</p>
+						</div>
+						<div className="align-items-center justify-content-center d-flex">
+							<a href="#"><i className="fa fa-facebook"></i></a>
+							<a href="#"><i className="fa fa-twitter"></i></a>
+							<a href="#"><i className="fa fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+				<div className="col-lg-3 col-md-6 col-sm-12 single-faculty">
+					<div className="thumb d-flex justify-content-center">
+						<img className="img-fluid" src="homepageTemplete/img/faculty/f4.jpg" alt=""/>
+					</div>
+					<div className="meta-text text-center">
+						<h4>Yousef alshabah</h4>
+						<p className="designation">Sr. Faculty Data Science</p>
+						<div className="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".7s">
+							<p>
+								If you are looking at blank cassettes on the web, you may be very confused at the difference in price.
+							</p>
+						</div>
+						<div className="align-items-center justify-content-center d-flex">
+							<a href="#"><i className="fa fa-facebook"></i></a>
+							<a href="#"><i className="fa fa-twitter"></i></a>
+							<a href="#"><i className="fa fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{/* <!-- End Faculty Area --> */}
+
+
+	{/* <!-- Start Testimonials Area --> */}
+
+	{/* <!-- End Testimonials Area --> */}
+
+
+	{/* <!-- Start Footer Area --> */}
+	<footer className="footer-area section-gap">
+		<div className="container">
+			<div className="row">
+				<div className="col-lg-2 col-md-6 single-footer-widget">
+					<h4>Top Products</h4>
+					<ul>
+						<li><a href="#">Managed Website</a></li>
+						<li><a href="#">Manage Reputation</a></li>
+						<li><a href="#">Power Tools</a></li>
+						<li><a href="#">Marketing Service</a></li>
+					</ul>
+				</div>
+				<div className="col-lg-2 col-md-6 single-footer-widget">
+					<h4>Quick Links</h4>
+					<ul>
+						<li><a href="#">Jobs</a></li>
+						<li><a href="#">Brand Assets</a></li>
+						<li><a href="#">Investor Relations</a></li>
+						<li><a href="#">Terms of Service</a></li>
+					</ul>
+				</div>
+				<div className="col-lg-2 col-md-6 single-footer-widget">
+					<h4>Features</h4>
+					<ul>
+						<li><a href="#">Jobs</a></li>
+						<li><a href="#">Brand Assets</a></li>
+						<li><a href="#">Investor Relations</a></li>
+						<li><a href="#">Terms of Service</a></li>
+					</ul>
+				</div>
+				<div className="col-lg-2 col-md-6 single-footer-widget">
+					<h4>Resources</h4>
+					<ul>
+						<li><a href="#">Guides</a></li>
+						<li><a href="#">Research</a></li>
+						<li><a href="#">Experts</a></li>
+						<li><a href="#">Agencies</a></li>
+					</ul>
+				</div>
+				<div className="col-lg-4 col-md-6 single-footer-widget">
+					<h4>Newsletter</h4>
+					<p>You can trust us. we only send promo offers,</p>
+					<div className="form-wrap" id="mc_embed_signup">
+						<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+						 method="get" className="form-inline">
+							<input className="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '"
+							 required="" type="email" />
+							<button className="click-btn btn btn-default"><span className="lnr lnr-arrow-right"></span></button>
+							<div  style={divStyle}>
+								<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text" />
+							</div>
+
+							<div className="info"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div className="footer-bottom row align-items-center">
+				<p className="footer-text m-0 col-lg-8 col-md-12">
+          {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i className="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+{/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
+</p>
+				<div className="col-lg-4 col-md-12 footer-social">
+					<a href="#"><i className="fa fa-facebook"></i></a>
+					<a href="#"><i className="fa fa-twitter"></i></a>
+					<a href="#"><i className="fa fa-dribbble"></i></a>
+					<a href="#"><i className="fa fa-behance"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	{/* <!-- End Footer Area --> */}
+
+	{/* <!-- ####################### Start Scroll to Top Area ####################### --> */}
+	<div id="back-top">
+		<a title="Go to Top" href="#"></a>
+	</div>
+	{/* <!-- ####################### End Scroll to Top Area ####################### -->    */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     );
   }
