@@ -5,6 +5,7 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+
 import axios from "axios";
 export class Game extends Component {
   constructor(props) {
