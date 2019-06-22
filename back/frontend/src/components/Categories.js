@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect, NavLink } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import axios from "axios";
 
 export class Categories extends Component {
@@ -30,16 +30,17 @@ export class Categories extends Component {
     axios.get("/Media/?role=" + role).then(res => {
       // console.log(res.data[0].img_url);
       // console.log(res.data.length);
-      console.log(res.data);
+      // console.log(res.data);
       var urlsArr = that.state.urls;
-      console.log(res.data.length);
+      console.log(res.data);
       for (let i = 0; i < res.data.length; i++) {
         urlsArr.push(res.data[i].img_url);
       }
+
       that.setState({
         urls: urlsArr
       });
-      console.log(that.state.child_info);
+      // console.log(that.state.child_info);
     });
   }
   render() {
@@ -47,6 +48,53 @@ export class Categories extends Component {
     // console.log(redirect);
     return (
       <div>
+        <header id="headerr">
+          <div className="container">
+            <div className="row align-items-center justify-content-between d-flex">
+              <Link to="/">
+                <div id="logo">
+                  {/* <a href="index.html"> */}
+                  <img src="homepageTemplete/img/logo.png" alt="" title="" />
+                  {/* </a> */}
+                </div>
+              </Link>
+              <nav id="nav-menu-container">
+                <ul className="nav-menu">
+                  <li>
+                    <Link to="/">
+                      <a>Home</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/signup">
+                      <a>Register</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/signin">
+                      <a>Login</a>
+                    </Link>
+                  </li>
+                  {/* <li className="menu-has-children"><a href="">Pages</a>
+							<ul>
+								<li><a href="elements.html">Elements</a></li>
+							</ul>
+						</li> */}
+                  {/* <li className="menu-has-children"><a href="">Blog</a>
+							<ul>
+								<li><a href="blog-home.html">Blog Home</a></li>
+								<li><a href="blog-single.html">Blog Details</a></li>
+							</ul>
+						</li> */}
+                  <li>
+                    <a href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+              {/* <!-- #nav-menu-container --> */}
+            </div>
+          </div>
+        </header>
         {/* <div className="profile_button_div">
           <NavLink
             to={{
@@ -117,7 +165,7 @@ export class Categories extends Component {
             <div className="feature-inner row">
               <div className="col-lg-4 col-md-6">
                 <div className="feature-item1">
-                  <i className="ti-crown" />
+                  {/* <i className="ti-crown" />
                   <h4>[Title]</h4>
                   <div
                     className="wow fadeIn"
@@ -128,12 +176,13 @@ export class Categories extends Component {
                       Lorem ipsum dolor sit amet consec tetur adipisicing elit,
                       sed do eiusmod tempor incididunt labore.
                     </p>
-                  </div>
+                  </div> */}
+                  <img src={this.state.urls[0]} />
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
                 <div className="feature-item1">
-                  <i className="ti-briefcase" />
+                  {/* <i className="ti-briefcase" />
                   <h4>[Title]</h4>
                   <div
                     className="wow fadeIn"
@@ -143,18 +192,51 @@ export class Categories extends Component {
                     <p>
                       Lorem ipsum dolor sit amet consec tetur adipisicing elit,
                       sed do eiusmod tempor incididunt labore.
-                    </p>
-                  </div>
+                    </p> */}
+                  {/* </div> */}
+                  <img src={this.state.urls[0]} />
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
                 <div className="feature-item1">
-                  <img src="https://i.pinimg.com/originals/4e/50/93/4e5093e68297c27d6c2f45b0145271da.jpg" />
+                  <img src={this.state.urls[0]} />
                 </div>
               </div>
             </div>
           </div>
         </section>
+        {/* Footer start */}
+        <footer className="footer-areaa section-gap">
+          <div className="container">
+            <div className="footer-bottom row align-items-center">
+              <p className="footer-text m-0 col-lg-8 col-md-12">
+                {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All
+                rights reserved | This template is made with{" "}
+                <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}
+                <a href="https://colorlib.com" target="_blank">
+                  EduKids Team
+                </a>
+                {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
+              </p>
+              <div className="col-lg-4 col-md-12 footer-social">
+                <a href="#">
+                  <i className="fa fa-facebook" />
+                </a>
+                <a href="#">
+                  <i className="fa fa-twitter" />
+                </a>
+                <a href="#">
+                  <i className="fa fa-dribbble" />
+                </a>
+                <a href="#">
+                  <i className="fa fa-behance" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
