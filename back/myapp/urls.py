@@ -4,10 +4,11 @@ from .api import MediaViewSet
 from .api import ChildViewSet
 from .api import AchievementsViewSet
 
-router=routers.DefaultRouter()
-router.register('Parent',ParentViewSet,'myapp')
-router.register('Media',MediaViewSet,'myapp')
-router.register('Child',ChildViewSet,'myapp')
-router.register('Ach',AchievementsViewSet,'myapp')
+router = routers.DefaultRouter()
+router.register('Parent', ParentViewSet, 'myapp')
+router.register('Media', MediaViewSet, 'myapp')
+router.register('Child', ChildViewSet, 'myapp')
+router.register('Ach', AchievementsViewSet, 'myapp')
+# router.register('Ach/<int:pk>', AchievementsViewSet, 'myapp')
 
-urlpatterns=router.urls
+urlpatterns = router.urls

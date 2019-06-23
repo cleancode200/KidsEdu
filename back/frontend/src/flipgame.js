@@ -176,7 +176,6 @@ class Flipgame extends Component {
     var endTime = Date.now();
     var startTime = this.state.startTime;
     this.state.totalTime = Math.ceil((endTime - startTime) / 1000);
-
     var data = {
       child_id: this.state.child_info.id,
       language_letters_level: this.state.level,
@@ -185,22 +184,63 @@ class Flipgame extends Component {
       total_time: this.state.totalTime,
       clicks: this.state.countclicks
     };
+    if (this.state.role === "animal") {
+      data.language_letters_level = 0;
+      data.language_planets_level = 0;
+      data.language_animals_level = this.state.level;
+    } else if (this.state.role === "plant") {
+      data.language_letters_level = 0;
+      data.language_planets_level = this.state.level;
+      data.language_animals_level = 0;
+    }
 
-    console.log(data);
-    axios({
-      method: "put",
-      url: "/Ach/",
-      data: data,
-      config: { headers: { "Content-Type": "application/json" } }
-    })
-      .then(function(response) {
-        //handle success
-        return console.log(response.statusText);
-      })
-      .catch(function(response) {
-        //handle error
-        console.log("not created");
+    axios
+      .get(
+        `/Ach/?language_letters_level=${
+          data.language_letters_level
+        }&language_animals_level=${
+          data.language_animals_level
+        }&language_planets_level=${data.language_planets_level}&child_id=${
+          data.child_id
+        }`
+      )
+      .then(function(res) {
+        console.log(res.data);
+        if (!res.data.length) {
+          axios({
+            method: "POST",
+            url: "/Ach/",
+            data: data,
+            config: { headers: { "Content-Type": "application/json" } }
+          })
+            .then(function(response) {
+              //handle success
+              return console.log(response.statusText);
+            })
+            .catch(function(response) {
+              //handle error
+              console.log("not created");
+            });
+        } else {
+          console.log(res.data[0].id);
+          axios({
+            method: "PUT",
+            url: `/Ach/${res.data[0].id}/`,
+            data: data,
+            config: { headers: { "Content-Type": "application/json" } }
+          })
+            .then(function(response) {
+              //handle success
+              console.log(response.data);
+              return console.log("updated");
+            })
+            .catch(function(response) {
+              //handle error
+              console.log("not created");
+            });
+        }
       });
+    console.log(data);
 
     //change the level
     this.state.level++;
@@ -228,6 +268,7 @@ class Flipgame extends Component {
   };
 
   componentWillMount() {
+    console.log(this.state.level_img);
     if (this.state.shuffledCard === "") {
       this.state.shuffledCard = this.duplicateCard().sort(
         () => Math.random() - 0.5
