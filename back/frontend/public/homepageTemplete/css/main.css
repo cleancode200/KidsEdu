@@ -1581,6 +1581,8 @@ h1, h2, h3, h4, h5, h6 {
 
   #header #logo img {
     max-height: 40px; } }
+<<<<<<< HEAD
+=======
 
     /* the next header in Category page*/
     
@@ -1626,6 +1628,7 @@ h1, h2, h3, h4, h5, h6 {
     
       #headerr #logo img {
         max-height: 40px; } }
+>>>>>>> ddd73fab0a5f746cdc91dfd8ec08bc32b7dc4cd1
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -2902,6 +2905,8 @@ body.mobile-nav-active #mobile-nav-toggle {
         -moz-transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
         transition: all 0.3s ease 0s; }
+<<<<<<< HEAD
+=======
 /* second footer in Categorey page  */
 
 
@@ -2952,5 +2957,6 @@ body.mobile-nav-active #mobile-nav-toggle {
         -moz-transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
         transition: all 0.3s ease 0s; }
+>>>>>>> ddd73fab0a5f746cdc91dfd8ec08bc32b7dc4cd1
 
 /*# sourceMappingURL=main.css.map */

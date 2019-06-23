@@ -12,7 +12,8 @@ export class subCategores extends Component {
       redirect1: false,
       redirect2: false,
       redirect3: false,
-      child_info: this.props.location.state.child_info
+      child_info: this.props.location.state.child_info,
+      role: ""
     };
   }
   goToSubCategories1(e) {
@@ -26,13 +27,14 @@ export class subCategores extends Component {
       }
       this.setState({
         redirect1: true,
-        game_img_urls: urlsArr.slice()
+        game_img_urls: urlsArr.slice(),
+        role: role
       });
     });
   }
   goToSubCategories2(e) {
     console.log("going to subCategories");
-    var role = "letter";
+    var role = "animal";
     axios.get("/Media/?role=" + role).then(res => {
       var urlsArr = [];
       for (let i = 0; i < res.data.length; i++) {
@@ -40,12 +42,13 @@ export class subCategores extends Component {
       }
       this.setState({
         redirect2: true,
-        game_img_urls: urlsArr
+        game_img_urls: urlsArr,
+        role: role
       });
     });
   }
   goToSubCategories3(e) {
-    var role = "letter";
+    var role = "plant";
     axios.get("/Media/?role=" + role).then(res => {
       // axios.get("/Media").then(response => {
       //   console.log(JSON.stringify(response));
@@ -56,7 +59,8 @@ export class subCategores extends Component {
       }
       this.setState({
         redirect3: true,
-        game_img_urls: urlsArr
+        game_img_urls: urlsArr,
+        role: role
       });
     });
   }
@@ -98,7 +102,8 @@ export class subCategores extends Component {
                 pathname: "/flipgame",
                 state: {
                   child_info: this.state.child_info,
-                  img_url: this.state.game_img_urls
+                  img_url: this.state.game_img_urls,
+                  role: this.state.role
                 }
               }}
             />
@@ -116,7 +121,8 @@ export class subCategores extends Component {
                 pathname: "/flipgame",
                 state: {
                   child_info: this.state.child_info,
-                  img_url: this.state.game_img_urls
+                  img_url: this.state.game_img_urls,
+                  role: this.state.role
                 }
               }}
             />
@@ -134,7 +140,8 @@ export class subCategores extends Component {
                 pathname: "/flipgame",
                 state: {
                   child_info: this.state.child_info,
-                  img_url: this.state.game_img_urls
+                  img_url: this.state.game_img_urls,
+                  role: this.state.role
                 }
               }}
             />
