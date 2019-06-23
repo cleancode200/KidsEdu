@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect, Link, NavLink } from "react-router-dom";
 import axios from "axios";
 
 export class Categories extends Component {
@@ -64,6 +64,21 @@ export class Categories extends Component {
                     <Link to="/">
                       <a>Home</a>
                     </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to={{
+                        pathname: "/Profile",
+                        state: {
+                          child_info: this.state.child_info,
+                          parentName: this.state.parentName,
+                          childsName: this.state.childsName
+                        }
+                      }}
+                    />
+                    {/* <Link to="/">
+                      <a>Profile</a>
+                    </Link> */}
                   </li>
                   <li>
                     <Link to="/signup">
@@ -177,7 +192,20 @@ export class Categories extends Component {
                       sed do eiusmod tempor incididunt labore.
                     </p>
                   </div> */}
-                  <img src={this.state.urls[0]} />
+                  <img
+                    src={this.state.urls[0]}
+                    onClick={this.goToSubCategories.bind(this)}
+                  />
+                  {redirect ? (
+                    <Redirect
+                      to={{
+                        pathname: "/subCategores",
+                        state: {
+                          child_info: this.state.child_info
+                        }
+                      }}
+                    />
+                  ) : null}
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
@@ -194,12 +222,38 @@ export class Categories extends Component {
                       sed do eiusmod tempor incididunt labore.
                     </p> */}
                   {/* </div> */}
-                  <img src={this.state.urls[0]} />
+                  <img
+                    src={this.state.urls[0]}
+                    onClick={this.goToSubCategories.bind(this)}
+                  />
+                  {redirect ? (
+                    <Redirect
+                      to={{
+                        pathname: "/subCategores",
+                        state: {
+                          child_info: this.state.child_info
+                        }
+                      }}
+                    />
+                  ) : null}
                 </div>
               </div>
               <div className="col-lg-4 col-md-6">
                 <div className="feature-item1">
-                  <img src={this.state.urls[0]} />
+                  <img
+                    src={this.state.urls[0]}
+                    onClick={this.goToSubCategories.bind(this)}
+                  />
+                  {redirect ? (
+                    <Redirect
+                      to={{
+                        pathname: "/subCategores",
+                        state: {
+                          child_info: this.state.child_info
+                        }
+                      }}
+                    />
+                  ) : null}
                 </div>
               </div>
             </div>
