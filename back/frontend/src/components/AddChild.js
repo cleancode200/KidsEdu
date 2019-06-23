@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Modal from "react-awesome-modal";
 import "./styles/AddChild.css";
-
 export class AddChild extends Component {
   constructor(props) {
     super(props);
@@ -151,8 +150,8 @@ export class AddChild extends Component {
   render() {
     var redirect = this.state.redirect1;
     return (
-      <div className="wrapper1">
-        <div className="inner1">
+      <div className="wrapperAddChild">
+        <div className="inner1AddChild">
           <Modal
             visible={this.state.AddChild}
             width="390px"
@@ -160,22 +159,21 @@ export class AddChild extends Component {
             effect="fadeInDown"
             onClickAway={() => this.closemodal("AddChild")}
           >
-            <div className="inner1">
+            <div className="inner1AddChild">
               <img
                 src="templets/images/image-1.png"
                 alt=""
                 className="image-11"
               />
 
-              <div className="wrap-login100">
-                <form className="login100-form">
-                  <div className="wrap-input100">
-                    <label htmlFor="inputChildName">
-                      <b>Child name</b>
-                    </label>
+              <div>
+                <form className="the_form">
+                  <h3 className="h3_tag">New child</h3>
+                  <div className="form-holder1234">
+                    <span className="lnr lnr-user" />
                     <input
                       type="text"
-                      className=""
+                      className="form-control123"
                       id="inputChildName"
                       placeholder="Enter your Child name"
                       value={this.state.name}
@@ -183,14 +181,12 @@ export class AddChild extends Component {
                       name="name"
                     />
                   </div>
-                  <div className="wrap-input100">
-                    <label htmlFor="inputChildAge">
-                      <b>Child age</b>
-                    </label>
+                  <div className="form-holder1234">
+                    <span className="lnr lnr-smile" />
                     <input
                       type="number"
                       placeholder="Your child age"
-                      className="form-control"
+                      className="form-control123"
                       id="inputChildAge"
                       min={4}
                       max={8}
@@ -199,42 +195,38 @@ export class AddChild extends Component {
                       name="age"
                     />
                   </div>
-                  <div className="container-login100-form-btn">
-                    <div className="wrap-login100-form-btn">
-                      <div className="login100-form-bgbtn" />
-                      <button
-                        className="addBtn"
-                        onClick={this.addChild.bind(this)}
-                      >
-                        Add
-                      </button>
-                    </div>
-                  </div>
+
+                  <button
+                    className="button_class"
+                    onClick={this.addChild.bind(this)}
+                  >
+                    Add
+                  </button>
                 </form>
               </div>
             </div>
+            <img
+              src="templets\images\image-2.png"
+              alt=""
+              className="image-21"
+            />
           </Modal>
-
-          <div
-            className="btn-toolbar"
-            role="toolbar"
-            aria-label="Toolbar with button groups"
-          >
-            {this.state.names.map((child, index) => {
-              return (
-                <div
-                  className="childName btn-group mr-2"
-                  role="group"
-                  aria-label="First group"
-                >
-                  <div
-                    className="btn-group"
-                    role="group"
-                    aria-label="Third group"
-                  >
+          {this.state.names.map((child, index) => {
+            return (
+              <div key={index + 4} className="wrapper2child">
+                <div key={index + 3} className="tweet-cards">
+                  <div key={index + 2} className="card-top" />
+                  <div key={index + 1} className="profile-pic">
+                    <img
+                      alt="child pic"
+                      src="https://flintobox.com/blog/wp-content/uploads/2016/09/400-400-img-min.jpg"
+                    />
+                  </div>
+                  <div className="">
                     <button
                       type="button"
-                      className="childsBtns btn btn-primary btn-lg"
+                      className="linkbtn btn btn-link"
+                      id="name"
                       key={index}
                       onClick={() => {
                         this.redirectToCategories(index);
@@ -242,31 +234,37 @@ export class AddChild extends Component {
                     >
                       {child}
                     </button>
+
+                    <div className="tweet">
+                      My Design for tweet cards used in Tweet-Finder is now up
+                      on @CodePen. Check it out and let me know what you think!
+                    </div>
+                    <p id="date">10m</p>
                   </div>
                 </div>
-              );
-            })}
-            {redirect ? (
-              <Redirect
-                to={{
-                  pathname: "/categories",
-                  state: {
-                    child_info: this.state.child_info,
-                    parentName: this.props.location.state.parentName,
-                    childsName: this.state.names
-                  }
-                }}
-              />
-            ) : null}
-
-            <input
-              className="childName childsBtns btn btn-primary btn-lg"
-              type="button"
-              value="+"
+              </div>
+            );
+          })}
+          {redirect ? (
+            <Redirect
+              to={{
+                pathname: "/categories",
+                state: {
+                  child_info: this.state.child_info,
+                  parentName: this.props.location.state.parentName,
+                  childsName: this.state.names
+                }
+              }}
+            />
+          ) : null}
+          <div className="addDiv">
+            <img
+              className="addImg"
+              alt="child pic"
+              src="http://pngimg.com/uploads/plus/plus_PNG65.png"
               onClick={() => this.openmodal("AddChild")}
             />
           </div>
-          <img src="templets\images\image-2.png" alt="" className="image-21" />
         </div>
       </div>
     );
