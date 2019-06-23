@@ -37,31 +37,6 @@ class Flipgame extends Component {
     };
   }
 
-  // Card = (cardNumber, id) => {
-  //   return (
-  //     <ReactCardFlip
-  //       isFlipped={this.state.isFlipped}
-  //       flipSpeedBackToFront={1}
-  //       flipSpeedFrontToBack={1}
-  //     >
-  //       <button
-  //         id={id}
-  //         className={`card card-front  ${cardNumber !== -1 ? "" : "hide-card"}`}
-  //         onClick={this.handleClick}
-  //         key="front"
-  //       />
-
-  //       <img
-  //         id={id}
-  //         className={`card card-back ${cardNumber !== -1 ? "" : "hide-card"}`}
-  //         onClick={this.handleClick}
-  //         key="back"
-  //         src={cardNumber}
-  //       />
-  //     </ReactCardFlip>
-  //   );
-  // };
-
   Header = () => {
     return (
       <div>

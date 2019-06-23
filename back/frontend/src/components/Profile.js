@@ -22,6 +22,22 @@ class Profile extends Component {
       [e]: false
     });
   }
+  //   componentWillMount() {
+  //     axios.get("/Ach").then(function(res) {
+  //       var childarray = res.data;
+  //       for (var i = 0; i < childarray.length; i++) {
+  //         if (
+  //           childarray[i].name === that.state.name &&
+  //           that.props.location.state.parent_id === childarray[i].parent_id
+  //         ) {
+  //           dublication = true;
+  //         }
+  //       }
+  //       if (dublication === true) {
+  //         toast("Child name is already exists ");
+  //       }
+  //     });
+  //   }
   render() {
     console.log(this.state.childsName);
     return (

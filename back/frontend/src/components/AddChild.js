@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Modal from "react-awesome-modal";
 import "./styles/AddChild.css";
-
 export class AddChild extends Component {
   constructor(props) {
     super(props);
@@ -64,12 +63,23 @@ export class AddChild extends Component {
             config: { headers: { "Content-Type": "application/json" } }
           })
             .then(function(response) {
+              var childarray = response.data;
+              var childInfo = that.state.childInfo;
+              childInfo.push(childarray);
               var namesArr = that.state.names;
               namesArr.push(response.data.name);
               //handle success
-              that.setState({
-                names: namesArr
-              });
+              that.setState(
+                {
+                  names: namesArr,
+                  childInfo: childInfo
+                },
+                () => {
+                  console.log(childarray);
+                  console.log(that.state);
+                  console.log(childarray);
+                }
+              );
             })
             .catch(function(response) {
               //handle error
@@ -94,6 +104,7 @@ export class AddChild extends Component {
           child_info: this.state.childInfo[index]
         },
         () => {
+          console.log(index);
           console.log(this.state.child_info);
         }
       );
@@ -112,7 +123,7 @@ export class AddChild extends Component {
     });
   }
 
-  componentDidMount() {
+  componentWillMount() {
     var that = this;
     let parentid = that.props.location.state.parent_id;
     console.log(parentid);
@@ -139,85 +150,97 @@ export class AddChild extends Component {
   render() {
     var redirect = this.state.redirect1;
     return (
-      <div>
-        <Modal
-          visible={this.state.AddChild}
-          width="390px"
-          height="250px"
-          effect="fadeInDown"
-          onClickAway={() => this.closemodal("AddChild")}
-        >
-          <div className="wrap-login100">
-            <form className="login100-form">
-              <div className="wrap-input100">
-                <label htmlFor="inputChildName">
-                  <b>Child name</b>
-                </label>
-                <input
-                  type="text"
-                  className=""
-                  id="inputChildName"
-                  placeholder="Enter your Child name"
-                  value={this.state.name}
-                  onChange={this.change.bind(this)}
-                  name="name"
-                />
-              </div>
-              <div className="wrap-input100">
-                <label htmlFor="inputChildAge">
-                  <b>Child age</b>
-                </label>
-                <input
-                  type="number"
-                  placeholder="Your child age"
-                  className="form-control"
-                  id="inputChildAge"
-                  min={4}
-                  max={8}
-                  value={this.state.age}
-                  onChange={this.change.bind(this)}
-                  name="age"
-                />
-              </div>
-              <div className="container-login100-form-btn">
-                <div className="wrap-login100-form-btn">
-                  <div className="login100-form-bgbtn" />
-                  <button className="addBtn" onClick={this.addChild.bind(this)}>
+      <div className="wrapperAddChild">
+        <div className="inner1AddChild">
+          <Modal
+            visible={this.state.AddChild}
+            width="390px"
+            height="250px"
+            effect="fadeInDown"
+            onClickAway={() => this.closemodal("AddChild")}
+          >
+            <div className="inner1AddChild">
+              <img
+                src="templets/images/image-1.png"
+                alt=""
+                className="image-11"
+              />
+
+              <div>
+                <form className="the_form">
+                  <h3 className="h3_tag">New child</h3>
+                  <div className="form-holder1234">
+                    <span className="lnr lnr-user" />
+                    <input
+                      type="text"
+                      className="form-control123"
+                      id="inputChildName"
+                      placeholder="Enter your Child name"
+                      value={this.state.name}
+                      onChange={this.change.bind(this)}
+                      name="name"
+                    />
+                  </div>
+                  <div className="form-holder1234">
+                    <span className="lnr lnr-smile" />
+                    <input
+                      type="number"
+                      placeholder="Your child age"
+                      className="form-control123"
+                      id="inputChildAge"
+                      min={4}
+                      max={8}
+                      value={this.state.age}
+                      onChange={this.change.bind(this)}
+                      name="age"
+                    />
+                  </div>
+
+                  <button
+                    className="button_class"
+                    onClick={this.addChild.bind(this)}
+                  >
                     Add
                   </button>
-                </div>
+                </form>
               </div>
-            </form>
-          </div>
-        </Modal>
-
-        <div
-          className="btn-toolbar"
-          role="toolbar"
-          aria-label="Toolbar with button groups"
-        >
+            </div>
+            <img
+              src="templets\images\image-2.png"
+              alt=""
+              className="image-21"
+            />
+          </Modal>
           {this.state.names.map((child, index) => {
             return (
-              <div
-                className="childName btn-group mr-2"
-                role="group"
-                aria-label="First group"
-              >
-                <div
-                  className="btn-group"
-                  role="group"
-                  aria-label="Third group"
-                >
-                  <button
-                    type="button"
-                    className="childsBtns btn btn-primary btn-lg"
-                    key={index}
-                    onClick={() => {
-                      this.redirectToCategories(index);
-                    }}
-                  >
-                    {child}
-                  </button>
+              <div key={index + 4} className="wrapper2child">
+                <div key={index + 3} className="tweet-cards">
+                  <div key={index + 2} className="card-top" />
+                  <div key={index + 1} className="profile-pic">
+                    <img
+                      alt="child pic"
+                      src="https://flintobox.com/blog/wp-content/uploads/2016/09/400-400-img-min.jpg"
+                    />
+                  </div>
+                  <div className="">
+                    <button
+                      type="button"
+                      className="linkbtn btn btn-link"
+                      id="name"
+                      key={index}
+                      onClick={() => {
+                        this.redirectToCategories(index);
+                      }}
+                    >
+                      {child}
+                    </button>
+
+                    <div className="tweet">
+                      My Design for tweet cards used in Tweet-Finder is now up
+                      on @CodePen. Check it out and let me know what you think!
+                    </div>
+                    <p id="date">10m</p>
+                  </div>
                 </div>
               </div>
             );
@@ -234,13 +257,14 @@ export class AddChild extends Component {
               }}
             />
           ) : null}
-
-          <input
-            className="childName childsBtns btn btn-primary btn-lg"
-            type="button"
-            value="+"
-            onClick={() => this.openmodal("AddChild")}
-          />
+          <div className="addDiv">
+            <img
+              className="addImg"
+              alt="child pic"
+              src="http://pngimg.com/uploads/plus/plus_PNG65.png"
+              onClick={() => this.openmodal("AddChild")}
+            />
+          </div>
         </div>
       </div>
     );
