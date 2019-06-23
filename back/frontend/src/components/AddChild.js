@@ -14,7 +14,8 @@ export class AddChild extends Component {
       AddChild: false,
       redirect1: false,
       dublication: false,
-      names: []
+      names: [],
+      childInfo: []
     };
   }
   change(e) {
@@ -159,13 +160,12 @@ export class AddChild extends Component {
             effect="fadeInDown"
             onClickAway={() => this.closemodal("AddChild")}
           >
-            <div className="inner1AddChild">
+            <div className="inner">
               <img
                 src="templets/images/image-1.png"
                 alt=""
                 className="image-11"
               />
-
               <div>
                 <form className="the_form">
                   <h3 className="h3_tag">New child</h3>
@@ -204,14 +204,14 @@ export class AddChild extends Component {
                   </button>
                 </form>
               </div>
+              <img
+                src="templets\images\image-2.png"
+                alt=""
+                className="image-21"
+              />
             </div>
-            <img
-              src="templets\images\image-2.png"
-              alt=""
-              className="image-21"
-            />
           </Modal>
-          {this.state.names.map((child, index) => {
+          {this.state.childInfo.map((child, index) => {
             return (
               <div key={index + 4} className="wrapper2child">
                 <div key={index + 3} className="tweet-cards">
@@ -232,13 +232,10 @@ export class AddChild extends Component {
                         this.redirectToCategories(index);
                       }}
                     >
-                      {child}
+                      {child.name}
                     </button>
 
-                    <div className="tweet">
-                      My Design for tweet cards used in Tweet-Finder is now up
-                      on @CodePen. Check it out and let me know what you think!
-                    </div>
+                    <div className="tweet">{child.age}</div>
                     <p id="date">10m</p>
                   </div>
                 </div>

@@ -43,6 +43,11 @@ button {
   background: #accffe;
 }
 
+.inner {
+  position: relative;
+  width: 435px;
+}
+
 .inner1AddChild {
   width: 100%;
   margin-right: 57px;
