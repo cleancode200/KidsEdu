@@ -1,19 +1,22 @@
 import React from "react";
 
 import ReactCardFlip from "react-card-flip";
-
-const Card = ({ id, isFlipped, handleClick, cardNumber }) => (
+const st = {
+  "background-color":"#3279bb",
+}
+const Card = ({image, id, isFlipped, handleClick, cardNumber }) => (
   <ReactCardFlip
     isFlipped={isFlipped}
     flipSpeedBackToFront={1}
     flipSpeedFrontToBack={1}
   >
     <img
+    style={st}
       id={id}
       className={`card card-front  ${cardNumber !== -1 ? "" : "hide-card"}`}
       onClick={handleClick}
       key="front"
-      src={cardNumber}
+      src={image}
     />
 
     <img
