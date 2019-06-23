@@ -209,8 +209,8 @@ class SignIn extends Component {
               className="image-11"
             />
             <form className="the_form" onSubmit={this.handleSubmit}>
-            {this.rend()}
-              <h3 className="h3_tag">New Account?</h3>
+              {this.rend()}
+              <h3 className="h3_tag">LOGIN</h3>
               <div className="form-holder1234">
                 <span className="lnr lnr-envelope" />
                 <input
@@ -234,8 +234,15 @@ class SignIn extends Component {
                 />
               </div>
               <button className="button_class" type="submit">
-                <span>Register</span>
+                <span>LOGIN</span>
               </button>
+              <div>
+                <br />
+                <span className="txt1">If you Don't have an account</span>{" "}
+                <Link to="/signup">
+                  <a className="txt2">Register</a>{" "}
+                </Link>
+              </div>
             </form>
             <img
               src="templets\images\image-2.png"

@@ -47,7 +47,7 @@ export class Categories extends Component {
     // console.log(redirect);
     return (
       <div>
-        {/* <div className="profile_button_div">
+        <div className="profile_button_div">
           <NavLink
             to={{
               pathname: "/Profile",
@@ -111,53 +111,7 @@ export class Categories extends Component {
               }}
             />
           ) : null}
-        </div> */}
-        <section className="feature-area body123">
-          <div className="container">
-            <div className="feature-inner row">
-              <div className="col-lg-4 col-md-6">
-                <div className="feature-item1">
-                  <i className="ti-crown" />
-                  <h4>[Title]</h4>
-                  <div
-                    className="wow fadeIn"
-                    data-wow-duration="1s"
-                    data-wow-delay=".1s"
-                  >
-                    <p>
-                      Lorem ipsum dolor sit amet consec tetur adipisicing elit,
-                      sed do eiusmod tempor incididunt labore.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="feature-item1">
-                  <i className="ti-briefcase" />
-                  <h4>[Title]</h4>
-                  <div
-                    className="wow fadeIn"
-                    data-wow-duration="1s"
-                    data-wow-delay=".3s"
-                  >
-                    <p>
-                      Lorem ipsum dolor sit amet consec tetur adipisicing elit,
-                      sed do eiusmod tempor incididunt labore.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="feature-item1">
-                  <img src="https://i.pinimg.com/originals/4e/50/93/4e5093e68297c27d6c2f45b0145271da.jpg"></img>
-                </div>
-              </div>
-              
-              
-              
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
     );
   }
