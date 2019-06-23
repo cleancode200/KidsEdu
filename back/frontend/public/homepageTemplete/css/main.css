@@ -3024,5 +3024,12 @@ body.mobile-nav-active #mobile-nav-toggle {
         -moz-transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
         transition: all 0.3s ease 0s; }
+        
+        /* style of the clickcounter of the flipgame component */
+        .clickcounter{
+           border:3px solid black;
+
+
+        }
 
 /*# sourceMappingURL=main.css.map */
