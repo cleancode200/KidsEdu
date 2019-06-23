@@ -64,7 +64,7 @@ export class subCategores extends Component {
       });
     });
   }
-  componentDidMount() {
+  componentWillMount() {
     // console.log("Sending a GET API Call !!!");
     var that = this;
     var role = "subcategories";

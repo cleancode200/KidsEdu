@@ -55,7 +55,7 @@ class UploadImages extends Component {
             this.state.url ||
             "https://i0.wp.com/addisonavenuemarketing.com/wp-content/uploads/2016/07/facebook-avatar.jpg?fit=690%2C435"
           }
-          alt="uploaded image"
+          alt="uploaded"
           height="150"
           width="200"
         />
