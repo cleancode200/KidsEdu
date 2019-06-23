@@ -180,8 +180,8 @@ export class Categories extends Component {
             <div className="feature-inner row">
               <div className="col-lg-4 col-md-6">
                 <div className="feature-item1">
-                  {/* <i className="ti-crown" />
-                  <h4>[Title]</h4>
+                  {/* <i className="ti-crown" /> */}
+                  {/* <h4>[Title]</h4>
                   <div
                     className="wow fadeIn"
                     data-wow-duration="1s"
@@ -220,8 +220,8 @@ export class Categories extends Component {
                     <p>
                       Lorem ipsum dolor sit amet consec tetur adipisicing elit,
                       sed do eiusmod tempor incididunt labore.
-                    </p> */}
-                  {/* </div> */}
+                    </p>
+                  </div> */}
                   <img
                     src={this.state.urls[0]}
                     onClick={this.goToSubCategories.bind(this)}
@@ -259,6 +259,98 @@ export class Categories extends Component {
             </div>
           </div>
         </section>
+        {/*  */}
+        {/* <!-- Portfolio --> */}
+        {/* <section className="content-section" id="portfolio">
+          <div className="container">
+            <div className="content-section-heading text-center" />
+            <div className="row no-gutters">
+              <div className="col-lg-6">
+                <div className="portfolio-item">
+                  <span className="caption">
+                    <span className="caption-content">
+                      <h2>Language</h2>
+                    </span>
+                  </span>
+                  <img
+                    className="img-fluid"
+                    src={this.state.urls[0]}
+                    onClick={this.goToSubCategories.bind(this)}
+                  />
+                  {redirect ? (
+                    <Redirect
+                      to={{
+                        pathname: "/subCategores",
+                        state: {
+                          child_info: this.state.child_info
+                        }
+                      }}
+                    />
+                  ) : null}
+                </div>
+              </div>
+
+              <div className="col-lg-6">
+                <a className="portfolio-item" href="#">
+                  <span className="caption">
+                    <span className="caption-content">
+                      <h2>Ice Cream</h2>
+                      <p className="mb-0">
+                        A dark blue background with a colored pencil, a clip,
+                        and a tiny ice cream cone!
+                      </p>
+                    </span>
+                  </span>
+                  <img
+                    className="img-fluid"
+                    src="templets\images\portfolio-2.jpg"
+                    alt=""
+                    onClick={this.goToSubCategories.bind(this)}
+                  />
+                </a>
+              </div>
+              <div className="col-lg-6">
+                <a className="portfolio-item" href="#">
+                  <span className="caption">
+                    <span className="caption-content">
+                      <h2>Strawberries</h2>
+                      <p className="mb-0">
+                        Strawberries are such a tasty snack, especially with a
+                        little sugar on top!
+                      </p>
+                    </span>
+                  </span>
+                  <img
+                    className="img-fluid"
+                    src={this.state.urls[0]}
+                    alt=""
+                    onClick={this.goToSubCategories.bind(this)}
+                  />
+                </a>
+              </div>
+              <div className="col-lg-6">
+                <a className="portfolio-item" href="#">
+                  <span className="caption">
+                    <span className="caption-content">
+                      <h2>Workspace</h2>
+                      <p className="mb-0">
+                        A yellow workspace with some scissors, pencils, and
+                        other objects.
+                      </p>
+                    </span>
+                  </span>
+                  <img
+                    className="img-fluid"
+                    src={this.state.urls[0]}
+                    alt=""
+                    onClick={this.goToSubCategories.bind(this)}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section> */}
+        {/*  */}
         {/* Footer start */}
         <footer className="footer-areaa section-gap">
           <div className="container">
