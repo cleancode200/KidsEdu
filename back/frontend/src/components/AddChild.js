@@ -64,12 +64,23 @@ export class AddChild extends Component {
             config: { headers: { "Content-Type": "application/json" } }
           })
             .then(function(response) {
+              var childarray = response.data;
+              var childInfo = that.state.childInfo;
+              childInfo.push(childarray);
               var namesArr = that.state.names;
               namesArr.push(response.data.name);
               //handle success
-              that.setState({
-                names: namesArr
-              });
+              that.setState(
+                {
+                  names: namesArr,
+                  childInfo: childInfo
+                },
+                () => {
+                  console.log(childarray);
+                  console.log(that.state);
+                  console.log(childarray);
+                }
+              );
             })
             .catch(function(response) {
               //handle error
@@ -94,6 +105,7 @@ export class AddChild extends Component {
           child_info: this.state.childInfo[index]
         },
         () => {
+          console.log(index);
           console.log(this.state.child_info);
         }
       );
@@ -112,7 +124,7 @@ export class AddChild extends Component {
     });
   }
 
-  componentDidMount() {
+  componentWillMount() {
     var that = this;
     let parentid = that.props.location.state.parent_id;
     console.log(parentid);
@@ -139,108 +151,122 @@ export class AddChild extends Component {
   render() {
     var redirect = this.state.redirect1;
     return (
-      <div>
-        <Modal
-          visible={this.state.AddChild}
-          width="390px"
-          height="250px"
-          effect="fadeInDown"
-          onClickAway={() => this.closemodal("AddChild")}
-        >
-          <div className="wrap-login100">
-            <form className="login100-form">
-              <div className="wrap-input100">
-                <label htmlFor="inputChildName">
-                  <b>Child name</b>
-                </label>
-                <input
-                  type="text"
-                  className=""
-                  id="inputChildName"
-                  placeholder="Enter your Child name"
-                  value={this.state.name}
-                  onChange={this.change.bind(this)}
-                  name="name"
-                />
-              </div>
-              <div className="wrap-input100">
-                <label htmlFor="inputChildAge">
-                  <b>Child age</b>
-                </label>
-                <input
-                  type="number"
-                  placeholder="Your child age"
-                  className="form-control"
-                  id="inputChildAge"
-                  min={4}
-                  max={8}
-                  value={this.state.age}
-                  onChange={this.change.bind(this)}
-                  name="age"
-                />
-              </div>
-              <div className="container-login100-form-btn">
-                <div className="wrap-login100-form-btn">
-                  <div className="login100-form-bgbtn" />
-                  <button className="addBtn" onClick={this.addChild.bind(this)}>
-                    Add
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </Modal>
+      <div className="wrapper1">
+        <div className="inner1">
+          <Modal
+            visible={this.state.AddChild}
+            width="390px"
+            height="250px"
+            effect="fadeInDown"
+            onClickAway={() => this.closemodal("AddChild")}
+          >
+            <div className="inner1">
+              <img
+                src="templets/images/image-1.png"
+                alt=""
+                className="image-11"
+              />
 
-        <div
-          className="btn-toolbar"
-          role="toolbar"
-          aria-label="Toolbar with button groups"
-        >
-          {this.state.names.map((child, index) => {
-            return (
-              <div
-                className="childName btn-group mr-2"
-                role="group"
-                aria-label="First group"
-              >
+              <div className="wrap-login100">
+                <form className="login100-form">
+                  <div className="wrap-input100">
+                    <label htmlFor="inputChildName">
+                      <b>Child name</b>
+                    </label>
+                    <input
+                      type="text"
+                      className=""
+                      id="inputChildName"
+                      placeholder="Enter your Child name"
+                      value={this.state.name}
+                      onChange={this.change.bind(this)}
+                      name="name"
+                    />
+                  </div>
+                  <div className="wrap-input100">
+                    <label htmlFor="inputChildAge">
+                      <b>Child age</b>
+                    </label>
+                    <input
+                      type="number"
+                      placeholder="Your child age"
+                      className="form-control"
+                      id="inputChildAge"
+                      min={4}
+                      max={8}
+                      value={this.state.age}
+                      onChange={this.change.bind(this)}
+                      name="age"
+                    />
+                  </div>
+                  <div className="container-login100-form-btn">
+                    <div className="wrap-login100-form-btn">
+                      <div className="login100-form-bgbtn" />
+                      <button
+                        className="addBtn"
+                        onClick={this.addChild.bind(this)}
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </Modal>
+
+          <div
+            className="btn-toolbar"
+            role="toolbar"
+            aria-label="Toolbar with button groups"
+          >
+            {this.state.names.map((child, index) => {
+              return (
                 <div
-                  className="btn-group"
+                  className="childName btn-group mr-2"
                   role="group"
-                  aria-label="Third group"
+                  aria-label="First group"
                 >
-                  <button
-                    type="button"
-                    className="childsBtns btn btn-primary btn-lg"
-                    key={index}
-                    onClick={() => {
-                      this.redirectToCategories(index);
-                    }}
+                  <div
+                    className="btn-group"
+                    role="group"
+                    aria-label="Third group"
                   >
-                    {child}
-                  </button>
+                    <button
+                      type="button"
+                      className="childsBtns btn btn-primary btn-lg"
+                      key={index}
+                      onClick={() => {
+                        this.redirectToCategories(index);
+                      }}
+                    >
+                      {child}
+                    </button>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-          {redirect ? (
-            <Redirect
-              to={{
-                pathname: "/categories",
-                state: {
-                  child_info: this.state.child_info,
-                  parentName: this.props.location.state.parentName,
-                  childsName: this.state.names
-                }
-              }}
-            />
-          ) : null}
+              );
+            })}
+            {redirect ? (
+              <Redirect
+                to={{
+                  pathname: "/categories",
+                  state: {
+                    child_info: this.state.child_info,
+                    parentName: this.props.location.state.parentName,
+                    childsName: this.state.names
+                  }
+                }}
+              />
+            ) : null}
 
-          <input
-            className="childName childsBtns btn btn-primary btn-lg"
-            type="button"
-            value="+"
-            onClick={() => this.openmodal("AddChild")}
-          />
+            <input
+              className="childName childsBtns btn btn-primary btn-lg"
+              type="button"
+              value="+"
+              onClick={() => this.openmodal("AddChild")}
+            />
+          </div>
+          <img src="templets\images\image-2.png" alt="" className="image-21" />
         </div>
       </div>
     );
