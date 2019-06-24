@@ -1,10 +1,22 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 // import ReactCardFlip from "react-card-flip";
 
 import Card from "./components/card/Card";
 import "./components/styles/main.css";
+const style_counter = {
+  color: "white",
+  width: "50px",
+  height: "50px"
+};
+const style_nextbut = {
+  "margin-top": "100px"
+};
+const style_level = {
+  "margin-left": "200px"
+};
 
 class Flipgame extends Component {
   constructor(props) {
@@ -20,14 +32,44 @@ class Flipgame extends Component {
       totalTime: 0,
       shuffledCard: "",
       level_img: this.props.location.state.img_url,
+      front_img:"https://media.giphy.com/media/kxYEBbpzXse6A/giphy.gif",
       role: this.props.location.state.role
     };
   }
 
   Header = () => {
     return (
-      <div className="grid-header-container">
-        <div className="justify-left timer">
+      <div>
+        <header id="headerr">
+          <div className="container">
+            <div className="row align-items-center justify-content-between d-flex">
+              <div id="logo" style={style_counter}>
+                {/* <a href="index.html"> */}
+                <h1 style={style_counter}>{this.state.child_info.name}</h1>
+                {/* </a> */}
+              </div>
+              <nav id="nav-menu-container">
+                <ul className="nav-menu">
+                  <li style={style_counter}>
+                    {" "}
+                    <h1 style={style_counter}>
+                      {" "}
+                      Clicks : {this.state.countclicks}
+                    </h1>{" "}
+                  </li>
+
+                  <li style={style_level}>
+                    {" "}
+                    <h1 style={style_counter}>
+                      Level : {this.state.level}
+                    </h1>{" "}
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        {/* <div className="justify-left timer">
           <div className="justify-center game-status-text">
             <div className="justify-end">
               <h1>
@@ -41,7 +83,7 @@ class Flipgame extends Component {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   };
@@ -49,11 +91,15 @@ class Flipgame extends Component {
   GameOver = () => {
     return (
       <div className="justify-center">
-        <h1>مبرووك</h1>
-        <h3 />
-        <button className="restart-button" onClick={this.restartGame}>
-          NEXT
-        </button>
+        <div style={style_nextbut}>
+          {" "}
+          
+          <h3 />
+          <img
+            onClick={this.restartGame}
+            src="https://cdn.dribbble.com/users/599042/screenshots/5802246/push_button.gif"
+          />
+        </div>
       </div>
     );
   };
@@ -69,42 +115,75 @@ class Flipgame extends Component {
       img2 = this.state.level_img[1];
       img3 = this.state.level_img[2];
       img4 = this.state.level_img[3];
+      this.setState({
+        front_img:"https://media.giphy.com/media/kxYEBbpzXse6A/giphy.gif"
+      })
+
     }
     if (this.state.level === 2) {
       img1 = this.state.level_img[4];
       img2 = this.state.level_img[5];
       img3 = this.state.level_img[6];
       img4 = this.state.level_img[7];
+
+      this.setState({
+        front_img:"https://cdn.dribbble.com/users/703583/screenshots/3206537/batman01.gif"
+      })
     }
     if (this.state.level === 3) {
       img1 = this.state.level_img[8];
       img2 = this.state.level_img[9];
       img3 = this.state.level_img[10];
       img4 = this.state.level_img[11];
+
+      this.setState({
+        front_img:"https://media3.giphy.com/media/DBOAgDc4hpY3e/giphy.gif"
+      })
     }
     if (this.state.level === 4) {
       img1 = this.state.level_img[12];
       img2 = this.state.level_img[13];
       img3 = this.state.level_img[14];
       img4 = this.state.level_img[15];
+
+      this.setState({
+        front_img:"https://i.gifer.com/Ntsh.gif"
+      })
+
     }
     if (this.state.level === 5) {
       img1 = this.state.level_img[16];
       img2 = this.state.level_img[17];
       img3 = this.state.level_img[18];
       img4 = this.state.level_img[19];
+
+      this.setState({
+        front_img:"https://cdn.dribbble.com/users/1761489/screenshots/4819503/rabbit.gif"
+      })
+
     }
     if (this.state.level === 6) {
       img1 = this.state.level_img[20];
       img2 = this.state.level_img[21];
       img3 = this.state.level_img[22];
       img4 = this.state.level_img[23];
+
+
+      this.setState({
+        front_img:"https://media1.tenor.com/images/4a720ffab56084f0fcf2a7b536b75d65/tenor.gif?itemid=13343717"
+      })
+
     }
     if (this.state.level === 7) {
       img1 = this.state.level_img[24];
       img2 = this.state.level_img[25];
       img3 = this.state.level_img[26];
       img4 = this.state.level_img[27];
+
+      this.setState({
+        front_img:"https://data.whicdn.com/images/294374923/original.gif"
+      })
+
     }
     // this is to dublicate the img it self so we can have tow imgs or the same one
     return [img1, img2, img3, img4].reduce(
@@ -288,6 +367,7 @@ class Flipgame extends Component {
             <div className="grid-container">
               {this.state.shuffledCard.map((cardNumber, index) => (
                 <Card
+                  image={this.state.front_img}
                   key={index}
                   id={index}
                   cardNumber={cardNumber}

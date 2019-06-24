@@ -62,8 +62,8 @@ body {
     /* font-size: 50px; */
 
 .card {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background-size: cover;
   background-color: rgb(42, 128, 139);
   color: white;
@@ -83,4 +83,10 @@ body {
 .card-back {
   font-weight: bold;
   text-align: center;
+}
+ /* style of the clickcounter of the flipgame component */
+ .clickcounter{
+background-color:3px solid white;
+
+
 }
