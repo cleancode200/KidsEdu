@@ -75,10 +75,11 @@ export class Categories extends Component {
                           childsName: this.state.childsName
                         }
                       }}
-                    />
-                    {/* <Link to="/">
+                    >
                       <a>Profile</a>
-                    </Link> */}
+                      {/* <Link to="/">
+                      <a>Profile</a>*/}
+                    </Link>
                   </li>
                   <li>
                     <Link to="/signup">
@@ -111,7 +112,7 @@ export class Categories extends Component {
           </div>
         </header>
         {/* <div className="profile_button_div">
-          <NavLink
+          <Link
             to={{
               pathname: "/Profile",
               state: {
@@ -122,7 +123,7 @@ export class Categories extends Component {
             }}
           >
             <button className="Profile_button">profile</button>
-          </NavLink>
+          </NLink>
         </div>
         <div>
           <img

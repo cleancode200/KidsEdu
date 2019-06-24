@@ -341,3 +341,8 @@ p#date {
   /* height: 362px; */
   margin-top: 63px;
 }
+
+p.agePara {
+  padding-top: 30px;
+  font-size: 24px;
+}

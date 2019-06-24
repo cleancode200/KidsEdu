@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Redirect, NavLink } from "react-router-dom";
-import Modal from "react-awesome-modal";
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -11,33 +10,7 @@ class Profile extends Component {
       childEvaluation: false
     };
   }
-  openmodal(e) {
-    this.setState({
-      [e]: true
-    });
-  }
 
-  closemodal(e) {
-    this.setState({
-      [e]: false
-    });
-  }
-  //   componentWillMount() {
-  //     axios.get("/Ach").then(function(res) {
-  //       var childarray = res.data;
-  //       for (var i = 0; i < childarray.length; i++) {
-  //         if (
-  //           childarray[i].name === that.state.name &&
-  //           that.props.location.state.parent_id === childarray[i].parent_id
-  //         ) {
-  //           dublication = true;
-  //         }
-  //       }
-  //       if (dublication === true) {
-  //         toast("Child name is already exists ");
-  //       }
-  //     });
-  //   }
   render() {
     console.log(this.state.childsName);
     return (
@@ -71,23 +44,8 @@ class Profile extends Component {
         <div>
           <h1>{this.state.parentName}</h1>
           childreen names:
-          {this.state.childsName.map((childName, i) => {
-            return (
-              <h1 onClick={() => this.openmodal("childEvaluation")}>
-                {childName}
-              </h1>
-            );
-          })}
+          <h1>{this.state.child_info.name}</h1>
         </div>
-        <Modal
-          visible={this.state.childEvaluation}
-          width="390px"
-          height="250px"
-          effect="fadeInDown"
-          onClickAway={() => this.closemodal("childEvaluation")}
-        >
-          <h1> The evaluation for child</h1>
-        </Modal>
       </div>
     );
   }

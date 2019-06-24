@@ -149,6 +149,9 @@ export class AddChild extends Component {
   }
 
   render() {
+    const style = {
+      color: "#006e96"
+    };
     var redirect = this.state.redirect1;
     return (
       <div className="wrapperAddChild">
@@ -223,20 +226,24 @@ export class AddChild extends Component {
                     />
                   </div>
                   <div className="">
-                    <button
-                      type="button"
-                      className="linkbtn btn btn-link"
-                      id="name"
-                      key={index}
-                      onClick={() => {
-                        this.redirectToCategories(index);
-                      }}
-                    >
-                      {child.name}
-                    </button>
+                    <div>
+                      <button
+                        type="button"
+                        className="linkbtn btn btn-link"
+                        id="name"
+                        key={index}
+                        onClick={() => {
+                          this.redirectToCategories(index);
+                        }}
+                      >
+                        {child.name}
+                      </button>
+                    </div>
 
-                    <div className="tweet">{child.age}</div>
-                    <p id="date">10m</p>
+                    <div style={style} className="tweet">
+                      <p className="agePara"> Age : {child.age}</p>
+                    </div>
+                    <p id="date">{child.created_at}</p>
                   </div>
                 </div>
               </div>
