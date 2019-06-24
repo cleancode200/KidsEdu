@@ -319,7 +319,7 @@ p#name a {
 p#date {
   position: relative;
   text-align: right;
-  margin: 0 25px 15px 0;
+  margin: 0 16px 0px 0px;
   font-family: helvetica;
   font-size: 0.8em;
   color: #919191;
