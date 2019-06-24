@@ -52,7 +52,11 @@ class AchievementsViewSet(viewsets.ModelViewSet):
             "language_animals_level", None)
         language_planets_level = self.request.query_params.get(
             "language_planets_level", None)
-        if(child_id):
+        idd = self.request.query_params.get("id",None)
+
+        if(child_id and (language_letters_level or language_animals_level or language_planets_level )):
             return queryset.filter(language_letters_level=language_letters_level, language_animals_level=language_animals_level, language_planets_level=language_planets_level, child_id=child_id)
-        else:
-            return Achievements.objects.all()
+        elif(child_id ):
+            return Achievements.objects.filter(child_id=child_id)
+        else :
+             return Achievements.objects.all()

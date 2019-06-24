@@ -75,7 +75,9 @@ export class Categories extends Component {
                           childsName: this.state.childsName
                         }
                       }}
-                    />
+                    >
+                      <a>Profile</a>
+                    </Link>
                     {/* <Link to="/">
                       <a>Profile</a>
                     </Link> */}
