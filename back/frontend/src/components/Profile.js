@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Redirect, NavLink } from "react-router-dom";
 import Modal from "react-awesome-modal";
+import axios from "axios";
+
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -8,13 +10,9 @@ class Profile extends Component {
       child_info: this.props.location.state.child_info,
       parentName: this.props.location.state.parentName,
       childsName: this.props.location.state.childsName,
-      childEvaluation: false
+      childEvaluation: false,
+      index: 0
     };
-  }
-  openmodal(e) {
-    this.setState({
-      [e]: true
-    });
   }
 
   closemodal(e) {
@@ -22,6 +20,18 @@ class Profile extends Component {
       [e]: false
     });
   }
+  saveNumber(id) {
+    console.log(id);
+    var child_id = id;
+    axios.get("Ach/?child_id=" + child_id).then(res => {
+      console.log(res.data);
+    });
+    // this.setState({
+    //   index: i
+    // });
+    // return this.openmodal("childEvaluation");
+  }
+
   //   componentWillMount() {
   //     axios.get("/Ach").then(function(res) {
   //       var childarray = res.data;
@@ -39,7 +49,10 @@ class Profile extends Component {
   //     });
   //   }
   render() {
+    // console.log(this.state.childsName[this.state.index]);
     console.log(this.state.childsName);
+    console.log(this.state.child_info);
+    console.log(this.state.parentName);
     return (
       <div>
         <div>
@@ -71,13 +84,9 @@ class Profile extends Component {
         <div>
           <h1>{this.state.parentName}</h1>
           childreen names:
-          {this.state.childsName.map((childName, i) => {
-            return (
-              <h1 onClick={() => this.openmodal("childEvaluation")}>
-                {childName}
-              </h1>
-            );
-          })}
+          <h1 onClick={() => this.saveNumber(this.state.child_info.id)}>
+            {this.state.child_info.name}
+          </h1>
         </div>
         <Modal
           visible={this.state.childEvaluation}
@@ -87,6 +96,7 @@ class Profile extends Component {
           onClickAway={() => this.closemodal("childEvaluation")}
         >
           <h1> The evaluation for child</h1>
+          <p>{this.state.childsName[this.state.index]}</p>
         </Modal>
       </div>
     );

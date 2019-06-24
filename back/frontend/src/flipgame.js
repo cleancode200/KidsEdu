@@ -32,7 +32,7 @@ class Flipgame extends Component {
       totalTime: 0,
       shuffledCard: "",
       level_img: this.props.location.state.img_url,
-      front_img:"https://media.giphy.com/media/kxYEBbpzXse6A/giphy.gif",
+      front_img: "https://media.giphy.com/media/kxYEBbpzXse6A/giphy.gif",
       role: this.props.location.state.role
     };
   }
@@ -93,7 +93,6 @@ class Flipgame extends Component {
       <div className="justify-center">
         <div style={style_nextbut}>
           {" "}
-          
           <h3 />
           <img
             onClick={this.restartGame}
@@ -116,9 +115,8 @@ class Flipgame extends Component {
       img3 = this.state.level_img[2];
       img4 = this.state.level_img[3];
       this.setState({
-        front_img:"https://media.giphy.com/media/kxYEBbpzXse6A/giphy.gif"
-      })
-
+        front_img: "https://media.giphy.com/media/kxYEBbpzXse6A/giphy.gif"
+      });
     }
     if (this.state.level === 2) {
       img1 = this.state.level_img[4];
@@ -127,8 +125,9 @@ class Flipgame extends Component {
       img4 = this.state.level_img[7];
 
       this.setState({
-        front_img:"https://cdn.dribbble.com/users/703583/screenshots/3206537/batman01.gif"
-      })
+        front_img:
+          "https://cdn.dribbble.com/users/703583/screenshots/3206537/batman01.gif"
+      });
     }
     if (this.state.level === 3) {
       img1 = this.state.level_img[8];
@@ -137,8 +136,8 @@ class Flipgame extends Component {
       img4 = this.state.level_img[11];
 
       this.setState({
-        front_img:"https://media3.giphy.com/media/DBOAgDc4hpY3e/giphy.gif"
-      })
+        front_img: "https://media3.giphy.com/media/DBOAgDc4hpY3e/giphy.gif"
+      });
     }
     if (this.state.level === 4) {
       img1 = this.state.level_img[12];
@@ -147,9 +146,8 @@ class Flipgame extends Component {
       img4 = this.state.level_img[15];
 
       this.setState({
-        front_img:"https://i.gifer.com/Ntsh.gif"
-      })
-
+        front_img: "https://i.gifer.com/Ntsh.gif"
+      });
     }
     if (this.state.level === 5) {
       img1 = this.state.level_img[16];
@@ -158,9 +156,9 @@ class Flipgame extends Component {
       img4 = this.state.level_img[19];
 
       this.setState({
-        front_img:"https://cdn.dribbble.com/users/1761489/screenshots/4819503/rabbit.gif"
-      })
-
+        front_img:
+          "https://cdn.dribbble.com/users/1761489/screenshots/4819503/rabbit.gif"
+      });
     }
     if (this.state.level === 6) {
       img1 = this.state.level_img[20];
@@ -168,11 +166,10 @@ class Flipgame extends Component {
       img3 = this.state.level_img[22];
       img4 = this.state.level_img[23];
 
-
       this.setState({
-        front_img:"https://media1.tenor.com/images/4a720ffab56084f0fcf2a7b536b75d65/tenor.gif?itemid=13343717"
-      })
-
+        front_img:
+          "https://media1.tenor.com/images/4a720ffab56084f0fcf2a7b536b75d65/tenor.gif?itemid=13343717"
+      });
     }
     if (this.state.level === 7) {
       img1 = this.state.level_img[24];
@@ -181,9 +178,8 @@ class Flipgame extends Component {
       img4 = this.state.level_img[27];
 
       this.setState({
-        front_img:"https://data.whicdn.com/images/294374923/original.gif"
-      })
-
+        front_img: "https://data.whicdn.com/images/294374923/original.gif"
+      });
     }
     // this is to dublicate the img it self so we can have tow imgs or the same one
     return [img1, img2, img3, img4].reduce(
@@ -304,7 +300,7 @@ class Flipgame extends Component {
           console.log(res.data[0].id);
           axios({
             method: "PUT",
-            url: `/Ach/${res.data[0].id}/`,
+            url: "/Ach/" + res.data[0].id + "/",
             data: data,
             config: { headers: { "Content-Type": "application/json" } }
           })
