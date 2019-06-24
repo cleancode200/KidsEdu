@@ -14,11 +14,6 @@ class Profile extends Component {
       index: 0
     };
   }
-  openmodal(e) {
-    this.setState({
-      [e]: true
-    });
-  }
 
   closemodal(e) {
     this.setState({
@@ -28,7 +23,6 @@ class Profile extends Component {
   saveNumber(id) {
     console.log(id);
     var child_id = id;
-    // axios("/Parent/?email=" + email + "&password=" + password).then(res => {
     axios.get("Ach/?child_id=" + child_id).then(res => {
       console.log(res.data);
     });
