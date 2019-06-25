@@ -73,7 +73,7 @@ export class Main extends Component {
 			<div className="row align-items-center justify-content-between d-flex">
 				<div id="logo">
       {/* <Link to="/"> */}
-					<img src="homepageTemplete/img/logo.png" alt="" title="" />
+					<img src="homepageTemplete/img/logo-rocket.png" alt="" title="" />
         {/* </Link> */}
 				</div>
 				<nav id="nav-menu-container">

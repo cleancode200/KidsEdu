@@ -63,7 +63,7 @@ export class Categories extends Component {
               <Link to="/">
                 <div id="logo">
                   {/* <a href="index.html"> */}
-                  <img src="homepageTemplete/img/logo.png" alt="" title="" />
+                  <img src="homepageTemplete/img/logo-rocket.png" alt="" title="" />
                   {/* </a> */}
                 </div>
               </Link>

@@ -93,7 +93,7 @@ export class subCategores extends Component {
             <div className="row align-items-center justify-content-between d-flex">
               <Link to="/">
                 <div id="logo">
-                  <img src="homepageTemplete/img/logo.png" alt="" title="" />
+                  <img src="homepageTemplete/img/logo-rocket.png" alt="" title="" />
                 </div>
               </Link>
               <nav id="nav-menu-container">
