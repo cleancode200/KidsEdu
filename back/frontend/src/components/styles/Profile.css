@@ -404,3 +404,30 @@ p#date {
   bottom: 0;
   right: -129px;
 }
+
+span.pieDes1 {
+  background-color: #e38627;
+  color: #e38627;
+  width: 15px;
+  border: 2px solid #e38627;
+  border-radius: 25px;
+}
+span.pieDes2 {
+  background-color: #c13c37;
+  color: #c13c37;
+  width: 15px;
+  border: 2px solid #c13c37;
+  border-radius: 25px;
+}
+
+span.pieDes3 {
+  background-color: #6a2135;
+  color: #6a2135;
+  width: 15px;
+  border: 2px solid #6a2135;
+  border-radius: 25px;
+}
+
+div.pieDes {
+  width: 383px;
+}

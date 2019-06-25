@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect, NavLink } from "react-router-dom";
+import PieChart from "react-minimal-pie-chart";
 import axios from "axios";
 import "./styles/Profile.css";
 class Profile extends Component {
@@ -9,6 +10,7 @@ class Profile extends Component {
       child_info: this.props.location.state.child_info,
       parentName: this.props.location.state.parentName,
       childsName: this.props.location.state.childsName,
+      childEvaluation: [],
       index: 0
     };
   }
@@ -16,36 +18,15 @@ class Profile extends Component {
   saveNumber(id) {
     console.log(id);
     var child_id = id;
+    var that = this;
     axios.get("Ach/?child_id=" + child_id).then(res => {
       console.log(res.data);
+      that.setState({
+        childEvaluation: res.data
+      });
     });
-    // this.setState({
-    //   index: i
-    // });
-    // return this.openmodal("childEvaluation");
   }
-
-  //   componentWillMount() {
-  //     axios.get("/Ach").then(function(res) {
-  //       var childarray = res.data;
-  //       for (var i = 0; i < childarray.length; i++) {
-  //         if (
-  //           childarray[i].name === that.state.name &&
-  //           that.props.location.state.parent_id === childarray[i].parent_id
-  //         ) {
-  //           dublication = true;
-  //         }
-  //       }
-  //       if (dublication === true) {
-  //         toast("Child name is already exists ");
-  //       }
-  //     });
-  //   }
   render() {
-    // console.log(this.state.childsName[this.state.index]);
-    console.log(this.state.childsName);
-    console.log(this.state.child_info);
-    console.log(this.state.parentName);
     return (
       <div className="container">
         <div className="row">
@@ -58,7 +39,7 @@ class Profile extends Component {
                   </div>
                   <nav id="nav-menu-container">
                     <ul className="nav-menu">
-                      <li className="menu-active">
+                      <li>
                         <a href="index.html">Home</a>
                       </li>
                       <li>
@@ -93,7 +74,6 @@ class Profile extends Component {
                       </li>
                     </ul>
                   </nav>
-                  {/* <!-- #nav-menu-container --> */}
                 </div>
               </div>
             </header>
@@ -109,25 +89,60 @@ class Profile extends Component {
                       src="https://flintobox.com/blog/wp-content/uploads/2016/09/400-400-img-min.jpg"
                     />
                   </div>
-                  <div className="">
-                    <div>
-                      <button
-                        type="button"
-                        className="linkbtn btn btn-link"
-                        onClick={() =>
-                          this.saveNumber(this.state.child_info.id)
-                        }
-                      >
-                        {this.state.child_info.name}
-                      </button>
-                    </div>
 
-                    <div className="tweet">
-                      <p className="agePara">
-                        {" "}
-                        Age : {this.state.child_info.age}
-                      </p>
-                    </div>
+                  <div>
+                    <p
+                      className="agePara"
+                      onClick={() => this.saveNumber(this.state.child_info.id)}
+                    >
+                      {this.state.child_info.name} <br />
+                      Age : {this.state.child_info.age}
+                    </p>
+                  </div>
+                  <br />
+                  <div className="tweet">
+                    <PieChart
+                      data={[
+                        {
+                          title: "One",
+                          value: this.state.child_info.age,
+                          color: "#E38627"
+                        },
+                        {
+                          title: "Two",
+                          value: 15,
+                          color: "#C13C37"
+                        },
+                        {
+                          title: "Three",
+                          value: 20,
+                          color: "#6A2135"
+                        }
+                      ]}
+                      lineWidth={20}
+                      paddingAngle={18}
+                      animate
+                      rounded
+                      label
+                      labelStyle={{
+                        fontSize: "5px",
+                        fontFamily: "sans-serif"
+                      }}
+                      // labelStyle={{
+                      //   fontSize: '5px',
+                      //   fontFamily: 'sans-serif'
+                      // }}
+                      labelPosition={60}
+                      radius={42}
+                      labelPosition={112}
+                    >
+                      <div className="pieDes">
+                        <span className="pieDes1"> pieDes </span> Latters
+                        <span className="pieDes2"> pieDes </span> Animals
+                        <span className="pieDes3"> pieDes </span> Vegetables and
+                        Fruits
+                      </div>
+                    </PieChart>
                   </div>
                 </div>
               </div>
