@@ -1,5 +1,9 @@
 
 import os
+import django_heroku 
+# Then all the way at the bottom of the file
+# ... 
+django_heroku.settings(locals())
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
