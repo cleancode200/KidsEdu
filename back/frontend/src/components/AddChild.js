@@ -133,9 +133,6 @@ export class AddChild extends Component {
       console.log(childarray);
       var namesArr = that.state.names;
       var childInfo = [];
-      // console.log(childarray);
-      // console.log(childarray[0].name);
-      // console.log(that.state.names);
       for (var i = 0; i < childarray.length; i++) {
         namesArr.push(childarray[i].name);
         childInfo.push(childarray[i]);
@@ -243,7 +240,6 @@ export class AddChild extends Component {
                     <div style={style} className="tweet">
                       <p className="agePara"> Age : {child.age}</p>
                     </div>
-                    <p id="date">{child.created_at}</p>
                   </div>
                 </div>
               </div>

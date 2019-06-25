@@ -1,0 +1,406 @@
+::-moz-selection {
+  /* Code for Firefox */
+  background-color: #39cfca;
+  color: #fff;
+}
+
+::selection {
+  background-color: #39cfca;
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #777777;
+  font-weight: 300;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #777777;
+  opacity: 1;
+  font-weight: 300;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #777777;
+  opacity: 1;
+  font-weight: 300;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #777777;
+  font-weight: 300;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #777777;
+  font-weight: 300;
+}
+
+body {
+  color: #777777;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.625em;
+  position: relative;
+  background-color: #accffe;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: "Muli-Regular";
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+  outline: 0;
+}
+
+.container.fullwidth {
+  width: 100%;
+}
+.container.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+/*--------------------------------------------------------------
+# Header
+  --------------------------------------------------------------*/
+#header {
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+#header.header-scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  transition: all 0.5s;
+}
+#header.header-scrolled .nav-menu li:hover > a,
+#header.header-scrolled .nav-menu > .menu-active > a {
+  color: #39cfca;
+}
+
+@media (max-width: 673px) {
+  #logo {
+    margin-left: 20px;
+  }
+}
+#header #logo h1 {
+  font-size: 34px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+#header #logo h1 a,
+#header #logo h1 a:hover {
+  color: #fff;
+  padding-left: 10px;
+  border-left: 4px solid #39cfca;
+}
+
+#header #logo img {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #header #logo h1 {
+    font-size: 28px;
+  }
+
+  #header #logo img {
+    max-height: 40px;
+  }
+}
+
+/* the next header in Category page*/
+
+#headerr {
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #3279bb;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+#headerr.headerr-scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  transition: all 0.5s;
+}
+#headerr.headerr-scrolled .nav-menu li:hover > a,
+#headerr.headerr-scrolled .nav-menu > .menu-active > a {
+  color: #3279bb;
+}
+
+@media (max-width: 673px) {
+  #logo {
+    margin-left: 20px;
+  }
+}
+#headerr #logo h1 {
+  font-size: 34px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+#headerr #logo h1 a,
+#headerr #logo h1 a:hover {
+  color: rgba(0, 0, 0, 0.9);
+  padding-left: 10px;
+  border-left: 4px solid #3279bb;
+}
+
+#headerr #logo img {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #headerr #logo h1 {
+    font-size: 28px;
+  }
+
+  #headerr #logo img {
+    max-height: 40px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Nav Menu Essentials */
+.nav-menu,
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+
+.nav-menu li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu > li {
+  float: left;
+}
+
+.nav-menu li:hover > ul,
+.nav-menu li.sfHover > ul {
+  display: block;
+}
+
+.nav-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+.nav-menu ul li {
+  min-width: 180px;
+  text-align: left;
+}
+
+/* Nav Meu Container */
+#nav-menu-container {
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  #nav-menu-container {
+    padding-right: 60px;
+  }
+}
+@media (max-width: 768px) {
+  #nav-menu-container {
+    display: none;
+  }
+}
+/* Nav Meu Styling */
+.nav-menu a {
+  padding: 0 8px 0px 8px;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  text-transform: capitalize;
+  outline: none;
+}
+
+.nav-menu li:hover > a,
+.nav-menu > .menu-active > a {
+  color: #222222;
+}
+
+.nav-menu > li {
+  margin-left: 10px;
+}
+
+.nav-menu ul {
+  margin: 27px 0 0 0;
+  padding: 10px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  background: #fff;
+}
+
+.nav-menu ul li {
+  transition: 0.3s;
+}
+
+.nav-menu ul li a {
+  padding: 10px;
+  color: #333;
+  transition: 0.3s;
+  display: block;
+  font-size: 12px;
+  text-transform: none;
+}
+
+.nav-menu ul li:hover > a {
+  color: #39cfca;
+}
+
+.nav-menu ul ul {
+  margin: 0;
+}
+
+.wrapper1 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #accffe;
+}
+
+.wrapper2child {
+  text-align: center;
+  width: 100%;
+}
+
+.playerCard {
+  align-items: center;
+  background-color: #f4f4f4;
+  width: 878px;
+  height: 494px;
+  margin-top: 30px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 3px #007ba8;
+  /* float: left; */
+  display: inline-block;
+  text-align: center;
+  margin-right: 60px;
+}
+.playerCard .card-top {
+  background-color: #007ba8;
+  border-bottom: 4px solid #006e96;
+  height: 11%;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.playerCard .profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  margin: -52px 0 0 6px;
+  border: 4px solid white;
+}
+
+.playerCard .profile-pic {
+  height: 50px;
+}
+
+p.agePara {
+  padding-top: 6px;
+  font-size: 24px;
+}
+
+.tweet {
+  /* position: relative; */
+  /* bottom: 7px; */
+  width: 260px;
+  height: 30px;
+  word-wrap: break-word;
+  /* text-align: center; */
+  /* line-height: 18px; */
+  /* margin: auto; */
+  font-weight: 200;
+  font-family: helvetica neue;
+  font-size: 0.95em;
+  color: #545454;
+}
+
+.linkbtn {
+  height: 49px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+p#date {
+  position: relative;
+  text-align: right;
+  margin: 0 16px 0px 0px;
+  font-family: helvetica;
+  font-size: 0.8em;
+  color: #919191;
+}
+
+.image-11 {
+  position: absolute;
+  bottom: -12px;
+  left: -191px;
+  z-index: 99;
+}
+
+.image-21 {
+  position: absolute;
+  bottom: 0;
+  right: -129px;
+}
