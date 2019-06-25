@@ -391,3 +391,16 @@ p#date {
   font-size: 0.8em;
   color: #919191;
 }
+
+.image-11 {
+  position: absolute;
+  bottom: -12px;
+  left: -191px;
+  z-index: 99;
+}
+
+.image-21 {
+  position: absolute;
+  bottom: 0;
+  right: -129px;
+}
