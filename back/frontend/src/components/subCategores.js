@@ -118,13 +118,15 @@ export class subCategores extends Component {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/signup">
-                      <a>Register</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/signin">
-                      <a>Login</a>
+                    <Link  to={{
+                        pathname: "/categories",
+                        state: {
+                          child_info: this.state.child_info,
+                          parentName: this.state.parentName,
+                          childsName: this.state.childsName
+                        }
+                      }}>
+                     <a>back to categories</a>
                     </Link>
                   </li>
                   <li>
