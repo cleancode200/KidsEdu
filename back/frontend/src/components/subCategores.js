@@ -93,7 +93,7 @@ export class subCategores extends Component {
             <div className="row align-items-center justify-content-between d-flex">
               <Link to="/">
                 <div id="logo">
-                  <img src="homepageTemplete/img/logo.png" alt="" title="" />
+                  <img src="homepageTemplete/img/logo-rocket.png" alt="" title="" />
                 </div>
               </Link>
               <nav id="nav-menu-container">
@@ -118,13 +118,15 @@ export class subCategores extends Component {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/signup">
-                      <a>Register</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/signin">
-                      <a>Login</a>
+                    <Link  to={{
+                        pathname: "/categories",
+                        state: {
+                          child_info: this.state.child_info,
+                          parentName: this.state.parentName,
+                          childsName: this.state.childsName
+                        }
+                      }}>
+                     <a>back to categories</a>
                     </Link>
                   </li>
                   <li>
