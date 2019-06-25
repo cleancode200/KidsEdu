@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import { Redirect, Link, NavLink } from "react-router-dom";
 import axios from "axios";
 
+const stylee = {
+  "max-width": "100%",
+  height: "290px"
+};
+const top = {
+  
+  "margin-top": "110px"
+
+};
 export class Categories extends Component {
   constructor(props) {
     super(props);
@@ -47,7 +56,7 @@ export class Categories extends Component {
     var redirect = this.state.redirect;
     // console.log(redirect);
     return (
-      <div>
+      <div className= "body123">
         <header id="headerr">
           <div className="container">
             <div className="row align-items-center justify-content-between d-flex">
@@ -180,7 +189,7 @@ export class Categories extends Component {
           ) : null}
         </div> */}
         <section className="feature-area body123">
-          <div className="container">
+          <div className="container" style={top}>
             <div className="feature-inner row">
               <div className="col-lg-4 col-md-6">
                 <div className="feature-item1">
@@ -197,7 +206,8 @@ export class Categories extends Component {
                     </p>
                   </div> */}
                   <img
-                    src={this.state.urls[0]}
+                    style={stylee}
+                    src="https://www.hpr2.org/sites/khpr/files/styles/medium/public/201901/33692_0.jpg"
                     onClick={this.goToSubCategories.bind(this)}
                   />
                   {redirect ? (
@@ -227,7 +237,8 @@ export class Categories extends Component {
                     </p>
                   </div> */}
                   <img
-                    src={this.state.urls[0]}
+                    style={stylee}
+                    src="https://cf-images.us-east-1.prod.boltdns.net/v1/static/5599740296001/1f20377c-971c-48a3-a6e5-d97a061c06b9/6922d194-e5de-4766-a763-e0889570d75f/1280x720/match/image.jpg"
                     onClick={this.goToSubCategories.bind(this)}
                   />
                   {redirect ? (
@@ -245,7 +256,8 @@ export class Categories extends Component {
               <div className="col-lg-4 col-md-6">
                 <div className="feature-item1">
                   <img
-                    src={this.state.urls[0]}
+                    style={stylee}
+                    src="https://s3.amazonaws.com/static.evanced.info/Customer/madelynhelling/STORYTIMELION_660B5172.JPG"
                     onClick={this.goToSubCategories.bind(this)}
                   />
                   {redirect ? (
@@ -355,38 +367,7 @@ export class Categories extends Component {
           </div>
         </section> */}
         {/*  */}
-        {/* Footer start */}
-        <footer className="footer-areaa section-gap">
-          <div className="container">
-            <div className="footer-bottom row align-items-center">
-              <p className="footer-text m-0 col-lg-8 col-md-12">
-                {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All
-                rights reserved | This template is made with{" "}
-                <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}
-                <a href="https://colorlib.com" target="_blank">
-                  EduKids Team
-                </a>
-                {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
-              </p>
-              <div className="col-lg-4 col-md-12 footer-social">
-                <a href="#">
-                  <i className="fa fa-facebook" />
-                </a>
-                <a href="#">
-                  <i className="fa fa-twitter" />
-                </a>
-                <a href="#">
-                  <i className="fa fa-dribbble" />
-                </a>
-                <a href="#">
-                  <i className="fa fa-behance" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
+
       </div>
     );
   }
