@@ -339,6 +339,26 @@ a:hover {
   border-bottom: 4px solid #006e96;
   height: 11%;
   border-radius: 2px 2px 0px 0px;
+  font-family: fantasy;
+  text-align: right;
+  text-align-last: justify;
+  font-size: xx-large;
+  font-stretch: ultra-expanded;
+  font-style: oblique;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: cadetblue;
+  color: aliceblue;
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-style: double;
+  text-orientation: sideways;
+  text-transform: capitalize;
+  text-underline-position: auto;
+  -webkit-text-emphasis: double-circle;
+  -webkit-text-emphasis-color: #007ba8;
+  padding-left: 10pc;
+  padding-right: 10pc;
 }
 
 .playerCard .profile-pic img {
@@ -359,11 +379,11 @@ p.agePara {
   font-size: 24px;
 }
 
-.tweet {
+.profileDiv {
   /* position: relative; */
   /* bottom: 7px; */
-  width: 260px;
-  height: 30px;
+  width: 721px;
+  height: 398px;
   word-wrap: break-word;
   /* text-align: center; */
   /* line-height: 18px; */
@@ -429,5 +449,21 @@ span.pieDes3 {
 }
 
 div.pieDes {
-  width: 383px;
+  /* width: 413px;
+  padding-left: 194px; */
+  padding: 27px;
+  /* display: block; */
+  /* position: relative; */
+  /* align-items: center; */
+  /* align-content: center; */
+  align-self: center;
+  /* -webkit-box-align: center; */
+  /* text-align: -webkit-center; */
+  /* scroll-snap-align: center; */
+  /* text-align-last: center; */
+  /* vertical-align: middle; */
+}
+
+span.pieDes {
+  margin: 5px;
 }

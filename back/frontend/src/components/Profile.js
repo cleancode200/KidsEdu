@@ -82,67 +82,72 @@ class Profile extends Component {
             <div className="">
               <div className="wrapper2child">
                 <div className="playerCard">
-                  <div className="card-top" />
+                  <div className="card-top">
+                    {this.state.child_info.name}
+                    {" " + this.state.child_info.age + "years "}
+                  </div>
                   <div className="profile-pic">
                     <img
+                      onClick={() => this.saveNumber(this.state.child_info.id)}
                       alt="child pic"
                       src="https://flintobox.com/blog/wp-content/uploads/2016/09/400-400-img-min.jpg"
                     />
                   </div>
-
-                  <div>
-                    <p
-                      className="agePara"
-                      onClick={() => this.saveNumber(this.state.child_info.id)}
-                    >
-                      {this.state.child_info.name} <br />
-                      Age : {this.state.child_info.age}
-                    </p>
-                  </div>
-                  <br />
-                  <div className="tweet">
-                    <PieChart
-                      data={[
-                        {
-                          title: "One",
-                          value: this.state.child_info.age,
-                          color: "#E38627"
-                        },
-                        {
-                          title: "Two",
-                          value: 15,
-                          color: "#C13C37"
-                        },
-                        {
-                          title: "Three",
-                          value: 20,
-                          color: "#6A2135"
-                        }
-                      ]}
-                      lineWidth={20}
-                      paddingAngle={18}
-                      animate
-                      rounded
-                      label
-                      labelStyle={{
-                        fontSize: "5px",
-                        fontFamily: "sans-serif"
-                      }}
-                      // labelStyle={{
-                      //   fontSize: '5px',
-                      //   fontFamily: 'sans-serif'
-                      // }}
-                      labelPosition={60}
-                      radius={42}
-                      labelPosition={112}
-                    >
-                      <div className="pieDes">
-                        <span className="pieDes1"> pieDes </span> Latters
-                        <span className="pieDes2"> pieDes </span> Animals
-                        <span className="pieDes3"> pieDes </span> Vegetables and
-                        Fruits
+                  <div className="profileDiv">
+                    <br />
+                    <div className="row">
+                      <div className="col-sm-6">
+                        <PieChart
+                          data={[
+                            {
+                              title: "One",
+                              value: this.state.child_info.age,
+                              color: "#E38627"
+                            },
+                            {
+                              title: "Two",
+                              value: 15,
+                              color: "#C13C37"
+                            },
+                            {
+                              title: "Three",
+                              value: 20,
+                              color: "#6A2135"
+                            }
+                          ]}
+                          lineWidth={20}
+                          paddingAngle={18}
+                          animate
+                          rounded
+                          label
+                          labelStyle={{
+                            fontSize: "5px",
+                            fontFamily: "sans-serif"
+                          }}
+                          // labelStyle={{
+                          //   fontSize: '5px',
+                          //   fontFamily: 'sans-serif'
+                          // }}
+                          labelPosition={60}
+                          radius={42}
+                          labelPosition={112}
+                        />
                       </div>
-                    </PieChart>
+                      <div className="col-sm-6 pieDes">
+                        <div className="row">
+                          <div className="col-sm-4">
+                            <span className="pieDes1"> pieDes </span> Latters
+                          </div>
+                          <div className="col-sm-4">
+                            <span className="pieDes2"> pieDes </span> Animals
+                          </div>
+                          <div className="col-sm-4">
+                            <span className="pieDes3"> pieDes </span> Vegetables
+                            and Fruits
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
