@@ -63,7 +63,7 @@ export class Categories extends Component {
               <Link to="/">
                 <div id="logo">
                   {/* <a href="index.html"> */}
-                  <img src="homepageTemplete/img/logo.png" alt="" title="" />
+                  <img src="homepageTemplete/img/logo-rocket.png" alt="" title="" />
                   {/* </a> */}
                 </div>
               </Link>
@@ -93,16 +93,7 @@ export class Categories extends Component {
                       <a>Profile</a>*/}
                     {/* </Link> */}
                   </li>
-                  <li>
-                    <Link to="/signup">
-                      <a>Register</a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/signin">
-                      <a>Login</a>
-                    </Link>
-                  </li>
+                 
                   {/* <li className="menu-has-children"><a href="">Pages</a>
 							<ul>
 								<li><a href="elements.html">Elements</a></li>
@@ -215,7 +206,9 @@ export class Categories extends Component {
                       to={{
                         pathname: "/subCategores",
                         state: {
-                          child_info: this.state.child_info
+                          child_info: this.state.child_info,
+                          parentName: this.state.parentName,
+                          childsName: this.state.childsName
                         }
                       }}
                     />

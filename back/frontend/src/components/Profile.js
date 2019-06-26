@@ -3,6 +3,11 @@ import { Redirect, NavLink } from "react-router-dom";
 import PieChart from "react-minimal-pie-chart";
 import axios from "axios";
 import "./styles/Profile.css";
+const style ={
+  "margin-top": "50px"
+}
+
+
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +40,7 @@ class Profile extends Component {
               <div className="container">
                 <div className="row align-items-center justify-content-between d-flex">
                   <div id="logo">
-                    <img src="homepageTemplete/img/logo.png" alt="" title="" />
+                    <img src="homepageTemplete/img/logo-rocket.png" alt="" title="" />
                   </div>
                   <nav id="nav-menu-container">
                     <ul className="nav-menu">
@@ -78,7 +83,7 @@ class Profile extends Component {
               </div>
             </header>
           </div>
-          <div className="col-sm-12">
+          <div className="col-sm-12" style={style}>
             <div className="">
               <div className="wrapper2child">
                 <div className="playerCard">
