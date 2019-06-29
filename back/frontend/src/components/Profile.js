@@ -356,13 +356,15 @@ class Profile extends Component {
                         <div className="col-sm-6 pieDes">
                           <div className="row">
                             <div className="col-sm-4">
-                              <span className="pieDes1"> pieDes </span> ممتاز
+                              <span className="pieDes1"> pieDes </span>
+                              excellent
                             </div>
                             <div className="col-sm-4">
-                              <span className="pieDes2"> pieDes </span> جيد جداً
+                              <span className="pieDes2"> pieDes </span> very
+                              good
                             </div>
                             <div className="col-sm-4">
-                              <span className="pieDes3"> pieDes </span> جيد
+                              <span className="pieDes3"> pieDes </span> good
                             </div>
                           </div>
                         </div>
