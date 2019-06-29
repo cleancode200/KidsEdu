@@ -376,6 +376,7 @@ class Flipgame extends Component {
       <div>
         <div>{this.Header()}</div>
         <div>
+          <br/>
           {this.isGameOver() ? (
             this.GameOver()
           ) : (

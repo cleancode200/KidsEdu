@@ -80,6 +80,17 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'test1',
+#         'USER': 'root',
+#         'PASSWORD': '1111',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

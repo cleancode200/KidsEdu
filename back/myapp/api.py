@@ -32,11 +32,10 @@ class MediaViewSet(viewsets.ModelViewSet):
 
 
 class ChildViewSet(viewsets.ModelViewSet):
-    serializer_class = ChildSerializer
-
+    serializer_class = ChildSerializer  
     def get_queryset(self):
         queryset = Child.objects.all()
-        parent_id = self.request.query_params.get("parent_id", None)
+        parent_id = self.request.query_params.get("parent_id", None)  
         return queryset.filter(parent_id=parent_id)
 
 
