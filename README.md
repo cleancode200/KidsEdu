@@ -115,21 +115,21 @@ This file cne be used in many categoris, what we did here is that we created a o
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. Fork the Project
+1. **Fork the Project**
   * Fork this repository by clicking on the fork button on the top of this page. This will create a copy of this repository in your account.
-2. Clone the repository
+2. **Clone the repository**
   * Now clone the forked repository to your machine. Go to your GitHub account, open the forked repository, click on the clone button and then click the copy to clipboard icon.
   * Open a terminal and run the following git command:
  ```sh
 git clone "url you just copied"
 ```
-3. Create your Branch
+3. **Create your Branch**
   * Now create a branch using the git checkout command:
  (`The name of the branch does not need to have the word add in it, but it's a reasonable thing to include because the purpose of this branch is to add your name to a list`)
   ```sh
   git checkout -b {add_your_new_branch_name}
   ```
-4. Commit your Changes 
+4. **Commit your Changes** 
   * after you finish from your adjustments ==> in your terminal 
 ```sh
 git status
@@ -141,12 +141,12 @@ git add .
 git commit -m "Add your commit here"
 ```
   
-5. Push to the GitHub 
+5. **Push to the GitHub** 
   * Push your changes using the command `git push`:
 ```sh
 git commit -m "Add your commit here"
 ```
-6. Open a Pull Request
+6. **Open a Pull Request**
   * If you go to your repository on GitHub, you'll see a Compare & pull request button. on the right side
   * press on it and (`submit the pull request`)
 
