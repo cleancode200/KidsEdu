@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="logo.png" alt="Logo" width="80" height="80">
+    <img src="home.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">EduKids</h3>
@@ -24,9 +24,7 @@
   * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+
 
 
 
@@ -88,7 +86,7 @@ This is an example of how to list things you need to use the software and how to
 ```sh
 npm install npm@latest -g
 ```
-pip install requirements.txt
+
 
 ### Installation
 
@@ -110,7 +108,7 @@ pip install requirements.txt
 
 * [flipgame](https://github.com/cleancode200/KidsEdu/blob/master/back/frontend/src/flipgame.js) 
 
-This file cne be used in many categoris, what we did here is that we created a one component that can be uses as a many component at the same time, so we are rendering all the levels and all the subCatigores in one component and thats called reusability, so insted of creating a hundreds of components we only created one that do the job of hunderds   .
+This file cne be used in many categoris, what we did here is that we created a one component that can be uses as a many components at the same time, so we are rendering all the levels and all the subCatigores in one component and thats called reusability, so insted of creating a hundreds of components we only created one that do the job of hunderds   .
 
 
 <!-- CONTRIBUTING -->
