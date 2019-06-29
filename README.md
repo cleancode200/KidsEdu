@@ -30,7 +30,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<img src="home.png" alt="Logo" width="1000" height="600">
+<img src="home.png" alt="Logo" width="1150" height="600">
 
 EduKids is an educational website that targets the kids within the ages (4-8), We noticed that the traditinal way of teaching is not that effective
 so we designed EduKids.
