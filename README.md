@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="logo-rocket.png" alt="Logo" width="200" height="80">
+    <img src="logo-rocket.png" alt="Logo" width="250" height="80">
   </a>
 
   <h3 align="center">EduKids</h3>
@@ -30,7 +30,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<img src="home.png" alt="Logo" width="500" height="650">
+<img src="home.png" alt="Logo" width="1000" height="650">
 
 EduKids is an educational website that targets the kids within the ages (4-8), We noticed that the traditinal way of teaching is not that effective
 so we designed EduKids.
