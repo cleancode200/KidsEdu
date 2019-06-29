@@ -107,8 +107,7 @@ pip install requirements.txt
 
 * [flipgame](https://github.com/cleancode200/KidsEdu/blob/master/back/frontend/src/flipgame.js) 
 
-This file cne be used in many categoris, what we did here is that we created a one component that can be uses as a many components at the same time, so we are rendering all the levels and all the subCatigores in one component and thats called reusability, so insted of creating a hundreds of components we only created one that do the job of hunderds   .
-
+This file cne be used in many categoris, what we did here is that we created a one component that can be used as a many components at the same time, so we are rendering all the levels and all the subCatigores in one component and thats called reusability, so insted of creating a hundreds of components we only created one that do the job of hunderds .
 
 <!-- CONTRIBUTING -->
 ## Contributing
