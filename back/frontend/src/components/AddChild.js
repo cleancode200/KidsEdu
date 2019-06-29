@@ -145,6 +145,18 @@ export class AddChild extends Component {
     });
   }
 
+  removeChild(index) {
+    console.log(this.state.childInfo[index].id);
+
+    if (this.state.childInfo[index].id) {
+      axios
+        .delete(`/Child/${this.state.childInfo[index].id}`)
+        .then(res => {
+          console.log(res.data);
+        });
+    }
+  }
+
   render() {
     const style = {
       color: "#006e96"
@@ -241,6 +253,17 @@ export class AddChild extends Component {
                       <p className="agePara"> Age : {child.age}</p>
                     </div>
                   </div>
+                  <button
+                    type="button"
+                    className="linkbtn btn btn-link"
+                    id="name"
+                    key={index}
+                    onClick={() => {
+                      this.removeChild(index);
+                    }}
+                  >
+                    remove
+                  </button>
                 </div>
               </div>
             );
