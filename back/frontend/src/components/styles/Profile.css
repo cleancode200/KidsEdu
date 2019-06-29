@@ -380,14 +380,9 @@ p.agePara {
 }
 
 .profileDiv {
-  /* position: relative; */
-  /* bottom: 7px; */
   width: 721px;
   height: 398px;
   word-wrap: break-word;
-  /* text-align: center; */
-  /* line-height: 18px; */
-  /* margin: auto; */
   font-weight: 200;
   font-family: helvetica neue;
   font-size: 0.95em;
@@ -426,13 +421,21 @@ p#date {
 }
 
 span.pieDes1 {
+  background-color: #234d2c;
+  color: #234d2c;
+  width: 15px;
+  border: 2px solid #234d2c;
+  border-radius: 25px;
+}
+span.pieDes2 {
   background-color: #e38627;
   color: #e38627;
   width: 15px;
   border: 2px solid #e38627;
   border-radius: 25px;
 }
-span.pieDes2 {
+
+span.pieDes3 {
   background-color: #c13c37;
   color: #c13c37;
   width: 15px;
@@ -440,30 +443,19 @@ span.pieDes2 {
   border-radius: 25px;
 }
 
-span.pieDes3 {
-  background-color: #6a2135;
-  color: #6a2135;
-  width: 15px;
-  border: 2px solid #6a2135;
-  border-radius: 25px;
-}
-
 div.pieDes {
-  /* width: 413px;
-  padding-left: 194px; */
   padding: 27px;
-  /* display: block; */
-  /* position: relative; */
-  /* align-items: center; */
-  /* align-content: center; */
   align-self: center;
-  /* -webkit-box-align: center; */
-  /* text-align: -webkit-center; */
-  /* scroll-snap-align: center; */
-  /* text-align-last: center; */
-  /* vertical-align: middle; */
 }
 
 span.pieDes {
   margin: 5px;
+}
+
+p.traningMassege {
+  color: #006e96;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  text-align-last: center;
+  font-size: 25px;
 }
