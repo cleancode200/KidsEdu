@@ -31,7 +31,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][<img src="logo.png" alt="Logo" width="80" height="80"/>]]
 
 EduKids is an educational website that targets the kids within the ages (4-8), We noticed that the traditinal way of teaching is not that effective
 so we designed EduKids.
