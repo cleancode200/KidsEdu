@@ -11,6 +11,12 @@ const style_counter = {
   width: "50px",
   height: "50px"
 };
+const style_button = {
+  color: "white",
+  width: "100px",
+  height: "50px",
+  "background-color": "rgb(52, 65, 86)"
+};
 const style_nextbut = {
   "margin-top": "100px"
 };
@@ -63,6 +69,19 @@ class Flipgame extends Component {
                     <h1 style={style_counter}>
                       Level : {this.state.level}
                     </h1>{" "}
+                  </li>
+                  <li style={style_level}>
+                    {" "}
+                    <Link
+                      to={{
+                        pathname: "/subCategores",
+                        state: {
+                          child_info: this.state.child_info
+                        }
+                      }}
+                    >
+                      <button style={style_button}>games</button>{" "}
+                    </Link>
                   </li>
                 </ul>
               </nav>
